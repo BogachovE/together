@@ -47,14 +47,15 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         }
     
   
+    @IBAction func donePressed(_ sender: Any) {
+        addnewUser()
+    }
     
        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   @IBAction func donePresed(_ sender: Any) {
-        addnewUser()
-    }
+   
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -105,7 +106,7 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         editPhoneNumber.layer.masksToBounds = true
     }
     
-    @IBAction func editPhotoPresed(_ sender: UITapGestureRecognizer) {
+    @IBAction func editPhotoPressed(_ sender: Any) {
         // Hide the keyboard.
         //        nameTextField.resignFirstResponder()
         
@@ -120,7 +121,7 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         
         present(imagePickerController, animated: true, completion: nil)
     }
-    func addnewUser(){
+       func addnewUser(){
        //find actual count of users
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
