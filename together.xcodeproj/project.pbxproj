@@ -20,6 +20,8 @@
 		DD306D8E1E2BE6D20036EB4A /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = together/Base.lproj; sourceTree = "<group>"; };
 		DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DD306D971E2BF5610036EB4A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		DD306D981E2BF5610036EB4A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDBFA9041E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		DD306D991E2BF5650036EB4A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD306D971E2BF5610036EB4A /* Roboto-Medium.ttf */,
+				DD306D981E2BF5610036EB4A /* Roboto-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		DDBFA8F31E27B0290040FEE1 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +100,7 @@
 				DD306D941E2BEF380036EB4A /* View */,
 				DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */,
 				DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */,
+				DD306D991E2BF5650036EB4A /* Fonts */,
 				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
 			);
 			path = together;

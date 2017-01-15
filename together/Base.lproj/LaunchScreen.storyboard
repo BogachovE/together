@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -16,12 +25,74 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lauch_photo_back" translatesAutoresizingMaskIntoConstraints="NO" id="drP-9C-4Nc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="UXc-tJ-wF9">
+                                <rect key="frame" x="79" y="116" width="218" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="5SE-9j-xoW"/>
+                                    <constraint firstAttribute="width" constant="218" id="TeC-fy-BK5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_text" translatesAutoresizingMaskIntoConstraints="NO" id="s8Q-Fi-r5s">
+                                <rect key="frame" x="67" y="356" width="242" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="Tmg-yH-fAw"/>
+                                    <constraint firstAttribute="width" constant="242" id="e7X-UN-Mkm"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.34000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPj-In-SpY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                <color key="backgroundColor" red="0.27058823529411763" green="0.3529411764705882" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="gn7-lh-fc3"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.58999999999999997" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHr-HZ-CId">
+                                <rect key="frame" x="0.0" y="575" width="375" height="92"/>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="Z7c-wx-EP5"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We support each other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-kX-ZHs">
+                                <rect key="frame" x="85.5" y="608" width="203.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.94117647058823528" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="drP-9C-4Nc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="6nK-7V-VnE"/>
+                            <constraint firstItem="wI2-kX-ZHs" firstAttribute="centerY" secondItem="KHr-HZ-CId" secondAttribute="centerY" id="7Wa-fd-Un3"/>
+                            <constraint firstItem="KHr-HZ-CId" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8VR-fy-rZf"/>
+                            <constraint firstItem="UXc-tJ-wF9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AOG-Tt-vtL"/>
+                            <constraint firstItem="WPj-In-SpY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Amt-0M-O7z"/>
+                            <constraint firstItem="s8Q-Fi-r5s" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BME-Wz-OK8"/>
+                            <constraint firstAttribute="trailing" secondItem="KHr-HZ-CId" secondAttribute="trailing" id="QDT-xr-xRc"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="drP-9C-4Nc" secondAttribute="bottom" id="a5N-kh-Tti"/>
+                            <constraint firstItem="wI2-kX-ZHs" firstAttribute="centerX" secondItem="KHr-HZ-CId" secondAttribute="centerX" id="aYv-5W-ByT"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KHr-HZ-CId" secondAttribute="bottom" id="cOc-bv-GIT"/>
+                            <constraint firstItem="s8Q-Fi-r5s" firstAttribute="top" secondItem="UXc-tJ-wF9" secondAttribute="bottom" constant="24" id="cPz-Dr-kaJ"/>
+                            <constraint firstItem="drP-9C-4Nc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ceQ-lf-YRB"/>
+                            <constraint firstItem="WPj-In-SpY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hFg-BG-d5c"/>
+                            <constraint firstAttribute="trailing" secondItem="WPj-In-SpY" secondAttribute="trailing" id="q4B-0o-2uZ"/>
+                            <constraint firstAttribute="trailing" secondItem="drP-9C-4Nc" secondAttribute="trailing" id="qga-e6-uEP"/>
+                            <constraint firstItem="UXc-tJ-wF9" firstAttribute="top" secondItem="WPj-In-SpY" secondAttribute="bottom" constant="92" id="qkg-sX-H2T"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lauch_photo_back" width="282" height="421"/>
+        <image name="logo" width="132" height="130"/>
+        <image name="logo_text" width="129" height="55"/>
+    </resources>
 </document>
