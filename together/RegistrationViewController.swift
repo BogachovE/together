@@ -51,7 +51,17 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
     
   
     @IBAction func donePressed(_ sender: Any) {
-        addnewUser()
+        FIRAuth.auth()?.createUser(withEmail: editEmail.text!, password: editPassword.text!, completion: { (user: FIRUser?, error) in
+            if error == nil {
+                print("successful")
+                self.addnewUser()
+            }else{
+                print("failure")
+                //registration failure
+            }
+        })
+        
+        //addnewUser()
     }
     
        override func didReceiveMemoryWarning() {
@@ -125,7 +135,7 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         present(imagePickerController, animated: true, completion: nil)
     }
        func addnewUser(){
-        user = User(name: self.editUserName.text!, email: self.editEmail.text!, password: self.editPassword.text!, phone: editPhoneNumber.text!, photo: self.photoEdit.image!)
+        user = User(name: self.editUserName.text!, email: self.editEmail.text!, phone: editPhoneNumber.text!, photo: self.photoEdit.image!)
         userRepositories.addnewUser(user: user, ref: ref, storageRef: storageRef)
     }
 

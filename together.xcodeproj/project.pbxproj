@@ -16,6 +16,7 @@
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
 		DDCC858F1E2C10260086F078 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */; };
+		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
 		DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */; };
 		DDEA9FA31E2D23F200A943FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA21E2D23F200A943FF /* User.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositories.swift; sourceTree = "<group>"; };
 		DDEA9FA21E2D23F200A943FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			children = (
 				DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */,
 				DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */,
+				DDE799401E2E812E00F93B6C /* FeedViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				DDBFA8FA1E27B02A0040FEE1 /* Resources */,
 				54DE3571B0D1209975B6CD7A /* [CP] Embed Pods Frameworks */,
 				8483923795AECABFBAE66BDB /* [CP] Copy Pods Resources */,
+				DD9DBF0B1E2E667B003E7A2E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -276,6 +280,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-together/Pods-together-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DD9DBF0B1E2E667B003E7A2E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -284,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
+				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
 				DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
