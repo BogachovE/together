@@ -1,0 +1,30 @@
+//
+//  Event.swift
+//  together
+//
+//  Created by ASda Bogasd on 20.01.17.
+//  Copyright © 2017 Attractive Products. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class Event {
+    var id: Int
+    var title: String
+    var description: String
+    var contrebuted: Int
+    var photo: UIImage
+    
+    
+    
+    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0) {
+        self.title = title
+        self.id = id
+        self.description = description
+        self.photo = photo
+        self.contrebuted = contrebuted
+    }
+}
+
+

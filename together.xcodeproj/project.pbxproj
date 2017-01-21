@@ -11,11 +11,16 @@
 		DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DD306D8E1E2BE6D20036EB4A /* Base.lproj */; };
 		DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */; };
 		DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */; };
+		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
+		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
+		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
+		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
+		DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */; };
+		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9051E27B02A0040FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9031E27B02A0040FEE1 /* Main.storyboard */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
-		DDCC858F1E2C10260086F078 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */; };
 		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
 		DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */; };
 		DDEA9FA31E2D23F200A943FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA21E2D23F200A943FF /* User.swift */; };
@@ -30,7 +35,13 @@
 		DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DD306D971E2BF5610036EB4A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		DD306D981E2BF5610036EB4A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
+		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
+		DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewEventViewController.swift; path = ../CreateNewEventViewController.swift; sourceTree = "<group>"; };
+		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "together-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +49,6 @@
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositories.swift; sourceTree = "<group>"; };
 		DDEA9FA21E2D23F200A943FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -67,6 +77,7 @@
 		DD306D941E2BEF380036EB4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */,
 				DDBFA9031E27B02A0040FEE1 /* Main.storyboard */,
 				DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */,
 			);
@@ -76,9 +87,11 @@
 		DD306D951E2BEF900036EB4A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */,
 				DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */,
 				DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */,
 				DDE799401E2E812E00F93B6C /* FeedViewController.swift */,
+				DD999D081E33A79900FF787A /* EventViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -87,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEA9FA21E2D23F200A943FF /* User.swift */,
+				DD3E8C3D1E3255810067F3A3 /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -130,7 +144,7 @@
 				DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */,
 				DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */,
 				DD306D991E2BF5650036EB4A /* Fonts */,
-				DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */,
+				DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */,
 				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
 				DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */,
 			);
@@ -141,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */,
+				DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -226,9 +241,9 @@
 			files = (
 				DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */,
 				DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */,
-				DDCC858F1E2C10260086F078 /* GoogleService-Info.plist in Resources */,
 				DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */,
 				DDBFA9051E27B02A0040FEE1 /* Main.storyboard in Resources */,
+				DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,9 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */,
+				DD999D091E33A79900FF787A /* EventViewController.swift in Sources */,
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
+				DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */,
+				DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */,
 				DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */,
+				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
 				DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */,

@@ -128,7 +128,7 @@ class LoginViewController: UIViewController  {
                                 let id = dict.value(forKey: "id")
                                 self.userId = id as AnyObject?
                             }
-                            self.performSegue(withIdentifier: "toMain", sender: self)
+                            self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
                         }
                     }
                 })
@@ -155,6 +155,8 @@ class LoginViewController: UIViewController  {
                 print("Logged in \(grantedPermissions) \(declinedPermissions) \(accessToken)")
                 self.returnUserData()
                 self.user = User()
+                self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+
                 
             }
         }

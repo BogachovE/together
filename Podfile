@@ -10,6 +10,7 @@ target ‘together’ do
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'HockeySDK', '~> 4.1.3'
+  
 
 end
 
