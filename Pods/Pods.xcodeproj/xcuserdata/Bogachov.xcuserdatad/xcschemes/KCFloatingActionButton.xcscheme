@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4E9F91CFB0E2B0FC40F9A218C54C356A"
-               BuildableName = "Pods_together.framework"
-               BlueprintName = "Pods-together"
+               BlueprintIdentifier = "A6E9CEC9E5ACFE69D21456CCB70BEEA0"
+               BuildableName = "KCFloatingActionButton.framework"
+               BlueprintName = "KCFloatingActionButton"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4E9F91CFB0E2B0FC40F9A218C54C356A"
-            BuildableName = "Pods_together.framework"
-            BlueprintName = "Pods-together"
+            BlueprintIdentifier = "A6E9CEC9E5ACFE69D21456CCB70BEEA0"
+            BuildableName = "KCFloatingActionButton.framework"
+            BlueprintName = "KCFloatingActionButton"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

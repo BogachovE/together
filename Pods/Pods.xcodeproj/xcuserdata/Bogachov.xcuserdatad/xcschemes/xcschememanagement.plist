@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KCFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-together.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -78,6 +83,11 @@
 			<true/>
 		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E9F91CFB0E2B0FC40F9A218C54C356A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E46B0130935A8033C57C2ABC493ECCB</key>
+		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
