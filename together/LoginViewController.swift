@@ -11,6 +11,7 @@ import Firebase
 import FacebookCore
 import FacebookLogin
 import FBSDKCoreKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController  {
     

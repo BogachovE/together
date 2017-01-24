@@ -20,6 +20,13 @@
 		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
 		DDA899871E379631002D2069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA899861E379631002D2069 /* Main.storyboard */; };
+		DDA899901E37B2FE002D2069 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA8998B1E37B2FE002D2069 /* GoogleSignIn.framework */; };
+		DDA899911E37B2FE002D2069 /* GoogleSignIn.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA8998C1E37B2FE002D2069 /* GoogleSignIn.bundle */; };
+		DDA899921E37B2FE002D2069 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA8998D1E37B2FE002D2069 /* GoogleAppUtilities.framework */; };
+		DDA899931E37B2FE002D2069 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA8998E1E37B2FE002D2069 /* GoogleSignInDependencies.framework */; };
+		DDA899941E37B2FE002D2069 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA8998F1E37B2FE002D2069 /* GoogleSymbolUtilities.framework */; };
+		DDA899961E37B321002D2069 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA899951E37B321002D2069 /* SafariServices.framework */; };
+		DDA899981E37B329002D2069 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA899971E37B329002D2069 /* SystemConfiguration.framework */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
@@ -46,10 +53,16 @@
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
 		DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewEventViewController.swift; path = ../CreateNewEventViewController.swift; sourceTree = "<group>"; };
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "together-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDA899861E379631002D2069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDA8998B1E37B2FE002D2069 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		DDA8998C1E37B2FE002D2069 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		DDA8998D1E37B2FE002D2069 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		DDA8998E1E37B2FE002D2069 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		DDA8998F1E37B2FE002D2069 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		DDA899951E37B321002D2069 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		DDA899971E37B329002D2069 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA899981E37B329002D2069 /* SystemConfiguration.framework in Frameworks */,
+				DDA899961E37B321002D2069 /* SafariServices.framework in Frameworks */,
+				DDA899901E37B2FE002D2069 /* GoogleSignIn.framework in Frameworks */,
+				DDA899911E37B2FE002D2069 /* GoogleSignIn.bundle in Frameworks */,
+				DDA899921E37B2FE002D2069 /* GoogleAppUtilities.framework in Frameworks */,
+				DDA899931E37B2FE002D2069 /* GoogleSignInDependencies.framework in Frameworks */,
+				DDA899941E37B2FE002D2069 /* GoogleSymbolUtilities.framework in Frameworks */,
 				03B8F0050708E8966D4CCFBC /* Pods_together.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +97,13 @@
 		0C74758632B04E1E1206644C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDA899971E37B329002D2069 /* SystemConfiguration.framework */,
+				DDA899951E37B321002D2069 /* SafariServices.framework */,
+				DDA8998B1E37B2FE002D2069 /* GoogleSignIn.framework */,
+				DDA8998C1E37B2FE002D2069 /* GoogleSignIn.bundle */,
+				DDA8998D1E37B2FE002D2069 /* GoogleAppUtilities.framework */,
+				DDA8998E1E37B2FE002D2069 /* GoogleSignInDependencies.framework */,
+				DDA8998F1E37B2FE002D2069 /* GoogleSymbolUtilities.framework */,
 				419035FA1DF494BFF8ACF1C1 /* Pods_together.framework */,
 			);
 			name = Frameworks;
@@ -158,7 +185,6 @@
 				DD306D991E2BF5650036EB4A /* Fonts */,
 				DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */,
 				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
-				DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */,
 			);
 			path = together;
 			sourceTree = "<group>";
@@ -403,6 +429,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -446,6 +476,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -461,11 +495,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = together/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.together;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "together-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -480,11 +518,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = together/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.together;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "together-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
