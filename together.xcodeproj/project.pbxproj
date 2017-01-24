@@ -17,10 +17,14 @@
 		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
 		DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */; };
 		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
+		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
+		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
+		DDA899871E379631002D2069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA899861E379631002D2069 /* Main.storyboard */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
-		DDBFA9051E27B02A0040FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9031E27B02A0040FEE1 /* Main.storyboard */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
+		DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256651E3619FA003180BA /* NewsViewController.swift */; };
+		DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256671E361A7F003180BA /* ContributionViewController.swift */; };
 		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
 		DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */; };
 		DDEA9FA31E2D23F200A943FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA21E2D23F200A943FF /* User.swift */; };
@@ -43,12 +47,16 @@
 		DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewEventViewController.swift; path = ../CreateNewEventViewController.swift; sourceTree = "<group>"; };
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "together-Bridging-Header.h"; sourceTree = "<group>"; };
+		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		DDA899861E379631002D2069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDBFA9041E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD256651E3619FA003180BA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		DDD256671E361A7F003180BA /* ContributionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionViewController.swift; sourceTree = "<group>"; };
 		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositories.swift; sourceTree = "<group>"; };
 		DDEA9FA21E2D23F200A943FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -78,8 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */,
-				DDBFA9031E27B02A0040FEE1 /* Main.storyboard */,
+				DDA899861E379631002D2069 /* Main.storyboard */,
 				DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */,
+				DDA899821E377E24002D2069 /* NewsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -92,6 +101,9 @@
 				DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */,
 				DDE799401E2E812E00F93B6C /* FeedViewController.swift */,
 				DD999D081E33A79900FF787A /* EventViewController.swift */,
+				DDD256651E3619FA003180BA /* NewsViewController.swift */,
+				DDD256671E361A7F003180BA /* ContributionViewController.swift */,
+				DDA899841E379310002D2069 /* settingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -239,10 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA899871E379631002D2069 /* Main.storyboard in Resources */,
 				DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */,
 				DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */,
 				DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */,
-				DDBFA9051E27B02A0040FEE1 /* Main.storyboard in Resources */,
 				DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,9 +330,13 @@
 				DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */,
 				DD999D091E33A79900FF787A /* EventViewController.swift in Sources */,
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
+				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
+				DDA899851E379310002D2069 /* settingsViewController.swift in Sources */,
 				DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */,
+				DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */,
 				DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */,
+				DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */,
 				DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */,
 				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
@@ -332,14 +348,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DDBFA9031E27B02A0040FEE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDBFA9041E27B02A0040FEE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

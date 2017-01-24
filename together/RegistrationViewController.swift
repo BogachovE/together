@@ -56,12 +56,12 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
                 print("successful")
                 self.addnewUser()
             }else{
-                print("failure")
+                print("failure" ,error!)
                 //registration failure
             }
         })
         
-        //addnewUser()
+      
     }
     
        override func didReceiveMemoryWarning() {
@@ -137,6 +137,7 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
        func addnewUser(){
         user = User(name: self.editUserName.text!, email: self.editEmail.text!, phone: editPhoneNumber.text!, photo: self.photoEdit.image!)
         userRepositories.addnewUser(user: user, ref: ref, storageRef: storageRef)
+        self.performSegue(withIdentifier: "fromRegisterToMain", sender: self)
     }
 
 
