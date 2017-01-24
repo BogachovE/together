@@ -21,6 +21,8 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
 
     
     var ref: FIRDatabaseReference!
+    var user: User!
+    var userRepositories: UserRepositories!
     var storageRef: FIRStorageReference!
     var count: Int!
     var userId : AnyObject? {
@@ -37,6 +39,7 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         underlined()
+        self.userRepositories = UserRepositories()
         self.photoEdit.layer.cornerRadius = self.photoEdit.frame.size.width / 2;
         self.photoEdit.clipsToBounds = true;
         self.photoEdit.layer.borderWidth = 1.0
@@ -48,7 +51,17 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
     
   
     @IBAction func donePressed(_ sender: Any) {
-        addnewUser()
+        FIRAuth.auth()?.createUser(withEmail: editEmail.text!, password: editPassword.text!, completion: { (user: FIRUser?, error) in
+            if error == nil {
+                print("successful")
+                self.addnewUser()
+            }else{
+                print("failure" ,error!)
+                //registration failure
+            }
+        })
+        
+      
     }
     
        override func didReceiveMemoryWarning() {
@@ -122,43 +135,9 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         present(imagePickerController, animated: true, completion: nil)
     }
        func addnewUser(){
-       //find actual count of users
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            self.count = value?["count"] as? NSInteger
-            let id: Int
-            if (self.count != nil){
-                id = self.count+1
-            } else{
-                id = 1
-            }
-            let newUser: NSDictionary = ["name":self.editUserName.text!, "email":self.editEmail.text!, "password":self.self.editPassword.text!, "phone":self.editPhoneNumber.text!, "id":id]
-        //Store UserId
-            self.userId = id as AnyObject?
-            
-        //Put image
-            // Data in memory
-            let data = UIImagePNGRepresentation(self.photoEdit.image!)
-            
-            // Create a reference to the file you want to upload
-            let riversRef = self.storageRef.child("avatars/"+String(id)+".jpg")
-            
-            // Upload the file to the path "images/rivers.jpg"
-            let uploadTask = riversRef.put(data!, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    // Uh-oh, an error occurred!
-                    return
-                }
-                // Metadata contains file metadata such as size, content-type, and download URL.
-            let downloadURL = metadata.downloadURL
-            }
-        //Put data to dataBase
-            self.ref.child("users").child(String(id)).setValue(newUser)
-            self.ref.child("users").child("count").setValue(id)
-            
-        }) { (error) in
-            print(error.localizedDescription)
-            }
+        user = User(name: self.editUserName.text!, email: self.editEmail.text!, phone: editPhoneNumber.text!, photo: self.photoEdit.image!)
+        userRepositories.addnewUser(user: user, ref: ref, storageRef: storageRef)
+        self.performSegue(withIdentifier: "fromRegisterToMain", sender: self)
     }
 
 

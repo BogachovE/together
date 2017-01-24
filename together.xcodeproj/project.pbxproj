@@ -11,11 +11,23 @@
 		DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DD306D8E1E2BE6D20036EB4A /* Base.lproj */; };
 		DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */; };
 		DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */; };
+		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
+		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
+		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
+		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
+		DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */; };
+		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
+		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
+		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
+		DDA899871E379631002D2069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA899861E379631002D2069 /* Main.storyboard */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
-		DDBFA9051E27B02A0040FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9031E27B02A0040FEE1 /* Main.storyboard */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
-		DDCC858F1E2C10260086F078 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */; };
+		DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256651E3619FA003180BA /* NewsViewController.swift */; };
+		DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256671E361A7F003180BA /* ContributionViewController.swift */; };
+		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
+		DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */; };
+		DDEA9FA31E2D23F200A943FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA21E2D23F200A943FF /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,14 +39,27 @@
 		DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DD306D971E2BF5610036EB4A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		DD306D981E2BF5610036EB4A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
+		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
+		DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewEventViewController.swift; path = ../CreateNewEventViewController.swift; sourceTree = "<group>"; };
+		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "together-Bridging-Header.h"; sourceTree = "<group>"; };
+		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		DDA899861E379631002D2069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDBFA9041E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDD256651E3619FA003180BA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		DDD256671E361A7F003180BA /* ContributionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionViewController.swift; sourceTree = "<group>"; };
+		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositories.swift; sourceTree = "<group>"; };
+		DDEA9FA21E2D23F200A943FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +85,10 @@
 		DD306D941E2BEF380036EB4A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDBFA9031E27B02A0040FEE1 /* Main.storyboard */,
+				DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */,
+				DDA899861E379631002D2069 /* Main.storyboard */,
 				DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */,
+				DDA899821E377E24002D2069 /* NewsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -69,17 +96,25 @@
 		DD306D951E2BEF900036EB4A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */,
 				DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */,
 				DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */,
+				DDE799401E2E812E00F93B6C /* FeedViewController.swift */,
+				DD999D081E33A79900FF787A /* EventViewController.swift */,
+				DDD256651E3619FA003180BA /* NewsViewController.swift */,
+				DDD256671E361A7F003180BA /* ContributionViewController.swift */,
+				DDA899841E379310002D2069 /* settingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		DD306D961E2BEFAB0036EB4A /* View */ = {
+		DD306D961E2BEFAB0036EB4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDEA9FA21E2D23F200A943FF /* User.swift */,
+				DD3E8C3D1E3255810067F3A3 /* Event.swift */,
 			);
-			name = View;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		DD306D991E2BF5650036EB4A /* Fonts */ = {
@@ -114,16 +149,27 @@
 			isa = PBXGroup;
 			children = (
 				DD93297F1E2C12DC00F647BE /* together.entitlements */,
-				DD306D961E2BEFAB0036EB4A /* View */,
+				DDEA9F9F1E2D218100A943FF /* Repositories */,
+				DD306D961E2BEFAB0036EB4A /* Model */,
 				DD306D951E2BEF900036EB4A /* Controller */,
 				DD306D941E2BEF380036EB4A /* View */,
 				DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */,
 				DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */,
 				DD306D991E2BF5650036EB4A /* Fonts */,
-				DDCC858E1E2C10260086F078 /* GoogleService-Info.plist */,
+				DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */,
 				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
+				DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */,
 			);
 			path = together;
+			sourceTree = "<group>";
+		};
+		DDEA9F9F1E2D218100A943FF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */,
+				DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */,
+			);
+			name = Repositories;
 			sourceTree = "<group>";
 		};
 		FD201E2D3E9DDB1C891EE18C /* Pods */ = {
@@ -148,6 +194,7 @@
 				DDBFA8FA1E27B02A0040FEE1 /* Resources */,
 				54DE3571B0D1209975B6CD7A /* [CP] Embed Pods Frameworks */,
 				8483923795AECABFBAE66BDB /* [CP] Copy Pods Resources */,
+				DD9DBF0B1E2E667B003E7A2E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -171,6 +218,7 @@
 					DDBFA8FB1E27B02A0040FEE1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 995N6ZUQMV;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -203,11 +251,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA899871E379631002D2069 /* Main.storyboard in Resources */,
 				DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */,
 				DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */,
-				DDCC858F1E2C10260086F078 /* GoogleService-Info.plist in Resources */,
 				DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */,
-				DDBFA9051E27B02A0040FEE1 /* Main.storyboard in Resources */,
+				DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +307,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-together/Pods-together-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DD9DBF0B1E2E667B003E7A2E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -266,8 +327,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */,
+				DD999D091E33A79900FF787A /* EventViewController.swift in Sources */,
+				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
+				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
+				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
+				DDA899851E379310002D2069 /* settingsViewController.swift in Sources */,
+				DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */,
+				DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */,
+				DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */,
+				DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */,
 				DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */,
+				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
+				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
 				DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,14 +348,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DDBFA9031E27B02A0040FEE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDBFA9041E27B02A0040FEE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -391,13 +456,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72E54767793A9E520F945689 /* Pods-together.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
 				INFOPLIST_FILE = together/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.together;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -406,13 +475,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5F596E73BD75E0EB1454B0F /* Pods-together.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
 				INFOPLIST_FILE = together/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.together;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -16,8 +16,60 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb265862410514007</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.454620151298-s30rtjn0jmv2snk53gs22jdrvdp1r56v</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>74b2c800e275a784e9d7220313097f814ad35952</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>publish-key</key>
+					<string>pub-c-cdb7434d-ef2f-4402-b7d7-51ba4404a339</string>
+					<key>secret-key</key>
+					<string>sec-c-NWY2YjRhNDctYjJhZS00ZWE2LWFkYzktYmE2OGVmNjhkNDFk</string>
+					<key>subscribe-key</key>
+					<string>sub-c-52b7efd6-dcc4-11e6-9211-02ee2ddab7fe</string>
+				</dict>
+				<key>KitName</key>
+				<string>PubNub</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>FacebookAppID</key>
+	<string>265862410514007</string>
+	<key>FacebookDisplayName</key>
+	<string>together</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -34,5 +86,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 </dict>
 </plist>

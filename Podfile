@@ -4,6 +4,14 @@ target ‘together’ do
     pod 'Firebase/Core'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
+    pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
+    pod 'HockeySDK', '~> 4.1.3'
+    pod "KCFloatingActionButton", "~> 2.1.0"
+  
 
 end
 
