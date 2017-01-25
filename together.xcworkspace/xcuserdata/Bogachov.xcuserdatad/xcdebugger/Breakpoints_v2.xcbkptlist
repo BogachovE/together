@@ -166,13 +166,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "together/FeedViewController.swift"
-            timestampString = "506630808.358914"
+            filePath = "together/RegistrationViewController.swift"
+            timestampString = "506961878.750061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "donePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -182,13 +182,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "together/RegistrationViewController.swift"
-            timestampString = "506961878.750061"
+            filePath = "together/UserRepositories.swift"
+            timestampString = "507037567.877914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "donePressed(_:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "loadUserImage(id:storage:storageRef:withh:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "together/UserRepositories.swift"
+            timestampString = "507037766.800393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "loadUserImage(id:storage:storageRef:withh:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

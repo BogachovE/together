@@ -136,7 +136,7 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
     }
        func addnewUser(){
         user = User(name: self.editUserName.text!, email: self.editEmail.text!, phone: editPhoneNumber.text!, photo: self.photoEdit.image!)
-        userRepositories.addnewUser(user: user, ref: ref, storageRef: storageRef)
+        userRepositories.addnewUser(user: user, ref: ref, storageRef: storageRef, type: "standart")
         self.performSegue(withIdentifier: "fromRegisterToMain", sender: self)
     }
 

@@ -7,33 +7,51 @@
 //
 
 import UIKit
-
+import Firebase
 
 class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet weak var filtersPiker: UIPickerView!
+    @IBOutlet var avatarImage: UIButton!
     
     var pickerData: [String] = [String] ()
     var eventRepositories: EventRepositories!
     var events: Array<Event> = []
     var Events:[Event] = [Event]()
+    var userRepositories: UserRepositories!
+    var ref: FIRDatabaseReference!
+    var storageRef: FIRStorageReference!
+    var id:Int!
 
     @IBOutlet weak var myColectionView: UICollectionView!
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = FIRDatabase.database().reference()
+        let storage = FIRStorage.storage()
+         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+        
+        //Load userDefaults
+        let defaults = UserDefaults.standard
+        id = defaults.integer(forKey: "userId")
+        
         eventRepositories = EventRepositories()
         eventRepositories.loadAllEvents(withh: {(events)  in
            self.events = events
             self.myColectionView.reloadData()
         })
-                // Connect data:
+        
         self.filtersPiker.delegate = self
         self.filtersPiker.dataSource = self
-        myColectionView.reloadData()
-        
+       
         pickerData = ["Category","Celebretion", "Helping"]
+        self.userRepositories = UserRepositories()
+        userRepositories.loadUserImage(id: id, storage: storage, storageRef: storageRef, withh: {(image) in
+            self.avatarImage.setImage(image, for: .normal)
+        })
+       
+
     }
     
     override func didReceiveMemoryWarning() {
