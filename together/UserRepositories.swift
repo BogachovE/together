@@ -26,7 +26,7 @@ class UserRepositories {
                         user.id = 1
                             }
             }
-            let newUser: NSDictionary = ["name":user.name, "email":user.email, "phone":user.phone, "id": user.id]
+            let newUser: NSDictionary = ["name":user.name, "email":user.email, "phone":user.phone, "id": user.id, "friends": user.friends, "signedEvent":user.signedEvent]
             //Store UserId
   
             

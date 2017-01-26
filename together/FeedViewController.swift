@@ -133,6 +133,9 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
          filterEvents(type: "friends")
     }
            
+    @IBAction func myEventPressed(_ sender: Any) {
+        filterEvents(type: "my")
+    }
     
     
     func filterEvents(row: Int = 0, type: String) {
@@ -154,6 +157,12 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.events = events
                     self.myColectionView.reloadData()
                 })
+            case "my":
+                eventRepositories.loadMyEvents(id: id, withh:{(events) in
+                    self.events = events
+                    self.myColectionView.reloadData()
+                })
+
 
         default:
             eventRepositories.loadAllEvents(withh: {(events)  in

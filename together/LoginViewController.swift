@@ -183,10 +183,9 @@ class LoginViewController: UIViewController  {
             else
             {
                 print("fetched user: \(result)")
-                if (self.rememberMe.isSelected) {
                     let id = Int((result as! NSObject).value(forKey: "id") as! String)!
                     self.userId = id as AnyObject?
-                }
+                
                 self.user.name = (result as! NSObject).value(forKey: "name")! as! String
                 self.user.id = Int((result as! NSObject).value(forKey: "id") as! String)!
                 self.userRepositories.addnewUser(user: self.user, ref: self.ref, storageRef: self.storageRef)

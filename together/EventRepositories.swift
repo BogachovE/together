@@ -70,15 +70,35 @@ class  EventRepositories {
                 })
             }
                   })
-        
-        
-        
-        
+    }
+    
+    func loadMyEvents (id: Int, withh: @escaping (Array<Event>)->Void)  {
+        var events: Array<Event>
+        events = Array<Event>()
+        let myEventQuery = self.ref.child("events").queryOrdered(byChild: "ownerId").queryEqual(toValue: id)
+        myEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+            let child = snapshot
+            //print("friendId", friend)
+            // print("snapshot", snapshot)
+            var event: Event = Event()
+            for childEvent in child.children {
+                let childEvent = childEvent as! FIRDataSnapshot
+                event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int)
+                // print("eventId", event.id)
+                events.append(event)
+                print("event count ", events.count)
+            }
+            withh(events)
+            
+        })
+
     }
     
     func findFriends(id: Int ,withh: @escaping (Array<Int>)->Void ){
         let friendsRef = ref.child("users/"+String(id))
         friendsRef.observe(.value, with: { snapshot in
+            print("UserID", id)
+            print("Snapshot", snapshot)
             let friends = snapshot.childSnapshot(forPath: "friends").value! as! Array<Int>
             withh(friends)
         })
