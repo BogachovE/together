@@ -15,12 +15,14 @@ class User {
     var email: String
     var phone: String
     var photo: UIImage
+    var friends: Array<Int>
     
-    init(name: String = "", email: String = "", id: Int = 0, phone: String = "", photo: UIImage = #imageLiteral(resourceName: "photo_edit")) {
+    init(name: String = "", email: String = "", id: Int = 0, phone: String = "", photo: UIImage = #imageLiteral(resourceName: "photo_edit"), friends: Array<Int> = [0]) {
         self.name = name
         self.id = id
         self.email = email
         self.phone = phone
         self.photo = photo
+        self.friends = friends
     }
 }

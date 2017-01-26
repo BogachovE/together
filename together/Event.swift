@@ -16,17 +16,20 @@ class Event {
     var contrebuted: Int
     var photo: UIImage
     var category: String
+    var ownerId: Int
     
     
     
-    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "") {
+    
+    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: Int = 0) {
         self.title = title
         self.id = id
         self.description = description
         self.photo = photo
         self.contrebuted = contrebuted
         self.category = category
-    }
+        self.ownerId = ownerId
+            }
 }
 
 

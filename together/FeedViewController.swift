@@ -13,6 +13,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var filtersPiker: UIPickerView!
     @IBOutlet var avatarImage: UIButton!
+    @IBOutlet weak var myColectionView: UICollectionView!
     
     var pickerData: [String] = [String] ()
     var eventRepositories: EventRepositories!
@@ -22,36 +23,43 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
     var id:Int!
-
-    @IBOutlet weak var myColectionView: UICollectionView!
     
-  
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
-         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+        storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         
         //Load userDefaults
         let defaults = UserDefaults.standard
         id = defaults.integer(forKey: "userId")
         
+        pickerData = ["Category","Celebretion", "Helping"]
+        
+        
+        
+        
         eventRepositories = EventRepositories()
         eventRepositories.loadAllEvents(withh: {(events)  in
-           self.events = events
+            self.events = events
             self.myColectionView.reloadData()
         })
         
         self.filtersPiker.delegate = self
         self.filtersPiker.dataSource = self
-       
-        pickerData = ["Category","Celebretion", "Helping"]
+        
+        //Load avatar
         self.userRepositories = UserRepositories()
         userRepositories.loadUserImage(id: id, storage: storage, storageRef: storageRef, withh: {(image) in
             self.avatarImage.setImage(image, for: .normal)
         })
-       
-
+        
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +67,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
     }
     
-//PickerView
+    //PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -72,6 +80,10 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        filterEvents(row:row, type:"category")
     }
     
     
@@ -90,7 +102,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return label!
     }
     
-//Collection View
+    //Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
@@ -104,19 +116,53 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
+        
         return events.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
     }
     
-//Mark Action 
+    //Mark Action
     @IBAction func createButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "fromFeedToCreateEvent", sender: self)
     }
     
+    @IBAction func friendsFilterPressed(_ sender: Any) {
+         filterEvents(type: "friends")
+    }
+           
+    
+    
+    func filterEvents(row: Int = 0, type: String) {
+        switch type {
+        case "category":
+            if (row == 0) {
+                eventRepositories.loadAllEvents(withh: {(events)  in
+                    self.events = events
+                    self.myColectionView.reloadData()
+                })
+            } else {
+                eventRepositories.loadCategoryEvents(category: pickerData[row], withh: {(events) in
+                    self.events = events
+                    self.myColectionView.reloadData()
+                })
+            }
+            case "friends":
+                eventRepositories.loadFriendsEvents(id: id, withh:{(events)  in
+                    self.events = events
+                    self.myColectionView.reloadData()
+                })
+
+        default:
+            eventRepositories.loadAllEvents(withh: {(events)  in
+                self.events = events
+                self.myColectionView.reloadData()
+            })
+        }
+        
+    }
     
     
     
