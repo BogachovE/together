@@ -22,7 +22,7 @@ class  EventRepositories {
             for item in value?.value(forKey: "events") as! NSArray {
                 let child = item as! NSDictionary
                 var event: Event = Event()
-                event = Event(title: child.value(forKey: "title")! as! String, description: child.value(forKey: "description") as! String, id: child.value(forKey: "id") as! Int, contrebuted: child.value(forKey: "contrebuted") as! Int)
+                event = Event(title: child.value(forKey: "title")! as! String, description: child.value(forKey: "description") as! String, id: child.value(forKey: "id") as! Int, contrebuted: child.value(forKey: "contrebuted") as! Int, likes: child.value(forKey: "likes") as! Array<Int>)
                 
                 events.append(event)
             }
@@ -39,7 +39,7 @@ class  EventRepositories {
             for item in snapshot.children {
                 let child = item as! FIRDataSnapshot
                 var event: Event = Event()
-                event = Event(title: child.childSnapshot(forPath: "title").value as! String, description: child.childSnapshot(forPath: "description").value as! String, id: child.childSnapshot(forPath: "id").value as! Int, contrebuted: child.childSnapshot(forPath: "contrebuted").value as! Int)
+                event = Event(title: child.childSnapshot(forPath: "title").value as! String, description: child.childSnapshot(forPath: "description").value as! String, id: child.childSnapshot(forPath: "id").value as! Int, contrebuted: child.childSnapshot(forPath: "contrebuted").value as! Int, likes: child.childSnapshot(forPath: "likes").value as! Array<Int>)
                 
                 events.append(event)
             }
@@ -60,7 +60,7 @@ class  EventRepositories {
                     var event: Event = Event()
                     for childEvent in child.children {
                         let childEvent = childEvent as! FIRDataSnapshot
-                        event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int)
+                        event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
                        // print("eventId", event.id)
                         events.append(event)
                         print("event count ", events.count)
@@ -70,6 +70,31 @@ class  EventRepositories {
                 })
             }
                   })
+    }
+    
+    func loadSignedEvents(id: Int, withh: @escaping (Array<Event>)->Void)  {
+        var events: Array<Event>
+        events = Array<Event>()
+        findSigned(id: id, withh: {(signeds)  in
+            for signed in signeds {
+                let signedsEventQuery = self.ref.child("events").queryOrdered(byChild: "id").queryEqual(toValue: signed)
+                signedsEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+                    let child = snapshot
+                    //print("friendId", friend)
+                    // print("snapshot", snapshot)
+                    var event: Event = Event()
+                    for childEvent in child.children {
+                        let childEvent = childEvent as! FIRDataSnapshot
+                        event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
+                        // print("eventId", event.id)
+                        events.append(event)
+                        print("event count ", events.count)
+                    }
+                    withh(events)
+                    
+                })
+            }
+        })
     }
     
     func loadMyEvents (id: Int, withh: @escaping (Array<Event>)->Void)  {
@@ -83,7 +108,7 @@ class  EventRepositories {
             var event: Event = Event()
             for childEvent in child.children {
                 let childEvent = childEvent as! FIRDataSnapshot
-                event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int)
+                event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
                 // print("eventId", event.id)
                 events.append(event)
                 print("event count ", events.count)
@@ -103,5 +128,16 @@ class  EventRepositories {
             withh(friends)
         })
     }
+    
+    func findSigned(id: Int ,withh: @escaping (Array<Int>)->Void ){
+        let signedEventsRef = ref.child("users/"+String(id))
+        signedEventsRef.observe(.value, with: { snapshot in
+            print("UserID", id)
+            print("Snapshot", snapshot)
+            let signeds = snapshot.childSnapshot(forPath: "signedEvent").value! as! Array<Int>
+            withh(signeds)
+        })
+    }
+
     
 }

@@ -69,7 +69,13 @@ class UserRepositories {
             }
             withh(image)
         }
-        
     }
-    
+
+    func loadLogin(id:Int, withh: @escaping (String)->Void){
+        var name:String = ""
+        ref.child("users/"+String(id)).observeSingleEvent(of: .value, with: { (snapshot) in
+            name = snapshot.childSnapshot(forPath: "name").value as! String
+            withh(name)
+        })
+    }
 }

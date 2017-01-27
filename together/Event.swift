@@ -17,11 +17,12 @@ class Event {
     var photo: UIImage
     var category: String
     var ownerId: Int
+    var likes: Array<Int>
     
     
     
     
-    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: Int = 0) {
+    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: Int = 0, likes: Array<Int> = [0]) {
         self.title = title
         self.id = id
         self.description = description
@@ -29,6 +30,7 @@ class Event {
         self.contrebuted = contrebuted
         self.category = category
         self.ownerId = ownerId
+        self.likes = likes
             }
 }
 

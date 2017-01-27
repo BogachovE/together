@@ -14,6 +14,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var filtersPiker: UIPickerView!
     @IBOutlet var avatarImage: UIButton!
     @IBOutlet weak var myColectionView: UICollectionView!
+    @IBOutlet weak var loginView: UILabel!
+   
     
     var pickerData: [String] = [String] ()
     var eventRepositories: EventRepositories!
@@ -23,12 +25,15 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
     var id:Int!
+    var buttonState: Array<Bool> = []
     
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
@@ -51,10 +56,13 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.filtersPiker.delegate = self
         self.filtersPiker.dataSource = self
         
-        //Load avatar
+        //Load avatar and Login
         self.userRepositories = UserRepositories()
         userRepositories.loadUserImage(id: id, storage: storage, storageRef: storageRef, withh: {(image) in
             self.avatarImage.setImage(image, for: .normal)
+        })
+        userRepositories.loadLogin(id:id, withh: {(name) in
+            self.loginView.text = name
         })
         
         
@@ -102,27 +110,64 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return label!
     }
     
+    
     //Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        
+        for i in events[indexPath.row].likes {
+            if (i == id){
+             cell.likeButton.isSelected = true
+            }else {
+              cell.likeButton.isSelected = false
+            }
+        }
         
         cell.eventPhoto.image = events[indexPath.row].photo
         cell.eventTitle.text = events[indexPath.row].title
         cell.eventDescription.text = events[indexPath.row].description
         cell.eventCollected.text = String(events[indexPath.row].contrebuted)+"$"
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
+        
         
         
         return cell
     }
+    func buttonClicked(sender: UIButton) {
+        var isLiked: Bool
+        isLiked = checkLike(sender: sender)
+        if (isLiked == true){
+            let likesQuery = ref.child("events/"+String(events[sender.tag].id)+"/likes").queryOrderedByValue().queryEqual(toValue: id).observe(.value, with: { (snapshot) in
+                
+                if (snapshot.exists()){
+                    let likes = snapshot.value as! NSArray
+                    for i in 0...(likes.count - 1) {
+                        if (likes[i] as! Int == self.id){
+                            print("i=", i)
+                            self.ref.child("events/"+String(self.events[sender.tag].id)+"/likes/"+String(i)+"/").removeValue()
+                            self.myColectionView.reloadData()
+                            
+                        }
+                    }
+                  
+                }
+            })
+            self.ref.removeObserver(withHandle: likesQuery)
+        } else {
+            
+        }
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return events.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
+    
     
     //Mark Action
     @IBAction func createButtonPressed(_ sender: Any) {
@@ -137,6 +182,13 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         filterEvents(type: "my")
     }
     
+    @IBAction func signedEventPressed(_ sender: Any) {
+        filterEvents(type: "signed")
+    }
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+     
+    }
     
     func filterEvents(row: Int = 0, type: String) {
         switch type {
@@ -162,6 +214,12 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.events = events
                     self.myColectionView.reloadData()
                 })
+            case "signed":
+                eventRepositories.loadSignedEvents(id: id, withh:{(events) in
+                    self.events = events
+                    self.myColectionView.reloadData()
+                })
+            
 
 
         default:
@@ -173,6 +231,20 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
     }
     
+    func checkLike(sender: UIButton) -> Bool {
+        var isLiked: Bool
+        isLiked = false
+        for i in events[sender.tag].likes{
+            if (i == id) {
+                isLiked = true
+                print("i=",i)
+            }
+        }
+        
+        print("eventId=", String(events[sender.tag].id),"isLiked", isLiked)
+        
+        return isLiked
+    }
     
     
     
