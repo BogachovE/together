@@ -26,7 +26,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var storageRef: FIRStorageReference!
     var id:Int!
     var buttonState: Array<Bool> = []
-    
+    var filterType: String = "all"
 
     
     
@@ -37,21 +37,15 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
-        
         //Load userDefaults
         let defaults = UserDefaults.standard
         id = defaults.integer(forKey: "userId")
         
         pickerData = ["Category","Celebretion", "Helping"]
         
-        
-        
-        
         eventRepositories = EventRepositories()
-        eventRepositories.loadAllEvents(withh: {(events)  in
-            self.events = events
-            self.myColectionView.reloadData()
-        })
+        filterType = "all"
+        filterEvents(type: filterType)
         
         self.filtersPiker.delegate = self
         self.filtersPiker.dataSource = self
@@ -91,7 +85,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        filterEvents(row:row, type:"category")
+        filterType = "category"
+        filterEvents(row:row, type: filterType)
     }
     
     
@@ -114,6 +109,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     //Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        
+        filterEvents(type: filterType)
         
         for i in events[indexPath.row].likes {
             if (i == id){
@@ -138,26 +135,10 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         var isLiked: Bool
         isLiked = checkLike(sender: sender)
         if (isLiked == true){
-            let likesQuery = ref.child("events/"+String(events[sender.tag].id)+"/likes").queryOrderedByValue().queryEqual(toValue: id).observe(.value, with: { (snapshot) in
-                
-                if (snapshot.exists()){
-                    let likes = snapshot.value as! NSArray
-                    for i in 0...(likes.count - 1) {
-                        if (likes[i] as! Int == self.id){
-                            print("i=", i)
-                            self.ref.child("events/"+String(self.events[sender.tag].id)+"/likes/"+String(i)+"/").removeValue()
-                            self.myColectionView.reloadData()
-                            
-                        }
-                    }
-                  
-                }
-            })
-            self.ref.removeObserver(withHandle: likesQuery)
-        } else {
-            
+            removeLike(sender: sender)
+                    } else {
+            addLike(sender: sender)
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -175,23 +156,30 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func friendsFilterPressed(_ sender: Any) {
-         filterEvents(type: "friends")
+        filterType = "friends"
+        filterEvents(type: filterType)
     }
            
     @IBAction func myEventPressed(_ sender: Any) {
-        filterEvents(type: "my")
+        filterType = "my"
+        filterEvents(type: filterType)
     }
     
     @IBAction func signedEventPressed(_ sender: Any) {
-        filterEvents(type: "signed")
+        filterType = "signed"
+        filterEvents(type: filterType)
     }
     
-    @IBAction func likeButtonPressed(_ sender: Any) {
-     
-    }
+    
     
     func filterEvents(row: Int = 0, type: String) {
         switch type {
+        case "all":
+            eventRepositories.loadAllEvents(withh: {(events)  in
+                self.events = events
+                self.myColectionView.reloadData()
+            })
+            
         case "category":
             if (row == 0) {
                 eventRepositories.loadAllEvents(withh: {(events)  in
@@ -244,6 +232,28 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         print("eventId=", String(events[sender.tag].id),"isLiked", isLiked)
         
         return isLiked
+    }
+    
+    func removeLike(sender: UIButton){
+        let likesQuery = ref.child("events/"+String(events[sender.tag].id)+"/likes").queryOrderedByValue().queryEqual(toValue: id)
+        likesQuery.observe(.value, with: { (snapshot) in
+            for i in snapshot.children{
+                let  snapy = i as! FIRDataSnapshot
+                if (snapshot.exists()){
+                    self.ref.child("events/"+String(self.events[sender.tag].id)+"/likes/"+String(snapy.key)+"/").removeValue()
+                    likesQuery.removeAllObservers()
+                }
+            }
+            self.myColectionView.reloadData()
+        })
+    }
+    
+    func addLike(sender: UIButton){
+        let likeRef = ref.child("events/"+String(self.events[sender.tag].id)+"/likes/")
+        likeRef.observeSingleEvent(of: .value, with: { (snaphot) in
+            likeRef.child(String(snaphot.childrenCount)).setValue(self.id)
+            self.myColectionView.reloadData()
+        })
     }
     
     
