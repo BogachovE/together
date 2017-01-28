@@ -49,7 +49,7 @@ class UserRepositories {
             //Put data to dataBase
             self.ref.child("users").child(String(user.id)).setValue(newUser)
             if(type == "standart"){self.ref.child("users").child("count").setValue(count!+1)}
-            
+                    
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -74,7 +74,15 @@ class UserRepositories {
     func loadLogin(id:Int, withh: @escaping (String)->Void){
         var name:String = ""
         ref.child("users/"+String(id)).observeSingleEvent(of: .value, with: { (snapshot) in
-            name = snapshot.childSnapshot(forPath: "name").value as! String
+            if(snapshot.exists()){
+                name = snapshot.childSnapshot(forPath: "name").value as! String
+            } else {
+                self.loadLogin(id: id, withh: {(namee) in
+                    var name: String = ""
+                   name=namee
+                    withh(name)
+                })
+                            }
             withh(name)
         })
     }

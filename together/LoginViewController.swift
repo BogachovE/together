@@ -162,7 +162,7 @@ class LoginViewController: UIViewController  {
                 print("Logged in \(grantedPermissions) \(declinedPermissions) \(accessToken)")
                 self.returnUserData()
                 self.user = User()
-                self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+                
 
                 
             }
@@ -188,9 +188,14 @@ class LoginViewController: UIViewController  {
                 
                 self.user.name = (result as! NSObject).value(forKey: "name")! as! String
                 self.user.id = Int((result as! NSObject).value(forKey: "id") as! String)!
-                self.userRepositories.addnewUser(user: self.user, ref: self.ref, storageRef: self.storageRef)
-                
-                
+                self.ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
+                    if (snapshot.childSnapshot(forPath: String(id)).exists()){
+                        self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+                    } else{
+                        self.userRepositories.addnewUser(user: self.user, ref: self.ref, storageRef: self.storageRef)
+                        self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+                    }
+                })
                 
             }
         })

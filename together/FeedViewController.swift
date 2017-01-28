@@ -252,7 +252,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.myColectionView.reloadData()
                 })
             case "hashtag":
-                eventRepositories.loadEventByHashtag(searchText, withh:{(events) in
+                eventRepositories.loadEventByHashtag(searchText: searchText, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
