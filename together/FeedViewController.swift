@@ -109,9 +109,6 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     //Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        
-        filterEvents(type: filterType)
-        
         for i in events[indexPath.row].likes {
             if (i == id){
              cell.likeButton.isSelected = true
@@ -139,6 +136,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     } else {
             addLike(sender: sender)
         }
+        self.myColectionView.reloadData()
+        filterEvents(type: filterType)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

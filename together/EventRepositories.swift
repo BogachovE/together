@@ -36,6 +36,7 @@ class  EventRepositories {
         events = Array<Event>()
         let categoryQuery = ref.child("events").queryOrdered(byChild: "category").queryEqual(toValue: category)
         categoryQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+            print("value=", snapshot.value)
             for item in snapshot.children {
                 let child = item as! FIRDataSnapshot
                 var event: Event = Event()
