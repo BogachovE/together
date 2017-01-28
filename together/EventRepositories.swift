@@ -120,6 +120,11 @@ class  EventRepositories {
 
     }
     
+    func loadEventByHashtag(searchText: String, withh:@escaping (Array<Event>)->Void){
+        
+        
+    }
+    
     func findFriends(id: Int ,withh: @escaping (Array<Int>)->Void ){
         let friendsRef = ref.child("users/"+String(id))
         friendsRef.observe(.value, with: { snapshot in

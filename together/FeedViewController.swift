@@ -9,12 +9,14 @@
 import UIKit
 import Firebase
 
-class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
+class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     
     @IBOutlet weak var filtersPiker: UIPickerView!
     @IBOutlet var avatarImage: UIButton!
     @IBOutlet weak var myColectionView: UICollectionView!
     @IBOutlet weak var loginView: UILabel!
+    @IBOutlet weak var mySerchBar: UISearchBar!
+    @IBOutlet weak var myColectionViewHeight: NSLayoutConstraint!
    
     
     var pickerData: [String] = [String] ()
@@ -27,6 +29,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var id:Int!
     var buttonState: Array<Bool> = []
     var filterType: String = "all"
+    var searchActive : Bool = false
 
     
     
@@ -49,6 +52,9 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         self.filtersPiker.delegate = self
         self.filtersPiker.dataSource = self
+        self.mySerchBar.delegate = self
+        
+        mySerchBar.isHidden = true
         
         //Load avatar and Login
         self.userRepositories = UserRepositories()
@@ -62,6 +68,12 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         
         
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchActive == false){
+            filterEvents(type: "hashtag", searchText:searchText)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,6 +97,10 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        mySerchBar.isHidden = true
+        self.myColectionViewHeight.constant = 489
+        self.myColectionView.layoutIfNeeded()
+
         filterType = "category"
         filterEvents(row:row, type: filterType)
     }
@@ -148,6 +164,18 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
     }
     
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+        
+    }
+    
+    
+
+    
     
     //Mark Action
     @IBAction func createButtonPressed(_ sender: Any) {
@@ -155,23 +183,40 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func friendsFilterPressed(_ sender: Any) {
+        mySerchBar.isHidden = true
+        self.myColectionViewHeight.constant = 489
+        self.myColectionView.layoutIfNeeded()
+
         filterType = "friends"
         filterEvents(type: filterType)
     }
            
     @IBAction func myEventPressed(_ sender: Any) {
+        mySerchBar.isHidden = true
+        self.myColectionViewHeight.constant = 489
+        self.myColectionView.layoutIfNeeded()
+
         filterType = "my"
         filterEvents(type: filterType)
     }
     
     @IBAction func signedEventPressed(_ sender: Any) {
+        mySerchBar.isHidden = true
+        self.myColectionViewHeight.constant = 489
+        self.myColectionView.layoutIfNeeded()
         filterType = "signed"
         filterEvents(type: filterType)
     }
     
+    @IBAction func HashTagPressed(_ sender: Any) {
+        mySerchBar.isHidden = false
+        self.myColectionViewHeight.constant = 459
+        self.myColectionView.layoutIfNeeded()
+    }
     
     
-    func filterEvents(row: Int = 0, type: String) {
+    
+    func filterEvents(row: Int = 0, type: String, searchText: String = "") {
         switch type {
         case "all":
             eventRepositories.loadAllEvents(withh: {(events)  in
@@ -206,9 +251,13 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.events = events
                     self.myColectionView.reloadData()
                 })
+            case "hashtag":
+                eventRepositories.loadEventByHashtag(searchText, withh:{(events) in
+                    self.events = events
+                    self.myColectionView.reloadData()
+                })
+
             
-
-
         default:
             eventRepositories.loadAllEvents(withh: {(events)  in
                 self.events = events

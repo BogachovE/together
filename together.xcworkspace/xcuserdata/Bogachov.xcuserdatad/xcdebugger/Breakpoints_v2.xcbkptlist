@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/FeedViewController.swift"
-            timestampString = "507301318.456395"
+            timestampString = "507309756.48167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "filterEvents(row:type:)"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "filterEvents(row:type:searchText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
