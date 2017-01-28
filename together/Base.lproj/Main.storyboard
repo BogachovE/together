@@ -1023,7 +1023,7 @@ My #1 goal will always be to meet your needs .</string>
                                 <rect key="frame" x="0.0" y="178" width="375" height="489"/>
                                 <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="489" id="7W4-RM-Dnf"/>
+                                    <constraint firstAttribute="height" constant="489" id="5xc-aC-ZiS"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="3" id="RWF-uD-nmy">
                                     <size key="itemSize" width="120" height="159"/>
@@ -1132,7 +1132,6 @@ My #1 goal will always be to meet your needs .</string>
                             <constraint firstItem="Eki-gj-Ws6" firstAttribute="top" secondItem="GDy-Zu-7VV" secondAttribute="top" id="6aR-EL-xi3"/>
                             <constraint firstItem="4Fh-kT-PSX" firstAttribute="centerX" secondItem="GDy-Zu-7VV" secondAttribute="centerX" id="93I-6p-hLW"/>
                             <constraint firstAttribute="trailing" secondItem="4Fh-kT-PSX" secondAttribute="trailing" id="9UC-Dw-q3e"/>
-                            <constraint firstItem="g88-Lm-vbk" firstAttribute="top" secondItem="jUD-LQ-4KM" secondAttribute="bottom" constant="55" id="Dab-Y3-XQh"/>
                             <constraint firstAttribute="trailing" secondItem="mz0-SP-XaX" secondAttribute="trailing" id="Fd4-TQ-NvS"/>
                             <constraint firstItem="qIv-AL-ZNo" firstAttribute="trailing" secondItem="GDy-Zu-7VV" secondAttribute="trailingMargin" id="ScU-XZ-ZFP"/>
                             <constraint firstItem="JPt-Sc-bXH" firstAttribute="centerX" secondItem="GDy-Zu-7VV" secondAttribute="centerX" id="TAZ-dX-2Wr"/>
@@ -1154,7 +1153,7 @@ My #1 goal will always be to meet your needs .</string>
                         <outlet property="filtersPiker" destination="tiv-4h-EyY" id="HHB-Tq-zpC"/>
                         <outlet property="loginView" destination="jUD-LQ-4KM" id="dKJ-YO-eN2"/>
                         <outlet property="myColectionView" destination="g88-Lm-vbk" id="8KB-hr-CJc"/>
-                        <outlet property="myColectionViewHeight" destination="7W4-RM-Dnf" id="68g-2P-f9o"/>
+                        <outlet property="myColectionViewHeight" destination="5xc-aC-ZiS" id="tnA-Aj-3EI"/>
                         <outlet property="mySerchBar" destination="JPt-Sc-bXH" id="iBc-Qb-upR"/>
                         <segue destination="Fnz-XP-EK3" kind="show" identifier="fromFeedToProfile" id="C1y-md-lF6"/>
                     </connections>
