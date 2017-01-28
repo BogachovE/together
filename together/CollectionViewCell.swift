@@ -15,4 +15,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var eventCollected: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    
+
 }

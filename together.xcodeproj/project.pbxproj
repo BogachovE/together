@@ -126,6 +126,13 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		DDB7F3691E3A6C7D00EF451A /* Mapers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mapers;
+			sourceTree = "<group>";
+		};
 		DDBFA8F31E27B0290040FEE1 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				DD93297F1E2C12DC00F647BE /* together.entitlements */,
+				DDB7F3691E3A6C7D00EF451A /* Mapers */,
 				DDEA9F9F1E2D218100A943FF /* Repositories */,
 				DD306D961E2BEFAB0036EB4A /* Model */,
 				DD306D951E2BEF900036EB4A /* Controller */,
