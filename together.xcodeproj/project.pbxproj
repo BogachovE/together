@@ -14,8 +14,10 @@
 		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
 		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
 		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
+		DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */; };
+		DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */; };
+		DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED51E3E21B00003A46F /* userMaper.swift */; };
 		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
-		DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */; };
 		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
 		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
@@ -42,9 +44,11 @@
 		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
 		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewEventViewController.swift; sourceTree = "<group>"; };
+		DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventMaper.swift; sourceTree = "<group>"; };
+		DD7E7ED51E3E21B00003A46F /* userMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userMaper.swift; sourceTree = "<group>"; };
 		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
-		DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewEventViewController.swift; path = ../CreateNewEventViewController.swift; sourceTree = "<group>"; };
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "together-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,7 +100,7 @@
 		DD306D951E2BEF900036EB4A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DD999D061E33766B00FF787A /* CreateNewEventViewController.swift */,
+				DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */,
 				DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */,
 				DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */,
 				DDE799401E2E812E00F93B6C /* FeedViewController.swift */,
@@ -129,6 +133,8 @@
 		DDB7F3691E3A6C7D00EF451A /* Mapers */ = {
 			isa = PBXGroup;
 			children = (
+				DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */,
+				DD7E7ED51E3E21B00003A46F /* userMaper.swift */,
 			);
 			name = Mapers;
 			sourceTree = "<group>";
@@ -337,16 +343,18 @@
 			files = (
 				DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */,
 				DD999D091E33A79900FF787A /* EventViewController.swift in Sources */,
+				DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */,
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
 				DDA899851E379310002D2069 /* settingsViewController.swift in Sources */,
+				DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */,
 				DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */,
 				DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */,
-				DD999D071E33766B00FF787A /* CreateNewEventViewController.swift in Sources */,
 				DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */,
 				DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */,
 				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
+				DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
 				DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */,

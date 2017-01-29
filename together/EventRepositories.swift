@@ -18,16 +18,24 @@ class  EventRepositories {
         events = Array<Event>()
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            
-            for item in value?.value(forKey: "events") as! NSArray {
-                let child = item as! NSDictionary
-                var event: Event = Event()
-                event = Event(title: child.value(forKey: "title")! as! String, description: child.value(forKey: "description") as! String, id: child.value(forKey: "id") as! Int, contrebuted: child.value(forKey: "contrebuted") as! Int, likes: child.value(forKey: "likes") as! Array<Int>)
-                
-                events.append(event)
+            if (value?.value(forKey: "events") != nil){
+                for item in (value?.value(forKey: "events") as? NSArray)! {
+                    let child = item as! NSDictionary
+                    var event: Event = Event()
+                    
+                    let storage = FIRStorage.storage()
+                    self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+                    self.loadEventPhoto(eventId: child.value(forKey: "id") as! Int, storageRef: self.storageRef, withh: { (image) in
+                        
+                        event = EventMaper.dictionaryToEvent(eventDictionary: child, image: image)
+                        
+                        events.append(event)
+                        withh(events)
+                    })
+                }
             }
-            withh(events)
         })
+    
         
     }
     
@@ -57,20 +65,20 @@ class  EventRepositories {
                 friendsEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
                     let child = snapshot
                     //print("friendId", friend)
-                   // print("snapshot", snapshot)
+                    // print("snapshot", snapshot)
                     var event: Event = Event()
                     for childEvent in child.children {
                         let childEvent = childEvent as! FIRDataSnapshot
                         event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
-                       // print("eventId", event.id)
+                        // print("eventId", event.id)
                         events.append(event)
                         print("event count ", events.count)
                     }
                     withh(events)
-
+                    
                 })
             }
-                  })
+        })
     }
     
     func loadSignedEvents(id: Int, withh: @escaping (Array<Event>)->Void)  {
@@ -117,7 +125,7 @@ class  EventRepositories {
             withh(events)
             
         })
-
+        
     }
     
     func loadEventByHashtag(searchText: String, withh:@escaping (Array<Event>)->Void){
@@ -144,6 +152,59 @@ class  EventRepositories {
             withh(signeds)
         })
     }
-
+    
+    func addNewEvent(event: Event, count: Int, storageRef: FIRStorageReference){
+        let eventDictionary: NSDictionary
+        eventDictionary = EventMaper.eventToDictionary(event: event)
+        ref.child("events/"+String(count)+"/").setValue(eventDictionary)
+        ref.child("eventscount").setValue(count+1)
+        
+        //Put image
+        // Data in memory
+        let data = UIImagePNGRepresentation(event.photo)
+        
+        // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("eventsPhoto/"+String(describing: event.id)+".jpg")
+        
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = riversRef.put(data!, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            let downloadURL = metadata.downloadURL
+            
+            
+        }
+    }
+    
+    func loadEventCount(withh: @escaping (Int)->Void) {
+        var count: Int = 0
+        ref.child("eventscount").observeSingleEvent(of: .value, with: { (snapshot) in
+            count = snapshot.value as! Int
+            withh(count)
+        })
+    }
+    
+    func loadEventPhoto(eventId: Int,storageRef: FIRStorageReference, withh: @escaping (UIImage)->Void){
+        var image :UIImage = UIImage()
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        let riversRef = storageRef.child("eventsPhoto/"+String(eventId)+".jpg")
+        riversRef.data(withMaxSize: 120 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("EROR =",error)
+            } else {
+                // Data for "images/island.jpg" is returned
+                image = UIImage(data: data!)!
+                
+            }
+            withh(image)
+        }
+    }
+    
+    
+    
     
 }

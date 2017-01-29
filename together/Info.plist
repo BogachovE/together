@@ -88,5 +88,7 @@
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NeedLibrary access for uploading Images</string>
 </dict>
 </plist>
