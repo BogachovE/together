@@ -24,7 +24,7 @@ class Event {
     
     
     
-    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: Int = 0, likes: Array<Int> = [0], location: String = "", startTime: Date = Date(), endTime: Date = Date()) {
+    init(title: String = "", description: String = "", id: Int = 00, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: Int = 0, likes: Array<Int> = [00], location: String = "", startTime: Date = Date(), endTime: Date = Date()) {
         self.title = title
         self.id = id
         self.description = description

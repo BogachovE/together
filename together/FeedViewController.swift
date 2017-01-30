@@ -150,6 +150,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         return cell
     }
+    
     func buttonClicked(sender: UIButton) {
         var isLiked: Bool
         isLiked = checkLike(sender: sender)
@@ -234,32 +235,38 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
         case "category":
             if (row == 0) {
+                events.removeAll()
                 eventRepositories.loadAllEvents(withh: {(events)  in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             } else {
+                events.removeAll()
                 eventRepositories.loadCategoryEvents(category: pickerData[row], withh: {(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             }
             case "friends":
+                events.removeAll()
                 eventRepositories.loadFriendsEvents(id: id, withh:{(events)  in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             case "my":
+                events.removeAll()
                 eventRepositories.loadMyEvents(id: id, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             case "signed":
+                events.removeAll()
                 eventRepositories.loadSignedEvents(id: id, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             case "hashtag":
+                events.removeAll()
                 eventRepositories.loadEventByHashtag(searchText: searchText, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()

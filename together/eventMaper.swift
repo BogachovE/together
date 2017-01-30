@@ -22,13 +22,17 @@ class EventMaper{
         return dictionaryEvent
     }
     
-    static func dictionaryToEvent(eventDictionary: NSDictionary,image:UIImage) ->Event {
+    static func dictionaryToEvent(eventDictionary: NSDictionary,image:UIImage = #imageLiteral(resourceName: "EventPhoto")) ->Event {
         let event: Event
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy, h:mm"
-        //dateFormatter.dateStyle = DateFormatter.Style.MediumStyle
+        dateFormatter.dateFormat = "MMM dd, yyyy, h:mm:ss a"
+        let startTimeString = eventDictionary.value(forKey: "startTime") as! String
+        let startTime = dateFormatter.date(from:startTimeString)
+        let endTimeString = eventDictionary.value(forKey: "endTime") as! String
+        let endTime = dateFormatter.date(from:endTimeString)
+        
        
-        event = Event(title: eventDictionary.value(forKey: "title") as! String, description: eventDictionary.value(forKey: "description") as! String, id: eventDictionary.value(forKey: "id") as! Int, contrebuted: eventDictionary.value(forKey: "contrebuted") as! Int, category: eventDictionary.value(forKey: "category") as! String, ownerId: eventDictionary.value(forKey: "ownerId") as! Int, likes: eventDictionary.value(forKey: "likes") as! Array<Int>, location: eventDictionary.value(forKey: "location") as! String)
+        event = Event(title: eventDictionary.value(forKey: "title") as! String, description: eventDictionary.value(forKey: "description") as! String, id: eventDictionary.value(forKey: "id") as! Int, photo: image, contrebuted: eventDictionary.value(forKey: "contrebuted") as! Int, category: eventDictionary.value(forKey: "category") as! String, ownerId: eventDictionary.value(forKey: "ownerId") as! Int, likes: eventDictionary.value(forKey: "likes") as! Array<Int>, location: eventDictionary.value(forKey: "location") as! String,  startTime: startTime!, endTime: endTime!)
         return event
     }
     

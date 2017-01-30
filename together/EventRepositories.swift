@@ -20,6 +20,8 @@ class  EventRepositories {
             let value = snapshot.value as? NSDictionary
             if (value?.value(forKey: "events") != nil){
                 for item in (value?.value(forKey: "events") as? NSArray)! {
+                    print("QWEQE",item as? NSDictionary)
+                    if (item as? NSDictionary != nil){
                     let child = item as! NSDictionary
                     var event: Event = Event()
                     
@@ -33,6 +35,7 @@ class  EventRepositories {
                         withh(events)
                     })
                 }
+                }
             }
         })
     
@@ -44,16 +47,21 @@ class  EventRepositories {
         events = Array<Event>()
         let categoryQuery = ref.child("events").queryOrdered(byChild: "category").queryEqual(toValue: category)
         categoryQuery.observeSingleEvent(of: .value, with: { (snapshot) in
-            print("value=", snapshot.value)
             for item in snapshot.children {
-                let child = item as! FIRDataSnapshot
+                let child = (item as! FIRDataSnapshot).value as! NSDictionary
                 var event: Event = Event()
-                event = Event(title: child.childSnapshot(forPath: "title").value as! String, description: child.childSnapshot(forPath: "description").value as! String, id: child.childSnapshot(forPath: "id").value as! Int, contrebuted: child.childSnapshot(forPath: "contrebuted").value as! Int, likes: child.childSnapshot(forPath: "likes").value as! Array<Int>)
-                
-                events.append(event)
+                let storage = FIRStorage.storage()
+                self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+                self.loadEventPhoto(eventId: child.value(forKey: "id") as! Int, storageRef: self.storageRef, withh: { (image) in
+                    
+                    event = EventMaper.dictionaryToEvent(eventDictionary: child, image: image)
+                    
+                    events.append(event)
+                    withh(events)
+                })
             }
-            withh(events)
         })
+            withh(events)
     }
     
     func loadFriendsEvents(id: Int, withh: @escaping (Array<Event>)->Void)  {
@@ -64,18 +72,18 @@ class  EventRepositories {
                 let friendsEventQuery = self.ref.child("events").queryOrdered(byChild: "ownerId").queryEqual(toValue: friend)
                 friendsEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
                     let child = snapshot
-                    //print("friendId", friend)
                     // print("snapshot", snapshot)
                     var event: Event = Event()
                     for childEvent in child.children {
-                        let childEvent = childEvent as! FIRDataSnapshot
-                        event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
-                        // print("eventId", event.id)
-                        events.append(event)
-                        print("event count ", events.count)
+                        let childEvent = ((childEvent as! FIRDataSnapshot).value) as! NSDictionary
+                        let storage = FIRStorage.storage()
+                        self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+                        self.loadEventPhoto(eventId: childEvent.value(forKey: "id") as! Int, storageRef: self.storageRef, withh: { (image) in
+                            event = EventMaper.dictionaryToEvent(eventDictionary: childEvent, image: image)
+                            events.append(event)
+                            withh(events)
+                        })
                     }
-                    withh(events)
-                    
                 })
             }
         })
@@ -86,22 +94,24 @@ class  EventRepositories {
         events = Array<Event>()
         findSigned(id: id, withh: {(signeds)  in
             for signed in signeds {
-                let signedsEventQuery = self.ref.child("events").queryOrdered(byChild: "id").queryEqual(toValue: signed)
-                signedsEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
-                    let child = snapshot
-                    //print("friendId", friend)
-                    // print("snapshot", snapshot)
-                    var event: Event = Event()
-                    for childEvent in child.children {
-                        let childEvent = childEvent as! FIRDataSnapshot
-                        event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
-                        // print("eventId", event.id)
-                        events.append(event)
-                        print("event count ", events.count)
-                    }
-                    withh(events)
-                    
-                })
+                if (signed != 0) {
+                    let signedsEventQuery = self.ref.child("events").queryOrdered(byChild: "id").queryEqual(toValue: signed)
+                    signedsEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+                        let child = snapshot
+                        var event: Event = Event()
+                        for childEvent in child.children {
+                            let childEvent = (childEvent as! FIRDataSnapshot).value  as! NSDictionary
+                            let storage = FIRStorage.storage()
+                            self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+                            self.loadEventPhoto(eventId: childEvent.value(forKey: "id") as! Int, storageRef: self.storageRef, withh: { (image) in
+                                event = EventMaper.dictionaryToEvent(eventDictionary: childEvent, image: image)
+                                events.append(event)
+                                withh(events)
+                            })
+                        }
+                    })
+                }
+                withh(events)
             }
         })
     }
@@ -116,14 +126,15 @@ class  EventRepositories {
             // print("snapshot", snapshot)
             var event: Event = Event()
             for childEvent in child.children {
-                let childEvent = childEvent as! FIRDataSnapshot
-                event = Event(title: childEvent.childSnapshot(forPath: "title").value as! String, description: childEvent.childSnapshot(forPath: "description").value as! String, id: childEvent.childSnapshot(forPath: "id").value as! Int, contrebuted: childEvent.childSnapshot(forPath: "contrebuted").value as! Int, likes: childEvent.childSnapshot(forPath: "likes").value as! Array<Int>)
-                // print("eventId", event.id)
-                events.append(event)
-                print("event count ", events.count)
+                let childEvent = (childEvent as! FIRDataSnapshot).value as! NSDictionary
+                let storage = FIRStorage.storage()
+                self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+                self.loadEventPhoto(eventId: childEvent.value(forKey: "id") as! Int, storageRef: self.storageRef, withh: { (image) in
+                    event = EventMaper.dictionaryToEvent(eventDictionary: childEvent, image: image)
+                    events.append(event)
+                    withh(events)
+                })
             }
-            withh(events)
-            
         })
         
     }
@@ -148,7 +159,8 @@ class  EventRepositories {
         signedEventsRef.observe(.value, with: { snapshot in
             print("UserID", id)
             print("Snapshot", snapshot)
-            let signeds = snapshot.childSnapshot(forPath: "signedEvent").value! as! Array<Int>
+            let snapshot = snapshot.value as! NSDictionary
+            let signeds = snapshot.value(forKey: "signedEvent") as! Array<Int>
             withh(signeds)
         })
     }
