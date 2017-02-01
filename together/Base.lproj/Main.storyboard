@@ -675,7 +675,7 @@ My #1 goal will always be to meet your needs .</string>
         <!--Event View Controller-->
         <scene sceneID="sye-c1-hUk">
             <objects>
-                <viewController id="kFf-qh-2P3" customClass="EventViewController" customModule="together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventViewController" id="kFf-qh-2P3" customClass="EventViewController" customModule="together" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="skX-sr-tTI"/>
                         <viewControllerLayoutGuide type="bottom" id="d81-TY-vXD"/>
@@ -685,21 +685,19 @@ My #1 goal will always be to meet your needs .</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-6q-FKB">
-                                <rect key="frame" x="221" y="510" width="48" height="48"/>
+                                <rect key="frame" x="305" y="510" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Jvd-2d-2zF"/>
                                     <constraint firstAttribute="width" constant="48" id="fcu-0N-huY"/>
                                 </constraints>
                                 <state key="normal" image="likeicongreen"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIb-ni-D72">
-                                <rect key="frame" x="293" y="510" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Ijm-8S-D9G"/>
-                                    <constraint firstAttribute="width" constant="48" id="Omx-nS-XfU"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IY-oa-cVd">
+                                <rect key="frame" x="52" y="493" width="307" height="162"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SaU-tv-FnR">
                                 <rect key="frame" x="0.0" y="265" width="375" height="353"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -736,8 +734,8 @@ My #1 goal will always be to meet your needs .</string>
                                     <constraint firstAttribute="width" secondItem="krm-Kb-0T2" secondAttribute="height" multiplier="373:240" id="KDu-gS-cla"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcT-MY-nru">
-                                <rect key="frame" x="10" y="34" width="57" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcT-MY-nru">
+                                <rect key="frame" x="12" y="48" width="57" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="YSr-Op-3qH"/>
                                 </constraints>
@@ -775,6 +773,19 @@ My #1 goal will always be to meet your needs .</string>
                                 <state key="normal" title="More">
                                     <color key="titleColor" red="0.40784313729999999" green="0.97254901959999995" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="moreButtonPressed:" destination="kFf-qh-2P3" eventType="touchUpInside" id="Fbc-Tz-cuU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-2I-nZm">
+                                <rect key="frame" x="16" y="543" width="36" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Less">
+                                    <color key="titleColor" red="0.40784313729999999" green="0.97254901959999995" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="lessPres:" destination="kFf-qh-2P3" eventType="touchUpInside" id="9p8-Vv-Y9N"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contribute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n89-LC-Fu3">
                                 <rect key="frame" x="235" y="255" width="89" height="21"/>
@@ -834,19 +845,27 @@ My #1 goal will always be to meet your needs .</string>
                                     <constraint firstAttribute="width" constant="24" id="pSn-Yv-ZMK"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-Xh-6Se">
+                                <rect key="frame" x="36" y="96" width="43" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wIb-ni-D72" firstAttribute="centerY" secondItem="ad8-6q-FKB" secondAttribute="centerY" id="33P-Lg-VAJ"/>
+                            <constraint firstItem="PcT-MY-nru" firstAttribute="top" secondItem="pth-qr-oaj" secondAttribute="bottom" constant="24" id="1p7-zT-avG"/>
                             <constraint firstItem="pth-qr-oaj" firstAttribute="leading" secondItem="hYs-Xd-ldP" secondAttribute="leading" id="3bG-XJ-UfK"/>
                             <constraint firstItem="Ssw-YA-ddZ" firstAttribute="leading" secondItem="kz9-X8-TvH" secondAttribute="leading" id="4Kd-3I-6Zh"/>
                             <constraint firstItem="Bwa-ct-TIC" firstAttribute="leading" secondItem="vIA-jr-zpc" secondAttribute="trailing" constant="12" id="6gI-Qr-4xD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ad8-6q-FKB" secondAttribute="trailing" constant="6" id="7Qe-nl-2tR"/>
                             <constraint firstItem="nDN-Mt-p1E" firstAttribute="top" secondItem="krm-Kb-0T2" secondAttribute="bottom" constant="-17.5" id="7zM-ne-rbm"/>
                             <constraint firstAttribute="trailing" secondItem="SaU-tv-FnR" secondAttribute="trailing" id="881-Fz-tjg"/>
                             <constraint firstItem="Bwa-ct-TIC" firstAttribute="top" secondItem="w8h-sb-gi2" secondAttribute="bottom" constant="46.5" id="8XH-IU-Kgv"/>
                             <constraint firstItem="ad8-6q-FKB" firstAttribute="centerY" secondItem="X6w-Fa-FUi" secondAttribute="centerY" id="8u2-bJ-An9"/>
                             <constraint firstItem="icn-TF-rGk" firstAttribute="centerY" secondItem="Wjc-OJ-tdb" secondAttribute="centerY" id="DbF-e7-Eyc"/>
                             <constraint firstItem="krm-Kb-0T2" firstAttribute="leading" secondItem="hYs-Xd-ldP" secondAttribute="leading" id="Exy-QZ-QCF"/>
+                            <constraint firstItem="xa9-Xh-6Se" firstAttribute="leading" secondItem="PcT-MY-nru" secondAttribute="leading" constant="24" id="FLx-Ms-kiH"/>
                             <constraint firstItem="XMy-gj-8lA" firstAttribute="trailing" secondItem="hYs-Xd-ldP" secondAttribute="trailingMargin" id="Fd8-Im-Rde"/>
                             <constraint firstItem="MZl-cV-ahp" firstAttribute="centerY" secondItem="spE-bs-NXe" secondAttribute="centerY" id="Jwt-nj-RRb"/>
                             <constraint firstItem="Wjc-OJ-tdb" firstAttribute="top" secondItem="Bwa-ct-TIC" secondAttribute="bottom" id="MTx-5t-CAN"/>
@@ -854,10 +873,11 @@ My #1 goal will always be to meet your needs .</string>
                             <constraint firstItem="u69-Tn-8TM" firstAttribute="leading" secondItem="spE-bs-NXe" secondAttribute="leading" id="NYd-j8-L18"/>
                             <constraint firstItem="X6w-Fa-FUi" firstAttribute="centerY" secondItem="Ssw-YA-ddZ" secondAttribute="centerY" id="Nyk-C1-uqA"/>
                             <constraint firstItem="nDN-Mt-p1E" firstAttribute="leading" secondItem="hYs-Xd-ldP" secondAttribute="leadingMargin" id="OHV-qe-JKC"/>
+                            <constraint firstItem="9IY-oa-cVd" firstAttribute="trailing" secondItem="XMy-gj-8lA" secondAttribute="trailing" id="P87-nu-lmM"/>
                             <constraint firstItem="Ssw-YA-ddZ" firstAttribute="leading" secondItem="kz9-X8-TvH" secondAttribute="leading" id="QaK-My-ljk"/>
+                            <constraint firstAttribute="bottom" secondItem="9IY-oa-cVd" secondAttribute="bottom" constant="12" id="Qj9-CS-rnB"/>
                             <constraint firstAttribute="trailing" secondItem="krm-Kb-0T2" secondAttribute="trailing" id="Qkh-un-jle"/>
                             <constraint firstItem="kz9-X8-TvH" firstAttribute="leading" secondItem="MZl-cV-ahp" secondAttribute="leading" id="QoB-R8-3DN"/>
-                            <constraint firstItem="wIb-ni-D72" firstAttribute="leading" secondItem="ad8-6q-FKB" secondAttribute="trailing" constant="24" id="Qt4-sm-NRf"/>
                             <constraint firstItem="vIA-jr-zpc" firstAttribute="top" secondItem="nDN-Mt-p1E" secondAttribute="bottom" constant="40" id="Quw-6Q-Cn9"/>
                             <constraint firstItem="krm-Kb-0T2" firstAttribute="top" secondItem="pth-qr-oaj" secondAttribute="bottom" id="Qxp-ay-sbp"/>
                             <constraint firstItem="spE-bs-NXe" firstAttribute="top" secondItem="Wjc-OJ-tdb" secondAttribute="bottom" constant="36" id="Rea-Ry-Wp7"/>
@@ -867,7 +887,7 @@ My #1 goal will always be to meet your needs .</string>
                             <constraint firstItem="XzJ-tc-uyy" firstAttribute="leading" secondItem="Wjc-OJ-tdb" secondAttribute="trailing" constant="3" id="Uvf-KB-WkE"/>
                             <constraint firstItem="u69-Tn-8TM" firstAttribute="top" secondItem="spE-bs-NXe" secondAttribute="bottom" constant="36" id="W4a-22-OC4"/>
                             <constraint firstItem="icn-TF-rGk" firstAttribute="leading" secondItem="Wjc-OJ-tdb" secondAttribute="trailing" constant="3" id="WB9-9F-4bw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wIb-ni-D72" secondAttribute="trailing" constant="18" id="WrV-Yy-EP7"/>
+                            <constraint firstItem="Gog-2I-nZm" firstAttribute="top" secondItem="kz9-X8-TvH" secondAttribute="bottom" constant="60" id="XLx-g1-rm3"/>
                             <constraint firstItem="kz9-X8-TvH" firstAttribute="centerY" secondItem="u69-Tn-8TM" secondAttribute="centerY" id="XqI-gO-AQF"/>
                             <constraint firstItem="pth-qr-oaj" firstAttribute="top" secondItem="hYs-Xd-ldP" secondAttribute="top" id="ZHW-aG-GLc"/>
                             <constraint firstItem="spE-bs-NXe" firstAttribute="leading" secondItem="Wjc-OJ-tdb" secondAttribute="leading" id="ZHj-5H-XUh"/>
@@ -875,19 +895,37 @@ My #1 goal will always be to meet your needs .</string>
                             <constraint firstItem="kz9-X8-TvH" firstAttribute="leading" secondItem="nDN-Mt-p1E" secondAttribute="leading" id="b1f-Mx-dif"/>
                             <constraint firstItem="w8h-sb-gi2" firstAttribute="centerX" secondItem="nDN-Mt-p1E" secondAttribute="centerX" id="cWQ-A0-WvN"/>
                             <constraint firstItem="XzJ-tc-uyy" firstAttribute="centerY" secondItem="Bwa-ct-TIC" secondAttribute="centerY" id="csS-f5-vZv"/>
+                            <constraint firstItem="PcT-MY-nru" firstAttribute="leading" secondItem="hYs-Xd-ldP" secondAttribute="leading" constant="12" id="eQl-uL-gRZ"/>
                             <constraint firstItem="XMy-gj-8lA" firstAttribute="top" secondItem="krm-Kb-0T2" secondAttribute="bottom" constant="-17.5" id="egf-Yt-tW1"/>
                             <constraint firstItem="Bwa-ct-TIC" firstAttribute="centerY" secondItem="vIA-jr-zpc" secondAttribute="centerY" id="fRJ-az-9dv"/>
                             <constraint firstItem="X6w-Fa-FUi" firstAttribute="top" secondItem="u69-Tn-8TM" secondAttribute="bottom" constant="36" id="fWd-Qc-Eto"/>
+                            <constraint firstItem="9IY-oa-cVd" firstAttribute="leading" secondItem="u69-Tn-8TM" secondAttribute="leading" id="fxy-a1-WBt"/>
                             <constraint firstItem="Wjc-OJ-tdb" firstAttribute="leading" secondItem="Bwa-ct-TIC" secondAttribute="leading" id="iEm-Xz-kjl"/>
                             <constraint firstItem="MZl-cV-ahp" firstAttribute="leading" secondItem="vIA-jr-zpc" secondAttribute="leading" id="jsN-8k-eJc"/>
                             <constraint firstItem="SaU-tv-FnR" firstAttribute="top" secondItem="krm-Kb-0T2" secondAttribute="bottom" id="nHK-DV-8fM"/>
+                            <constraint firstItem="9IY-oa-cVd" firstAttribute="top" secondItem="u69-Tn-8TM" secondAttribute="bottom" constant="12" id="oAU-O4-dlh"/>
                             <constraint firstItem="d81-TY-vXD" firstAttribute="top" secondItem="SaU-tv-FnR" secondAttribute="bottom" id="opM-9w-Pfo"/>
+                            <constraint firstItem="xa9-Xh-6Se" firstAttribute="top" secondItem="PcT-MY-nru" secondAttribute="bottom" constant="12" id="pYr-qx-R4g"/>
                             <constraint firstItem="Ssw-YA-ddZ" firstAttribute="leading" secondItem="MZl-cV-ahp" secondAttribute="leading" id="pzI-lx-M0n"/>
                             <constraint firstItem="MZl-cV-ahp" firstAttribute="leading" secondItem="vIA-jr-zpc" secondAttribute="leading" id="r3K-Ha-iUB"/>
                             <constraint firstItem="w8h-sb-gi2" firstAttribute="centerY" secondItem="nDN-Mt-p1E" secondAttribute="centerY" id="raU-1H-nsk"/>
                             <constraint firstItem="vIA-jr-zpc" firstAttribute="leading" secondItem="kz9-X8-TvH" secondAttribute="leading" id="s6F-8U-dhU"/>
+                            <constraint firstItem="Gog-2I-nZm" firstAttribute="leading" secondItem="kz9-X8-TvH" secondAttribute="leading" id="ss1-rv-vaH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventDataEnd" destination="Wjc-OJ-tdb" id="Dgn-IE-m9P"/>
+                        <outlet property="eventDataStart" destination="Bwa-ct-TIC" id="0l0-nq-SM1"/>
+                        <outlet property="eventDescription" destination="9IY-oa-cVd" id="Sr4-p4-dwV"/>
+                        <outlet property="eventLocation" destination="spE-bs-NXe" id="0sR-nu-HmX"/>
+                        <outlet property="eventParticipants" destination="u69-Tn-8TM" id="QW5-2l-o8m"/>
+                        <outlet property="eventPhoto" destination="krm-Kb-0T2" id="4PS-iy-TKu"/>
+                        <outlet property="eventTitle" destination="xa9-Xh-6Se" id="CXe-iw-D5C"/>
+                        <outlet property="lessButton" destination="Gog-2I-nZm" id="Ne3-cz-LDU"/>
+                        <outlet property="likeButton" destination="ad8-6q-FKB" id="P2u-wd-pp7"/>
+                        <outlet property="moreButton" destination="X6w-Fa-FUi" id="VSh-mj-Q3x"/>
+                        <outlet property="moreIcon" destination="Ssw-YA-ddZ" id="dAJ-02-3c4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ff4-8x-mC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1094,7 +1132,6 @@ My #1 goal will always be to meet your needs .</string>
                                             <outlet property="eventPhoto" destination="Rx8-gR-MrB" id="5e7-p9-LUa"/>
                                             <outlet property="eventTitle" destination="Jg5-Uk-g25" id="o6r-r0-x3B"/>
                                             <outlet property="likeButton" destination="D7H-dh-C2L" id="uNu-HZ-Sla"/>
-                                            <segue destination="kFf-qh-2P3" kind="show" id="M8g-RP-R34"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1155,6 +1192,7 @@ My #1 goal will always be to meet your needs .</string>
                         <outlet property="myColectionView" destination="g88-Lm-vbk" id="8KB-hr-CJc"/>
                         <outlet property="myColectionViewHeight" destination="5xc-aC-ZiS" id="tnA-Aj-3EI"/>
                         <outlet property="mySerchBar" destination="JPt-Sc-bXH" id="iBc-Qb-upR"/>
+                        <segue destination="kFf-qh-2P3" kind="show" identifier="fromFeedToEvent" id="n3t-Pa-Wnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymM-FM-948" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2090,9 +2128,9 @@ My #1 goal will always be to meet your needs .</string>
         <image name="yes" width="8" height="7"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dNn-MN-MVn"/>
-        <segue reference="td1-Ao-sby"/>
-        <segue reference="M8g-RP-R34"/>
+        <segue reference="Y9l-1x-Ax7"/>
+        <segue reference="n3t-Pa-Wnp"/>
         <segue reference="WLb-3E-RrO"/>
+        <segue reference="dNn-MN-MVn"/>
     </inferredMetricsTieBreakers>
 </document>

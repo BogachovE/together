@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import
+import KCFloatingActionButton
 
 class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate {
 
@@ -25,6 +25,8 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
     var event: Event = Event()
      var id:Int!
     var storageRef: FIRStorageReference!
+    var fab = KCFloatingActionButton()
+
     
     
     override func viewDidLoad() {
@@ -42,10 +44,36 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         
+        layoutFAB()
         
         
         // Do any additional setup after loading the view.
     }
+    
+    func layoutFAB() {
+        let item = KCFloatingActionButtonItem()
+        item.buttonColor = UIColor.blue
+        item.circleShadowColor = UIColor.red
+        item.titleShadowColor = UIColor.blue
+        item.title = "Custom item"
+        item.handler = { item in
+        }
+        
+        fab.addItem(title: "I got a title")
+        fab.addItem("I got a icon", icon: UIImage(named: "icShare"))
+        fab.addItem("I got a handler", icon: UIImage(named: "icMap")) { item in
+            let alert = UIAlertController(title: "Hey", message: "I'm hungry...", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Me too", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.fab.close()
+        }
+        fab.addItem(item: item)
+        fab.sticky = true
+        
+              
+        self.view.addSubview(fab)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

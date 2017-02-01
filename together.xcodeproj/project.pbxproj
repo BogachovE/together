@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		03B8F0050708E8966D4CCFBC /* Pods_together.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419035FA1DF494BFF8ACF1C1 /* Pods_together.framework */; };
+		DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */; };
 		DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DD306D8E1E2BE6D20036EB4A /* Base.lproj */; };
 		DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */; };
 		DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */; };
 		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
 		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
 		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
+		DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */; };
 		DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */; };
 		DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */; };
 		DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED51E3E21B00003A46F /* userMaper.swift */; };
@@ -36,6 +38,7 @@
 		419035FA1DF494BFF8ACF1C1 /* Pods_together.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_together.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E54767793A9E520F945689 /* Pods-together.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.debug.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.debug.xcconfig"; sourceTree = "<group>"; };
 		A5F596E73BD75E0EB1454B0F /* Pods-together.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.release.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.release.xcconfig"; sourceTree = "<group>"; };
+		DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShare.swift; sourceTree = "<group>"; };
 		DD306D8E1E2BE6D20036EB4A /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = together/Base.lproj; sourceTree = "<group>"; };
 		DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
 		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewEventViewController.swift; sourceTree = "<group>"; };
 		DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventMaper.swift; sourceTree = "<group>"; };
 		DD7E7ED51E3E21B00003A46F /* userMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userMaper.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 				419035FA1DF494BFF8ACF1C1 /* Pods_together.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD1CB5431E40FA250060A7E8 /* OwnLibs */ = {
+			isa = PBXGroup;
+			children = (
+				DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */,
+			);
+			name = OwnLibs;
 			sourceTree = "<group>";
 		};
 		DD306D941E2BEF380036EB4A /* View */ = {
@@ -161,6 +173,7 @@
 		DDBFA8FE1E27B02A0040FEE1 /* together */ = {
 			isa = PBXGroup;
 			children = (
+				DD1CB5431E40FA250060A7E8 /* OwnLibs */,
 				DD93297F1E2C12DC00F647BE /* together.entitlements */,
 				DDB7F3691E3A6C7D00EF451A /* Mapers */,
 				DDEA9F9F1E2D218100A943FF /* Repositories */,
@@ -173,6 +186,7 @@
 				DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */,
 				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
 				DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */,
+				DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */,
 			);
 			path = together;
 			sourceTree = "<group>";
@@ -347,6 +361,7 @@
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
+				DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */,
 				DDA899851E379310002D2069 /* settingsViewController.swift in Sources */,
 				DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */,
 				DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */,
@@ -354,6 +369,7 @@
 				DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */,
 				DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */,
 				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
+				DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */,
 				DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
@@ -478,12 +494,14 @@
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
 				INFOPLIST_FILE = together/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.together;
+				PRODUCT_BUNDLE_IDENTIFIER = com.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -497,11 +515,13 @@
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
 				INFOPLIST_FILE = together/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.together;
+				PRODUCT_BUNDLE_IDENTIFIER = com.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

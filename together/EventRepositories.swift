@@ -216,6 +216,28 @@ class  EventRepositories {
         }
     }
     
+    func loadEvent(eventId: Int, withh: @escaping (Event)->Void){
+        let eventRef = ref.child("events/"+String(eventId)).observe(.value, with: { (snapshot) in
+            let eventDictionary = snapshot.value as? NSDictionary
+            let storage = FIRStorage.storage()
+            self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+            self.loadEventPhoto(eventId: eventId, storageRef: self.storageRef, withh:{ (image) in
+                let event: Event = EventMaper.dictionaryToEvent(eventDictionary: eventDictionary!, image: image)
+                 withh(event)
+            })
+        })
+    }
+    
+    func loadParticipantsCount(evetId: Int, withh: @escaping (Int)->Void){
+        let eventRef = ref.child("events/"+String(evetId)).observe(.value, with: { (snapshot) in
+            let eventDictionary = snapshot.value as? NSDictionary
+            let signedUsers = eventDictionary?.value(forKey: "signedUsers") as! Array<Int>
+            let count = signedUsers.count
+            
+                withh(count-1)
+            })
+    }
+    
     
     
     

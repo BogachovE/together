@@ -30,6 +30,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var buttonState: Array<Bool> = []
     var filterType: String = "all"
     var searchActive : Bool = false
+    var selectedEvent: Int = 0
 
     
     
@@ -168,7 +169,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        selectedEvent = indexPath.row
+       self.performSegue(withIdentifier: "fromFeedToEvent", sender: self)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -319,8 +321,14 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         })
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "fromFeedToEvent") {
+            let svc = segue.destination as! EventViewController
+            
+            svc.eventId = events[selectedEvent].id
+            
+        }
+    }
     
     
 }

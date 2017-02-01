@@ -18,7 +18,7 @@ class EventMaper{
         formatter.timeStyle = .medium
         let startTimeString = formatter.string(from: event.startTime)
         let endTimeString = formatter.string(from: event.endTime)
-        dictionaryEvent = ["id":event.id, "title":event.title, "description":event.description, "contrebuted":event.contrebuted, "category":event.category, "ownerId":event.ownerId, "likes":event.likes, "location":event.location, "startTime":startTimeString, "endTime": endTimeString]
+        dictionaryEvent = ["id":event.id, "title":event.title, "description":event.description, "contrebuted":event.contrebuted, "category":event.category, "ownerId":event.ownerId, "likes":event.likes, "location":event.location, "startTime":startTimeString, "endTime": endTimeString, "signedUsers": event.signedUsers]
         return dictionaryEvent
     }
     
@@ -32,7 +32,7 @@ class EventMaper{
         let endTime = dateFormatter.date(from:endTimeString)
         
        
-        event = Event(title: eventDictionary.value(forKey: "title") as! String, description: eventDictionary.value(forKey: "description") as! String, id: eventDictionary.value(forKey: "id") as! Int, photo: image, contrebuted: eventDictionary.value(forKey: "contrebuted") as! Int, category: eventDictionary.value(forKey: "category") as! String, ownerId: eventDictionary.value(forKey: "ownerId") as! Int, likes: eventDictionary.value(forKey: "likes") as! Array<Int>, location: eventDictionary.value(forKey: "location") as! String,  startTime: startTime!, endTime: endTime!)
+        event = Event(title: eventDictionary.value(forKey: "title") as! String, description: eventDictionary.value(forKey: "description") as! String, id: eventDictionary.value(forKey: "id") as! Int, photo: image, contrebuted: eventDictionary.value(forKey: "contrebuted") as! Int, category: eventDictionary.value(forKey: "category") as! String, ownerId: eventDictionary.value(forKey: "ownerId") as! Int, likes: eventDictionary.value(forKey: "likes") as! Array<Int>, location: eventDictionary.value(forKey: "location") as! String,  startTime: startTime!, endTime: endTime!, signedUsers: eventDictionary.value(forKey: "signedUsers") as! Array<Int>)
         return event
     }
     
