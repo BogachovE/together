@@ -30,6 +30,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var buttonState: Array<Bool> = []
     var filterType: String = "all"
     var searchActive : Bool = false
+    var selectedEvent: Int = 0
 
     
     
@@ -47,12 +48,14 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         pickerData = ["Category","Celebretion", "Helping"]
         
         eventRepositories = EventRepositories()
-        filterType = "all"
-        filterEvents(type: filterType)
+        
         
         self.filtersPiker.delegate = self
         self.filtersPiker.dataSource = self
         self.mySerchBar.delegate = self
+        
+        filterType = "all"
+        filterEvents(type: filterType)
         
         mySerchBar.isHidden = true
         
@@ -64,6 +67,9 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         userRepositories.loadLogin(id:id, withh: {(name) in
             self.loginView.text = name
         })
+        
+        mySerchBar.isHidden = true
+        self.myColectionViewHeight.constant = 489
         
         
         
@@ -133,6 +139,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             }
         }
         
+        
         cell.eventPhoto.image = events[indexPath.row].photo
         cell.eventTitle.text = events[indexPath.row].title
         cell.eventDescription.text = events[indexPath.row].description
@@ -144,6 +151,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         return cell
     }
+    
     func buttonClicked(sender: UIButton) {
         var isLiked: Bool
         isLiked = checkLike(sender: sender)
@@ -161,7 +169,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        selectedEvent = indexPath.row
+       self.performSegue(withIdentifier: "fromFeedToEvent", sender: self)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -219,6 +228,8 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func filterEvents(row: Int = 0, type: String, searchText: String = "") {
         switch type {
         case "all":
+            mySerchBar.isHidden = true
+            self.myColectionViewHeight.constant = 489
             eventRepositories.loadAllEvents(withh: {(events)  in
                 self.events = events
                 self.myColectionView.reloadData()
@@ -226,32 +237,38 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
         case "category":
             if (row == 0) {
+                events.removeAll()
                 eventRepositories.loadAllEvents(withh: {(events)  in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             } else {
+                events.removeAll()
                 eventRepositories.loadCategoryEvents(category: pickerData[row], withh: {(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             }
             case "friends":
+                events.removeAll()
                 eventRepositories.loadFriendsEvents(id: id, withh:{(events)  in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             case "my":
+                events.removeAll()
                 eventRepositories.loadMyEvents(id: id, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             case "signed":
+                events.removeAll()
                 eventRepositories.loadSignedEvents(id: id, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()
                 })
             case "hashtag":
+                events.removeAll()
                 eventRepositories.loadEventByHashtag(searchText: searchText, withh:{(events) in
                     self.events = events
                     self.myColectionView.reloadData()
@@ -304,8 +321,14 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         })
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "fromFeedToEvent") {
+            let svc = segue.destination as! EventViewController
+            
+            svc.eventId = events[selectedEvent].id
+            
+        }
+    }
     
     
 }
