@@ -86,4 +86,16 @@ class UserRepositories {
             withh(name)
         })
     }
+    func loadUser(userId: Int, withh: @escaping (User)->Void){
+        let userRef = ref.child("users/" + String(userId)).observe(.value, with:{ (snapshot) in
+        let userDictionary = snapshot.value as! NSDictionary
+        let storage = FIRStorage.storage()
+        self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+            self.loadUserImage(id: userId, storage: storage, storageRef: self.storageRef, withh:{ (image) in
+                let user: User = UserMaper.dictionaryToUser(userDictionary: userDictionary, image: image)
+                withh(user)
+            })
+        })
+    
+    }
 }

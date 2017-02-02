@@ -14,6 +14,7 @@ import HockeySDK
 
 
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BITHockeyManager.shared().configure(withIdentifier: "66f170cf8d774cdd8716ae0d2d2d5e31")
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+        
+
 
         return true
     }

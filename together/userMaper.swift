@@ -14,8 +14,19 @@ class UserMaper{
     
     static func userToDictionary(user: User) ->NSDictionary  {
         let dictionaryUser: NSDictionary
-        dictionaryUser = ["id":user.id, "name":user.name, "email":user.email, "phone":user.phone, "friends":user.friends, "signedEvent":user.signedEvent]
+        dictionaryUser = ["id":user.id, "name":user.name, "email":user.email, "phone":user.phone, "friends":user.friends, "signedEvent":user.signedEvent, "title":user.title, "followersCount":user.followersCount, "description":user.description]
         return dictionaryUser
     }
+    
+    static func dictionaryToUser(userDictionary: NSDictionary, image: UIImage = #imageLiteral(resourceName: "face"))-> User{
+        let user: User
+        
+        user = User(name: userDictionary.value(forKey: "name") as! String, email: userDictionary.value(forKey: "email") as! String, id: userDictionary.value(forKey: "id") as! Int, phone: userDictionary.value(forKey: "phone") as! String, photo: image, friends: userDictionary.value(forKey: "friends") as! Array<Int>, signedEvent: userDictionary.value(forKey: "signedEvent") as! Array<Int>, title: userDictionary.value(forKey: "title") as! String, followersCount: userDictionary.value(forKey: "followersCount") as! Int, description: userDictionary.value(forKey: "description") as! String)
+        
+        
+        
+        return user
+    }
+    
 }
 

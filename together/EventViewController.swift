@@ -10,9 +10,11 @@ import UIKit
 import Firebase
 import KCFloatingActionButton
 import MessageUI
+import Social
 
 
-class EventViewController: UIViewController, MFMailComposeViewControllerDelegate{
+
+class EventViewController: UIViewController, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate{
     var eventId: Int = 0
     var storageRef: FIRStorageReference!
     var ref: FIRDatabaseReference!
@@ -79,7 +81,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     func layoutFAB() {
                 fab.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
         fab.plusColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-        let titles: Array<String> = ["Share to whasapp", "Share to facebook", "Share to snapchat", "Share by email", "Share to instagram", "Share to twiter"]
+        let titles: Array<String> = ["Share to whatsapp", "Share to facebook", "Share to snapchat", "Share by email", "Share to instagram", "Share to twiter"]
         let types: Array<String> = ["wat", "face", "snap", "email", "incta", "twiter"]
         let icons: Array<UIImage> = [#imageLiteral(resourceName: "watBtn"), #imageLiteral(resourceName: "faceBtn"), #imageLiteral(resourceName: "snapBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
         for i in 0...5{
@@ -90,7 +92,11 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
             item.icon = icons[i]
             item.title = titles[i]
             item.handler = { item in
-            self.share(type: types[i])
+                if #available(iOS 10.0, *) {
+                    self.share(type: types[i])
+                } else {
+                    // Fallback on earlier versions
+                }
             }
             fab.addItem(item: item)
         }
@@ -126,13 +132,20 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         return newImage!
     }
     
+    @available(iOS 10.0, *)
     func share(type: String){
         switch (type) {
         case "face":
-            SocialShare.shareToFacebook(event: event, controller: self)
+            shareFace(event:event)
         case "email":
             shareByEmail(event: event)
-        
+        case "wat":
+            SocialShare.whatsappShare(event:event)
+        case "incta":
+            InstagramManager.sharedManager.postImageToInstagramWithCaption(imageInstagram:event.photo, instagramCaption: "\(event.description)", view: self.view)
+            case "twiter":
+            shareTwit(event: event)
+            
         default :
             print("Switch error")
         }
@@ -166,6 +179,25 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
         sendMailErrorAlert.show()
     }
+    func shareFace(event: Event){
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+            vc.setInitialText("Look at this great picture!")
+            vc.add(event.photo)
+            vc.add(URL(string: "https://www.hackingwithswift.com"))
+            present(vc, animated: true)
+        }
+
+    }
+    func shareTwit(event: Event){
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+            vc.setInitialText("Look at this great picture!")
+            vc.add(event.photo)
+            vc.add(URL(string: "https://www.hackingwithswift.com"))
+            present(vc, animated: true)
+        }
+        
+    }
+
     
     // MARK: MFMailComposeViewControllerDelegate
     
@@ -173,6 +205,8 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         controller.dismiss(animated: true, completion: nil)
         
     }
+    
+    
 
  
 

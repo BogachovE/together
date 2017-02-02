@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vad-dQ-DRH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vad-dQ-DRH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -249,10 +248,10 @@
             </objects>
             <point key="canvasLocation" x="33" y="-668"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="OzS-pX-mSf">
             <objects>
-                <viewController id="Fnz-XP-EK3" sceneMemberID="viewController">
+                <viewController id="Fnz-XP-EK3" customClass="ProfileViewController" customModule="together" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nzl-5G-1a5"/>
                         <viewControllerLayoutGuide type="bottom" id="k6I-re-1Xo"/>
@@ -303,6 +302,9 @@ My #1 goal will always be to meet your needs .</string>
                                     <constraint firstAttribute="width" constant="187" id="voq-4f-Dc6"/>
                                 </constraints>
                                 <state key="normal" image="btn"/>
+                                <connections>
+                                    <action selector="subscriblePressedWithSender:" destination="Fnz-XP-EK3" eventType="touchUpInside" id="sKH-6J-4Ms"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yP0-Io-7Ze">
                                 <rect key="frame" x="42" y="224" width="292" height="96"/>
@@ -332,8 +334,8 @@ My #1 goal will always be to meet your needs .</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.5K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdh-ac-xsJ">
-                                        <rect key="frame" x="224" y="58" width="35" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3.5K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdh-ac-xsJ">
+                                        <rect key="frame" x="224" y="58" width="35" height="82"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -414,6 +416,16 @@ My #1 goal will always be to meet your needs .</string>
                             <constraint firstAttribute="bottomMargin" secondItem="ck8-93-hJd" secondAttribute="bottom" constant="60" id="wnD-1B-btX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatar" destination="cal-c1-uoU" id="KKD-SR-dbf"/>
+                        <outlet property="descriptionLabel" destination="EE9-cH-IYE" id="beE-Ub-0Eh"/>
+                        <outlet property="followersLabel" destination="dCB-bY-Rdw" id="PqG-MG-cLq"/>
+                        <outlet property="followingLabels" destination="Hdh-ac-xsJ" id="3il-6C-n7N"/>
+                        <outlet property="loginLabel" destination="0mt-9o-RFy" id="8mY-8a-P8x"/>
+                        <outlet property="subscribeBtnLabel" destination="k7U-gE-HvD" id="S7V-tb-OhK"/>
+                        <outlet property="subscribleButton" destination="ck8-93-hJd" id="mVf-Wq-Vyf"/>
+                        <outlet property="titleLabel" destination="m1n-yb-K7H" id="ZQ3-Cz-JkH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvI-eF-Pgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -978,7 +990,7 @@ My #1 goal will always be to meet your needs .</string>
                                         </constraints>
                                         <state key="normal" image="face"/>
                                         <connections>
-                                            <segue destination="Fnz-XP-EK3" kind="show" id="qBT-ae-Fze"/>
+                                            <segue destination="Fnz-XP-EK3" kind="show" identifier="fromFeedToProfile" id="qBT-ae-Fze"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1722,7 +1734,7 @@ My #1 goal will always be to meet your needs .</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwo-Nw-Gop" id="Csk-O4-yfd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="007-eT-hOq">
@@ -2128,9 +2140,9 @@ My #1 goal will always be to meet your needs .</string>
         <image name="yes" width="8" height="7"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y9l-1x-Ax7"/>
-        <segue reference="n3t-Pa-Wnp"/>
+        <segue reference="WYc-us-yhh"/>
         <segue reference="WLb-3E-RrO"/>
+        <segue reference="n3t-Pa-Wnp"/>
         <segue reference="dNn-MN-MVn"/>
     </inferredMetricsTieBreakers>
 </document>
