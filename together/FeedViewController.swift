@@ -327,6 +327,10 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
             svc.eventId = events[selectedEvent].id
             
+        } else if (segue.identifier == "fromFeedToProfile"){
+            let svc = segue.destination as! ProfileViewController
+            
+            svc.userId = 4//self.id
         }
     }
     

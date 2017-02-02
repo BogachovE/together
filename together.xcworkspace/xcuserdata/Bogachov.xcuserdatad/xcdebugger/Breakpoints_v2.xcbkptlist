@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/EventViewController.swift"
-            timestampString = "507647008.774856"
+            timestampString = "507723232.401943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "configuredMailComposeViewController()"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "shareByEmail(event:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

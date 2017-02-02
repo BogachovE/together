@@ -11,8 +11,6 @@ target ‘together’ do
     pod 'GoogleSignIn'
     pod 'HockeySDK', '~> 4.1.3'
     pod "KCFloatingActionButton"
-  
-
 end
 
 
