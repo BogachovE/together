@@ -502,7 +502,7 @@
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
 				INFOPLIST_FILE = together/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,7 +523,7 @@
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
 				DEVELOPMENT_TEAM = 995N6ZUQMV;
 				INFOPLIST_FILE = together/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";

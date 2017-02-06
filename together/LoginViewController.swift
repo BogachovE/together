@@ -137,10 +137,10 @@ class LoginViewController: UIViewController  {
                         for item in snapshot.children {
                             let child = item as! FIRDataSnapshot
                             let dict = child.value as! NSDictionary
-                            if (self.rememberMe.isSelected) {
+                            
                                 let id = dict.value(forKey: "id")
                                 self.userId = id as AnyObject?
-                            }
+                        
                             self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
                         }
                     }
