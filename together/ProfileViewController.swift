@@ -78,8 +78,6 @@ class ProfileViewController: UIViewController {
     @IBAction func subscriblePressed(sender: AnyObject) {
         if (subscribeBtnLabel.text == "Unsubscrible"){
             let uscribeIndex = user.friends.index(of: userId)
-            let str = String(describing: uscribeIndex) as String!
-            print("users/" + String(myId/*userId*/) + "/friends/" + str!)
             user.friends.remove(at: uscribeIndex!)
             let newFriendsList = user.friends 
             ref.child("users/" + String(myId) + "/friends/").setValue(newFriendsList)
