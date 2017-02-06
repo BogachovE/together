@@ -1496,7 +1496,7 @@ My #1 goal will always be to meet your needs .</string>
                                             <constraint firstAttribute="height" constant="24" id="vlL-AX-IWR"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zez-Ph-rsz">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zez-Ph-rsz">
                                         <rect key="frame" x="24" y="0.0" width="276" height="15"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
@@ -1509,7 +1509,7 @@ My #1 goal will always be to meet your needs .</string>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVN-vs-NgR" userLabel="phoneStack">
-                                <rect key="frame" x="37.5" y="282" width="110.5" height="24"/>
+                                <rect key="frame" x="37.5" y="282" width="300" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="kdi-GM-Ybh">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -1518,17 +1518,20 @@ My #1 goal will always be to meet your needs .</string>
                                             <constraint firstAttribute="height" constant="24" id="tP4-Ma-AY8"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSS-9R-PrF">
-                                        <rect key="frame" x="24" y="0.0" width="86.5" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSS-9R-PrF">
+                                        <rect key="frame" x="24" y="0.0" width="276" height="24"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UmD-YX-ahX"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjz-L9-Dtf" userLabel="emailStack">
-                                <rect key="frame" x="37.5" y="330" width="58.5" height="24"/>
+                                <rect key="frame" x="37.5" y="330" width="300" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="MiJ-Af-SCH">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -1537,17 +1540,20 @@ My #1 goal will always be to meet your needs .</string>
                                             <constraint firstAttribute="height" constant="24" id="NsV-uX-bhO"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zf-qF-N1z">
-                                        <rect key="frame" x="24" y="0.0" width="34.5" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zf-qF-N1z">
+                                        <rect key="frame" x="24" y="0.0" width="276" height="24"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="9VO-iL-3ZO"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ab7-rb-Kky" userLabel="descriptionStack">
-                                <rect key="frame" x="37.5" y="378" width="82.5" height="24"/>
+                                <rect key="frame" x="37.5" y="378" width="300" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3Zn-UA-lfu">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -1556,17 +1562,20 @@ My #1 goal will always be to meet your needs .</string>
                                             <constraint firstAttribute="height" constant="24" id="qzh-of-Mbn"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GR5-jN-o0x">
-                                        <rect key="frame" x="24" y="0.0" width="58.5" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="description" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GR5-jN-o0x">
+                                        <rect key="frame" x="24" y="0.0" width="276" height="24"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Rog-3C-HgF"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ4-Ay-i6X" userLabel="titleStack">
-                                <rect key="frame" x="37.5" y="426" width="53" height="24"/>
+                                <rect key="frame" x="37.5" y="426" width="300" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="descriptionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7Pd-wF-9CM">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -1575,17 +1584,20 @@ My #1 goal will always be to meet your needs .</string>
                                             <constraint firstAttribute="width" constant="24" id="b5o-uK-x7Y"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mj8-i1-jLH">
-                                        <rect key="frame" x="24" y="0.0" width="29" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mj8-i1-jLH">
+                                        <rect key="frame" x="24" y="0.0" width="276" height="24"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="wmt-BJ-Elu"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-aA-H1q" userLabel="passwordStack">
-                                <rect key="frame" x="37.5" y="474" width="82.5" height="24"/>
+                                <rect key="frame" x="37.5" y="474" width="300" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="xO8-01-efU">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -1594,14 +1606,17 @@ My #1 goal will always be to meet your needs .</string>
                                             <constraint firstAttribute="height" constant="24" id="zbx-J3-2GJ"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuI-ow-0Ko">
-                                        <rect key="frame" x="24" y="0.0" width="58.5" height="24"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuI-ow-0Ko">
+                                        <rect key="frame" x="24" y="0.0" width="276" height="24"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="h5i-5P-q0a"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKj-eZ-r6F">
                                 <rect key="frame" x="292" y="32" width="55" height="36"/>
@@ -1695,6 +1710,7 @@ My #1 goal will always be to meet your needs .</string>
                         <outlet property="editTitle" destination="GR5-jN-o0x" id="ylC-W2-b2N"/>
                         <outlet property="editUserName" destination="zez-Ph-rsz" id="eib-fZ-YQ4"/>
                         <outlet property="photo" destination="koX-cx-Wab" id="ILl-RE-oFW"/>
+                        <segue destination="hFH-y2-4ro" kind="show" identifier="fromSettingsToFeed" id="jfm-WW-4Rb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnC-Gw-RVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2174,8 +2190,9 @@ My #1 goal will always be to meet your needs .</string>
         <image name="yes" width="8" height="7"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u3N-WV-xMK"/>
+        <segue reference="jfm-WW-4Rb"/>
         <segue reference="WLb-3E-RrO"/>
+        <segue reference="u3N-WV-xMK"/>
         <segue reference="G0E-3f-w9Q"/>
         <segue reference="G8D-NZ-Tdh"/>
     </inferredMetricsTieBreakers>
