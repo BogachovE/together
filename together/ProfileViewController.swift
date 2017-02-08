@@ -52,10 +52,6 @@ class ProfileViewController: UIViewController {
         if (userId == myId){
             subscribleButton.isHidden = true
         }
-        
-        
-        
-
         // Do any additional setup after loading the view.
     }
 
