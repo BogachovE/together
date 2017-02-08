@@ -98,4 +98,20 @@ class UserRepositories {
         })
     
     }
+    
+    func uploadUserImage(userId: Int,image: UIImage){
+        ref = FIRDatabase.database().reference()
+        let storage = FIRStorage.storage()
+        storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+        let data = UIImagePNGRepresentation(image)
+        let riversRef = storageRef.child("avatars/"+String(describing: userId)+".jpg")
+        let uploadTask = riversRef.put(data!, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            let downloadURL = metadata.downloadURL
+        }
+    }
 }

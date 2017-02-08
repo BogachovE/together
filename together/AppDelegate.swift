@@ -11,6 +11,7 @@ import Firebase
 import FacebookCore
 import FBSDKCoreKit
 import HockeySDK
+import Stripe
 
 
 
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BITHockeyManager.shared().configure(withIdentifier: "66f170cf8d774cdd8716ae0d2d2d5e31")
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_G0fWUO5ThaNkUb6lEID2M0Uz"
+        //STPPaymentConfiguration.shared().appleMerchantIdentifier = "your apple merchant identifier"
+
         
 
 

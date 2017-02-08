@@ -60,12 +60,25 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
             if(self.editDescription.text! != ""){newUser.description = self.editDescription.text!}
             if(self.editTitle.text! != ""){newUser.title = self.editTitle.text!}
             if(self.editEmail.text! != ""){newUser.email = self.editEmail.text!}
+            if (self.editEmail.text != ""){
+            FIRAuth.auth()?.currentUser?.updateEmail(self.editEmail.text!) { (error) in
+                // ...
+                if (error != nil){ print("ERRORCHANGEEMAIL =", error!)}
+            }
+            }
+            if (self.editPassword.text != ""){
+            FIRAuth.auth()?.currentUser?.updatePassword(self.editPassword.text!) { (error) in
+                // ...
+                if (error != nil){ print("ERRORCHANGEPASSWORD =", error!)}
+            }
+            }
             if(self.editPhoneNumber.text! != ""){newUser.phone = self.editPhoneNumber.text!}
             //if(photo.image! != photo.image){newUser.name = photo.image!}
             //if(editPassword.text! != ""){newUser. = editPassword.text!}
             let userDictionary = UserMaper.userToDictionary(user: newUser)
             self.ref.child("users/" + String(self.myId)).setValue(userDictionary)
-                    })
+            userRepositories.uploadUserImage(userId: user.id, image: self.photo.image!)
+        })
         
         
     }
@@ -100,6 +113,7 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
    
     @IBAction func saveButttonPressed(sender: AnyObject) {
         userUpdate()
+        self.performSegue(withIdentifier: "fromSettingsToFeed", sender: self)
     }
     
     

@@ -69,7 +69,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         })
         
         mySerchBar.isHidden = true
-        self.myColectionViewHeight.constant = 489
+       // self.myColectionViewHeight.constant = 489
         
         
         
@@ -104,7 +104,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         mySerchBar.isHidden = true
-        self.myColectionViewHeight.constant = 489
+        //self.myColectionViewHeight.constant = 489
         self.myColectionView.layoutIfNeeded()
 
         filterType = "category"
@@ -193,7 +193,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func friendsFilterPressed(_ sender: Any) {
         mySerchBar.isHidden = true
-        self.myColectionViewHeight.constant = 489
+        //self.myColectionViewHeight.constant = 489
         self.myColectionView.layoutIfNeeded()
 
         filterType = "friends"
@@ -202,7 +202,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
            
     @IBAction func myEventPressed(_ sender: Any) {
         mySerchBar.isHidden = true
-        self.myColectionViewHeight.constant = 489
+        //self.myColectionViewHeight.constant = 489
         self.myColectionView.layoutIfNeeded()
 
         filterType = "my"
@@ -211,7 +211,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func signedEventPressed(_ sender: Any) {
         mySerchBar.isHidden = true
-        self.myColectionViewHeight.constant = 489
+        //self.myColectionViewHeight.constant = 489
         self.myColectionView.layoutIfNeeded()
         filterType = "signed"
         filterEvents(type: filterType)
@@ -219,7 +219,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func HashTagPressed(_ sender: Any) {
         mySerchBar.isHidden = false
-        self.myColectionViewHeight.constant = 459
+        //self.myColectionViewHeight.constant = 459
         self.myColectionView.layoutIfNeeded()
     }
     
@@ -229,7 +229,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         switch type {
         case "all":
             mySerchBar.isHidden = true
-            self.myColectionViewHeight.constant = 489
+            //self.myColectionViewHeight.constant = 489
             eventRepositories.loadAllEvents(withh: {(events)  in
                 self.events = events
                 self.myColectionView.reloadData()
