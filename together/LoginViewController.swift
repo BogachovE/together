@@ -190,7 +190,7 @@ class LoginViewController: UIViewController  {
             {
                 print("fetched user: \((result as! NSDictionary).value(forKey: "id"))")
                 let id = (result as! NSDictionary).value(forKey: "id") as! String
-                self.userId = id as AnyObject?
+                self.userId = Int(id) as AnyObject?
                 self.user.name = (result as! NSObject).value(forKey: "name")! as! String
                 self.user.id = self.userId as! Int
                 self.ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in

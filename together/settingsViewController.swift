@@ -88,7 +88,7 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
         let defaults = UserDefaults.standard
         
         if let bundle = Bundle.main.bundleIdentifier {
-            defaults.removePersistentDomain(forName: "com.togetherr")
+            defaults.removePersistentDomain(forName: "com.products.attractive.togetherr")
             defaults.synchronize()
         }
         self.performSegue(withIdentifier: "fromSettingsToLogin", sender: self)

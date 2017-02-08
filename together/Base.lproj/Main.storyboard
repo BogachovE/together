@@ -1010,13 +1010,13 @@ My #1 goal will always be to meet your needs .</string>
                                 <rect key="frame" x="0.0" y="79" width="375" height="48"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiv-4h-EyY">
-                                        <rect key="frame" x="12" y="-84" width="119" height="216"/>
+                                        <rect key="frame" x="12" y="-84" width="96" height="216"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="119" id="yu8-bP-C5U"/>
+                                            <constraint firstAttribute="width" constant="96" id="VbM-08-7Oy"/>
                                         </constraints>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLg-Cu-wHC">
-                                        <rect key="frame" x="155" y="9" width="51" height="30"/>
+                                        <rect key="frame" x="132" y="9" width="51" height="30"/>
                                         <state key="normal" title="Friends">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1034,7 +1034,7 @@ My #1 goal will always be to meet your needs .</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rke-53-M9d">
-                                        <rect key="frame" x="230" y="9" width="86" height="30"/>
+                                        <rect key="frame" x="207" y="9" width="86" height="30"/>
                                         <state key="normal" title="My occasion">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1043,7 +1043,7 @@ My #1 goal will always be to meet your needs .</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfe-L5-2R2">
-                                        <rect key="frame" x="340" y="9" width="48" height="30"/>
+                                        <rect key="frame" x="317" y="9" width="48" height="30"/>
                                         <state key="normal" title="Signed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
