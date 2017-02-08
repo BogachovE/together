@@ -9,8 +9,10 @@
 import UIKit
 import Firebase
 import KCFloatingActionButton
+import Social
+import MessageUI
 
-class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate {
+class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate {
 
     @IBOutlet var dataStartPicker: UIDatePicker!
     @IBOutlet var dataEndPicker: UIDatePicker!
@@ -44,34 +46,37 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         
-        layoutFAB()
-        
-        
         // Do any additional setup after loading the view.
     }
     
     func layoutFAB() {
-        let item = KCFloatingActionButtonItem()
-        item.buttonColor = UIColor.blue
-        item.circleShadowColor = UIColor.red
-        item.titleShadowColor = UIColor.blue
-        item.title = "Custom item"
-        item.handler = { item in
+        fab.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
+        fab.plusColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+        let titles: Array<String> = ["Share to whatsapp", "Share to facebook", "Share by email", "Share to instagram", "Share to twiter"]
+        let types: Array<String> = ["wat", "face", "email", "incta", "twiter"]
+        let icons: Array<UIImage> = [#imageLiteral(resourceName: "watBtn"), #imageLiteral(resourceName: "faceBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
+        for i in 0...4{
+            let item = KCFloatingActionButtonItem()
+            item.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
+            item.circleShadowColor = UIColor.red
+            item.titleShadowColor = UIColor.blue
+            item.icon = icons[i]
+            item.title = titles[i]
+            item.handler = { item in
+                if #available(iOS 10.0, *) {
+                    self.share(type: types[i])
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            fab.addItem(item: item)
         }
         
-        fab.addItem(title: "I got a title")
-        fab.addItem("I got a icon", icon: UIImage(named: "icShare"))
-        fab.addItem("I got a handler", icon: UIImage(named: "icMap")) { item in
-            let alert = UIAlertController(title: "Hey", message: "I'm hungry...", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Me too", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.fab.close()
-        }
-        fab.addItem(item: item)
         fab.sticky = true
         
-              
+        
         self.view.addSubview(fab)
+
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -124,6 +129,9 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
                 self.event = Event(title: self.editTitle.text!, description: self.editDescription.text!, id: count, photo: self.photoEdit.image!
                     , category: self.selectedCategory, ownerId: self.id, location: self.editLoaction.text!, startTime: self.dataStartPicker.date, endTime: self.dataEndPicker.date)
                 eventRepositories.addNewEvent(event: self.event, count: count, storageRef: self.storageRef)
+                self.layoutFAB()
+                self.makeToast(text: "Do you want to share your ivent?")
+                self.fab.open()
             } else {
                 self.makeToast(text: "Please select category")
             }
@@ -176,7 +184,77 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         })
     }
 
-    
-    
-
+    @available(iOS 10.0, *)
+    func share(type: String){
+        switch (type) {
+        case "face":
+            shareFace(event:event)
+        case "email":
+            shareByEmail(event: event)
+        case "wat":
+            SocialShare.whatsappShare(event:event)
+        case "incta":
+            InstagramManager.sharedManager.postImageToInstagramWithCaption(imageInstagram:event.photo, instagramCaption: "\(event.description)", view: self.view)
+        case "twiter":
+            shareTwit(event: event)
+            
+        default :
+            print("Switch error")
+        }
     }
+
+    func shareByEmail(event: Event){
+        let mailComposeViewController = configuredMailComposeViewController(event: event)
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    func configuredMailComposeViewController(event: Event) -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        
+        mailComposerVC.setSubject("Email from Together")
+        mailComposerVC.setMessageBody("Hi I want to show you something", isHTML: false)
+        
+        let data = UIImagePNGRepresentation(event.photo) as NSData?
+        
+        mailComposerVC.addAttachmentData(data as! Data, mimeType: "hz", fileName: "event.jpg")
+        
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    func shareFace(event: Event){
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+            vc.setInitialText("Look at this great picture!")
+            vc.add(event.photo)
+            vc.add(URL(string: "https://www.hackingwithswift.com"))
+            present(vc, animated: true)
+        }
+        
+    }
+    func shareTwit(event: Event){
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+            vc.setInitialText("Look at this great picture!")
+            vc.add(event.photo)
+            vc.add(URL(string: "https://www.hackingwithswift.com"))
+            present(vc, animated: true)
+        }
+        
+    }
+    
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismiss(animated: true, completion: nil)
+    
+    }
+}

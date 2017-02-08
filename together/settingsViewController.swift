@@ -77,7 +77,8 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
             //if(editPassword.text! != ""){newUser. = editPassword.text!}
             let userDictionary = UserMaper.userToDictionary(user: newUser)
             self.ref.child("users/" + String(self.myId)).setValue(userDictionary)
-                    })
+            userRepositories.uploadUserImage(userId: user.id, image: self.photo.image!)
+        })
         
         
     }

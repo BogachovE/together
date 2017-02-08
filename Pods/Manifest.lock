@@ -87,6 +87,7 @@ PODS:
     - HockeySDK/DefaultLib (= 4.1.3)
   - HockeySDK/DefaultLib (4.1.3)
   - KCFloatingActionButton (2.1.2)
+  - Stripe (9.3.0)
 
 DEPENDENCIES:
   - FacebookCore
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - HockeySDK (~> 4.1.3)
   - KCFloatingActionButton
+  - Stripe
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -124,7 +126,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   HockeySDK: 7dd8d7f5a4d71b7a5eebb320c8515cb22e99221b
   KCFloatingActionButton: 1b22ce95d44b51915280df8a8b277eae4a06c3f1
+  Stripe: 0f41a33a6fa3ac76ee668d7df3e2680c28b8ab1a
 
-PODFILE CHECKSUM: 61c6ee725029111cb53c01fd2a9d97d8f6560605
+PODFILE CHECKSUM: c0d9a8e7fecae8f78e4c3391b58e988e7b827be8
 
 COCOAPODS: 1.1.1

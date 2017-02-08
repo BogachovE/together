@@ -15,6 +15,7 @@
 		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
 		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
 		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
+		DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515EA81E48EA610025D5BE /* PaymentViewController.swift */; };
 		DD61661F1E4366B200D3DF82 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61661E1E4366B200D3DF82 /* Instagram.swift */; };
 		DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6166201E43706D00D3DF82 /* ProfileViewController.swift */; };
 		DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */; };
@@ -49,6 +50,7 @@
 		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
 		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD515EA81E48EA610025D5BE /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		DD61661E1E4366B200D3DF82 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		DD6166201E43706D00D3DF82 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				DDD256671E361A7F003180BA /* ContributionViewController.swift */,
 				DDA899841E379310002D2069 /* settingsViewController.swift */,
 				DD6166201E43706D00D3DF82 /* ProfileViewController.swift */,
+				DD515EA81E48EA610025D5BE /* PaymentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -251,7 +254,7 @@
 				TargetAttributes = {
 					DDBFA8FB1E27B02A0040FEE1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 995N6ZUQMV;
+						DevelopmentTeam = FZM9VUX6F8;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -378,6 +381,7 @@
 				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
 				DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */,
 				DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */,
+				DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */,
 				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
@@ -500,12 +504,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
-				DEVELOPMENT_TEAM = 995N6ZUQMV;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = FZM9VUX6F8;
 				INFOPLIST_FILE = together/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.togetherr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.products.attractive.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -521,12 +528,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
-				DEVELOPMENT_TEAM = 995N6ZUQMV;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = FZM9VUX6F8;
 				INFOPLIST_FILE = together/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.togetherr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.products.attractive.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

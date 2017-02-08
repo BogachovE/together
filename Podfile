@@ -9,7 +9,6 @@ target ‘together’ do
     pod 'FacebookShare'
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
-    pod 'HockeySDK', '~> 4.1.3'
     pod "KCFloatingActionButton"
 end
 

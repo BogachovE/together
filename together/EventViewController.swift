@@ -81,10 +81,10 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     func layoutFAB() {
                 fab.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
         fab.plusColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-        let titles: Array<String> = ["Share to whatsapp", "Share to facebook", "Share to snapchat", "Share by email", "Share to instagram", "Share to twiter"]
-        let types: Array<String> = ["wat", "face", "snap", "email", "incta", "twiter"]
-        let icons: Array<UIImage> = [#imageLiteral(resourceName: "watBtn"), #imageLiteral(resourceName: "faceBtn"), #imageLiteral(resourceName: "snapBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
-        for i in 0...5{
+        let titles: Array<String> = ["Share to whatsapp", "Share to facebook", "Share by email", "Share to instagram", "Share to twiter"]
+        let types: Array<String> = ["wat", "face", "email", "incta", "twiter"]
+        let icons: Array<UIImage> = [#imageLiteral(resourceName: "watBtn"), #imageLiteral(resourceName: "faceBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
+        for i in 0...4{
             let item = KCFloatingActionButtonItem()
             item.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
             item.circleShadowColor = UIColor.red
