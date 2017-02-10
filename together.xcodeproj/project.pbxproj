@@ -30,6 +30,16 @@
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
+		DDBFA91E1E4DF8DC003C9F2C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */; };
+		DDCBA6DF1E4CD1FF00F3CD74 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */; };
+		DDCBA6E01E4CD1FF00F3CD74 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D71E4CD1FF00F3CD74 /* AudioToolbox.framework */; };
+		DDCBA6E11E4CD1FF00F3CD74 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D81E4CD1FF00F3CD74 /* AVFoundation.framework */; };
+		DDCBA6E21E4CD1FF00F3CD74 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D91E4CD1FF00F3CD74 /* CoreLocation.framework */; };
+		DDCBA6E31E4CD1FF00F3CD74 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6DA1E4CD1FF00F3CD74 /* CoreMedia.framework */; };
+		DDCBA6E41E4CD1FF00F3CD74 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6DB1E4CD1FF00F3CD74 /* MessageUI.framework */; };
+		DDCBA6E51E4CD1FF00F3CD74 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6DC1E4CD1FF00F3CD74 /* MobileCoreServices.framework */; };
+		DDCBA6E61E4CD1FF00F3CD74 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6DD1E4CD1FF00F3CD74 /* SafariServices.framework */; };
+		DDCBA6E71E4CD1FF00F3CD74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6DE1E4CD1FF00F3CD74 /* SystemConfiguration.framework */; };
 		DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256651E3619FA003180BA /* NewsViewController.swift */; };
 		DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256671E361A7F003180BA /* ContributionViewController.swift */; };
 		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
@@ -60,7 +70,6 @@
 		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "together-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDA899861E379631002D2069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +78,18 @@
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DDCBA6D41E4CD0CD00F3CD74 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		DDCBA6D51E4CD12500F3CD74 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
+		DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		DDCBA6D71E4CD1FF00F3CD74 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DDCBA6D81E4CD1FF00F3CD74 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DDCBA6D91E4CD1FF00F3CD74 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DDCBA6DA1E4CD1FF00F3CD74 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DDCBA6DB1E4CD1FF00F3CD74 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DDCBA6DC1E4CD1FF00F3CD74 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DDCBA6DD1E4CD1FF00F3CD74 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		DDCBA6DE1E4CD1FF00F3CD74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DDD256651E3619FA003180BA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DDD256671E361A7F003180BA /* ContributionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionViewController.swift; sourceTree = "<group>"; };
 		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +102,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCBA6DF1E4CD1FF00F3CD74 /* Accelerate.framework in Frameworks */,
+				DDCBA6E01E4CD1FF00F3CD74 /* AudioToolbox.framework in Frameworks */,
+				DDCBA6E11E4CD1FF00F3CD74 /* AVFoundation.framework in Frameworks */,
+				DDCBA6E21E4CD1FF00F3CD74 /* CoreLocation.framework in Frameworks */,
+				DDCBA6E31E4CD1FF00F3CD74 /* CoreMedia.framework in Frameworks */,
+				DDCBA6E41E4CD1FF00F3CD74 /* MessageUI.framework in Frameworks */,
+				DDCBA6E51E4CD1FF00F3CD74 /* MobileCoreServices.framework in Frameworks */,
+				DDCBA6E61E4CD1FF00F3CD74 /* SafariServices.framework in Frameworks */,
+				DDCBA6E71E4CD1FF00F3CD74 /* SystemConfiguration.framework in Frameworks */,
 				D63093A0274366C148A9DE67 /* Pods_together.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +132,7 @@
 			children = (
 				DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */,
 				DD61661E1E4366B200D3DF82 /* Instagram.swift */,
+				DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */,
 			);
 			name = OwnLibs;
 			sourceTree = "<group>";
@@ -164,6 +195,8 @@
 		DDBFA8F31E27B0290040FEE1 = {
 			isa = PBXGroup;
 			children = (
+				DDCBA6D51E4CD12500F3CD74 /* ZZAppDelegate.h */,
+				DDCBA6D41E4CD0CD00F3CD74 /* Header.h */,
 				DDBFA8FE1E27B02A0040FEE1 /* together */,
 				DDBFA8FD1E27B02A0040FEE1 /* Products */,
 				DD306D8E1E2BE6D20036EB4A /* Base.lproj */,
@@ -195,7 +228,6 @@
 				DD306D991E2BF5650036EB4A /* Fonts */,
 				DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */,
 				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
-				DD9DBF081E2E21D5003E7A2E /* together-Bridging-Header.h */,
 				DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */,
 			);
 			path = together;
@@ -213,6 +245,15 @@
 		FDE4294A7497F7895F95DFC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */,
+				DDCBA6D71E4CD1FF00F3CD74 /* AudioToolbox.framework */,
+				DDCBA6D81E4CD1FF00F3CD74 /* AVFoundation.framework */,
+				DDCBA6D91E4CD1FF00F3CD74 /* CoreLocation.framework */,
+				DDCBA6DA1E4CD1FF00F3CD74 /* CoreMedia.framework */,
+				DDCBA6DB1E4CD1FF00F3CD74 /* MessageUI.framework */,
+				DDCBA6DC1E4CD1FF00F3CD74 /* MobileCoreServices.framework */,
+				DDCBA6DD1E4CD1FF00F3CD74 /* SafariServices.framework */,
+				DDCBA6DE1E4CD1FF00F3CD74 /* SystemConfiguration.framework */,
 				65E158FE0680D7E6A951A920 /* Pods_together.framework */,
 			);
 			name = Frameworks;
@@ -258,7 +299,13 @@
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -367,6 +414,7 @@
 				DD61661F1E4366B200D3DF82 /* Instagram.swift in Sources */,
 				DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */,
 				DD999D091E33A79900FF787A /* EventViewController.swift in Sources */,
+				DDBFA91E1E4DF8DC003C9F2C /* Notification.swift in Sources */,
 				DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */,
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
@@ -513,7 +561,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -537,7 +585,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "together/together-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

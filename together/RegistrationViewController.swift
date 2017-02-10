@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import OneSignal
 
 
 
@@ -135,9 +136,16 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         present(imagePickerController, animated: true, completion: nil)
     }
        func addnewUser(){
-        user = User(name: self.editUserName.text!, email: self.editEmail.text!, phone: editPhoneNumber.text!, photo: self.photoEdit.image!)
-        userRepositories.addnewUser(user: user, ref: ref, storageRef: storageRef, type: "standart")
-        self.performSegue(withIdentifier: "fromRegisterToMain", sender: self)
+        OneSignal.idsAvailable({(_ userId, _ pushToken) in
+            print("UserId:\(userId)")
+            if pushToken != nil {
+                print("pushToken:\(pushToken)")
+            }
+            self.user = User(name: self.editUserName.text!, email: self.editEmail.text!, phone: self.editPhoneNumber.text!, photo: self.photoEdit.image!, notificationId: userId!)
+            self.userRepositories.addnewUser(user: self.user, ref: self.ref, storageRef: self.storageRef, type: "standart")
+            self.performSegue(withIdentifier: "fromRegisterToMain", sender: self)
+        })
+        
     }
 
 

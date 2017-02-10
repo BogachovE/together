@@ -11,13 +11,13 @@ import Firebase
 import FacebookCore
 import FacebookLogin
 import FBSDKCoreKit
+import OneSignal
 
 class LoginViewController: UIViewController  {
     
     @IBOutlet weak var passwordEdit: UITextField!
     @IBOutlet weak var emailEdit: UITextField!
     @IBOutlet weak var rememberMe: UIButton!
-    @IBOutlet weak var signInButton: GIDSignInButton!
     
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
@@ -155,6 +155,7 @@ class LoginViewController: UIViewController  {
     }
     
     func facebookLogin(fromViewController:UIViewController)  {
+        user = User()
         let loginManager = LoginManager()
         loginManager.loginBehavior = LoginBehavior.native;
         
@@ -167,7 +168,7 @@ class LoginViewController: UIViewController  {
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in \(grantedPermissions) \(declinedPermissions) \(accessToken)")
                 self.returnUserData()
-                self.user = User()
+                
                 
 
                 
@@ -188,18 +189,25 @@ class LoginViewController: UIViewController  {
             }
             else
             {
-                print("fetched user: \((result as! NSDictionary).value(forKey: "id"))")
-                let id = (result as! NSDictionary).value(forKey: "id") as! String
-                self.userId = Int(id) as AnyObject?
-                self.user.name = (result as! NSObject).value(forKey: "name")! as! String
-                self.user.id = self.userId as! Int
-                self.ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
-                    if (snapshot.childSnapshot(forPath: String(id)).exists()){
-                        self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
-                    } else{
-                        self.userRepositories.addnewUser(user: self.user, ref: self.ref, storageRef: self.storageRef)
-                        self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+                OneSignal.idsAvailable({(_ userNotifId, _ pushToken) in
+                    print("UserId:\(userNotifId)")
+                    if pushToken != nil {
+                        print("pushToken:\(pushToken)")
                     }
+                    print("fetched user: \((result as! NSDictionary).value(forKey: "name"))")
+                    let id = (result as! NSDictionary).value(forKey: "id") as! String
+                    self.userId = Int(id) as AnyObject?
+                    self.user.name = (result as! NSDictionary).value(forKey: "name") as! String
+                    self.user.id = self.userId as! Int
+                    self.user.notificationId = userNotifId!
+                    self.ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
+                        if (snapshot.childSnapshot(forPath: String(id)).exists()){
+                            self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+                        } else{
+                            self.userRepositories.addnewUser(user: self.user, ref: self.ref, storageRef: self.storageRef)
+                            self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+                        }
+                    })
                 })
                 
             }
