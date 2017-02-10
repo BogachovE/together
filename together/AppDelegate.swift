@@ -10,8 +10,7 @@ import UIKit
 import Firebase
 import FacebookCore
 import FBSDKCoreKit
-import HockeySDK
-import Stripe
+import OneSignal
 
 
 
@@ -25,15 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-        BITHockeyManager.shared().configure(withIdentifier: "66f170cf8d774cdd8716ae0d2d2d5e31")
-        BITHockeyManager.shared().start()
-        BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
-        STPPaymentConfiguration.shared().publishableKey = "pk_test_G0fWUO5ThaNkUb6lEID2M0Uz"
-        //STPPaymentConfiguration.shared().appleMerchantIdentifier = "your apple merchant identifier"
-
+         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Aa1krQ-_8zYx_bd8F2qCjqXbrFPrCcvIpa54v38Eri7lVihEi66gqy4nQLT6WabRcqO5nHZ_E6sH5iSj", PayPalEnvironmentSandbox: "aanoorwali-facilitator@hotmail.com"])
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "5eb5a37e-b458-11e3-ac11-000c2940e62c")
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba", handleNotificationReceived: { (notification) in
+            print("Received Notification - \(notification?.payload.notificationID)")
+        }, handleNotificationAction: { (result) in
+            let payload: OSNotificationPayload? = result?.notification.payload
+            
+            var fullMessage: String? = payload?.body
+            if payload?.additionalData != nil {
+                var additionalData: [AnyHashable: Any]? = payload?.additionalData
+                if additionalData!["actionSelected"] != nil {
+                    fullMessage = fullMessage! + "\nPressed ButtonId:\(additionalData!["actionSelected"])"
+                }
+            }
+            
+            print(fullMessage)
+        }, settings: [kOSSettingsKeyAutoPrompt : true])
         
-
-
         return true
     }
     

@@ -230,6 +230,16 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         controller.dismiss(animated: true, completion: nil)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "fromEventToContribut") {
+            let svc = segue.destination as! ContributionViewController
+            
+            svc.event = event
+            
+        }
+    }
+
    
     func checkLike() -> Bool {
         var isLiked: Bool

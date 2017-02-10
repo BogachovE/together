@@ -10,6 +10,8 @@ target ‘together’ do
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod "KCFloatingActionButton"
+    pod 'PayPal-iOS-SDK'
+    pod 'OneSignal'
 end
 
 

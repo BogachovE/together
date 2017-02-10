@@ -20,8 +20,9 @@ class User {
     var title: String
     var followersCount: Int
     var description: String
+    var notificationId: String
     
-    init(name: String = "", email: String = "", id: Int = 0, phone: String = "", photo: UIImage = #imageLiteral(resourceName: "photo_edit"), friends: Array<Int> = [0], signedEvent: Array<Int> = [0], title: String = "", followersCount:Int = 0, description:String = "") {
+    init(name: String = "", email: String = "", id: Int = 0, phone: String = "", photo: UIImage = #imageLiteral(resourceName: "photo_edit"), friends: Array<Int> = [0], signedEvent: Array<Int> = [0], title: String = "", followersCount:Int = 0, description:String = "", notificationId: String = "") {
         self.name = name
         self.id = id
         self.email = email
@@ -32,5 +33,6 @@ class User {
         self.title = title
         self.followersCount = followersCount
         self.description = description
+        self.notificationId = notificationId
     }
 }

@@ -54,27 +54,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HockeySDK-HockeySDKResources.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>KCFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-together.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Stripe-Stripe.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -117,16 +102,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C91DD38ECDE6DB55E9DC1E386AC5AD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>99CB1254FF65AE4C29B67B36E16018D5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
 		<dict>
 			<key>primary</key>
@@ -142,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7DEF48307A3E8BCEF73A46E3110DBC9</key>
+		<key>CC146B4EEC419D18BE59EDBB632EC29D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB9AD825427F216B54E693242E671FA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

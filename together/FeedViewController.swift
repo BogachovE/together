@@ -172,7 +172,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         selectedEvent = indexPath.row
        self.performSegue(withIdentifier: "fromFeedToEvent", sender: self)
     }
-    
+
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
     }
