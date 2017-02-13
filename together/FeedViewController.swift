@@ -314,6 +314,13 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func addLike(sender: UIButton){
+        
+        self.userRepositories.loadUser(userId: id, withh:{ (user) in
+            let notificationRepositories = NotificationRepositories()
+            notificationRepositories.likeNotification(event: self.events[sender.tag], user: user, myId:self.id)
+            
+        })
+        
         let likeRef = ref.child("events/"+String(self.events[sender.tag].id)+"/likes/")
         likeRef.observeSingleEvent(of: .value, with: { (snaphot) in
             likeRef.child(String(snaphot.childrenCount)).setValue(self.id)

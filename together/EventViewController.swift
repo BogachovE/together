@@ -269,6 +269,8 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     func addLike(){
+        let notificationRepositories = NotificationRepositories()
+        notificationRepositories.likeNotification(event: event, user: user, myId: myId)
         let likeRef = ref.child("events/"+String(self.event.id)+"/likes/")
         likeRef.observeSingleEvent(of: .value, with: { (snaphot) in
             likeRef.child(String(snaphot.childrenCount)).setValue(self.myId)
