@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
          PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Aa1krQ-_8zYx_bd8F2qCjqXbrFPrCcvIpa54v38Eri7lVihEi66gqy4nQLT6WabRcqO5nHZ_E6sH5iSj", PayPalEnvironmentSandbox: "aanoorwali-facilitator@hotmail.com"])
-        OneSignal.initWithLaunchOptions(launchOptions, appId: "5eb5a37e-b458-11e3-ac11-000c2940e62c")
-        OneSignal.initWithLaunchOptions(launchOptions, appId: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba", handleNotificationReceived: { (notification) in
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "aab72c04-c005-49da-a064-d4e93e7fed76")
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "aab72c04-c005-49da-a064-d4e93e7fed76", handleNotificationReceived: { (notification) in
             print("Received Notification - \(notification?.payload.notificationID)")
         }, handleNotificationAction: { (result) in
             let payload: OSNotificationPayload? = result?.notification.payload

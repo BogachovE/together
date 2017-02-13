@@ -14,6 +14,7 @@ class ContributionViewController: UIViewController, PayPalPaymentDelegate{
     @IBOutlet var agreeButton: UIButton!
     
     var event : Event!
+    var myId: Int!
     
     var payPalConfig = PayPalConfiguration()
     
@@ -33,6 +34,9 @@ class ContributionViewController: UIViewController, PayPalPaymentDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Load userDefaults
+        let defaults = UserDefaults.standard
+        myId = defaults.integer(forKey: "userId")
         
         
         payPalConfig.acceptCreditCards = acceptCreditCards
@@ -74,7 +78,13 @@ class ContributionViewController: UIViewController, PayPalPaymentDelegate{
     
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController!, didComplete completedPayment: PayPalPayment!) {
         print("PayPal Payment Success !")
-        paymentViewController?.dismiss(animated: true, completion: { () -> Void in
+        let contributeSum = editSum.text
+        let userRepositories = UserRepositories()
+        userRepositories.loadUser(userId: myId, withh: { (user) in
+            let notificationRepositories = NotificationRepositories()
+            notificationRepositories.contributeNotification(event: self.event, user: user, sum: Int(contributeSum!)!)
+        })
+                paymentViewController?.dismiss(animated: true, completion: { () -> Void in
             // send completed confirmaion to your server
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
         })
@@ -117,7 +127,7 @@ class ContributionViewController: UIViewController, PayPalPaymentDelegate{
     @IBAction func payButtonPressed(_ sender: Any) {
         let contributeSum = editSum.text
         // Process Payment once the pay button is clicked.
-        if (agreeButton.isSelected == true){
+        if (agreeButton.isSelected == true && contributeSum != ""){
             let item1 = PayPalItem(name: "Contribute Item", withQuantity: 1, withPrice: NSDecimalNumber(string: contributeSum), withCurrency: "USD", withSku: "Hip-0037")
             
             let items = [item1]
