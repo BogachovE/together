@@ -20,13 +20,13 @@
 		DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6166201E43706D00D3DF82 /* ProfileViewController.swift */; };
 		DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */; };
 		DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */; };
+		DD7BADC41E51EB98002AB3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7BADC21E51EB98002AB3ED /* Main.storyboard */; };
 		DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */; };
 		DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED51E3E21B00003A46F /* userMaper.swift */; };
 		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
 		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
 		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
-		DDA899871E379631002D2069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA899861E379631002D2069 /* Main.storyboard */; };
 		DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */; };
 		DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
@@ -68,6 +68,7 @@
 		DD6166201E43706D00D3DF82 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewEventViewController.swift; sourceTree = "<group>"; };
+		DD7BADC31E51EB98002AB3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventMaper.swift; sourceTree = "<group>"; };
 		DD7E7ED51E3E21B00003A46F /* userMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userMaper.swift; sourceTree = "<group>"; };
 		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
-		DDA899861E379631002D2069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationMaper.swift; sourceTree = "<group>"; };
 		DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRepositories.swift; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +146,8 @@
 		DD306D941E2BEF380036EB4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD7BADC21E51EB98002AB3ED /* Main.storyboard */,
 				DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */,
-				DDA899861E379631002D2069 /* Main.storyboard */,
 				DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */,
 				DDA899821E377E24002D2069 /* NewsTableViewCell.swift */,
 			);
@@ -344,8 +344,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA899871E379631002D2069 /* Main.storyboard in Resources */,
 				DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */,
+				DD7BADC41E51EB98002AB3ED /* Main.storyboard in Resources */,
 				DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */,
 				DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */,
 				DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */,
@@ -452,6 +452,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DD7BADC21E51EB98002AB3ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD7BADC31E51EB98002AB3ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

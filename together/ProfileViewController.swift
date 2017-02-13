@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import OneSignal
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var followersLabel: UILabel!
@@ -25,7 +26,7 @@ class ProfileViewController: UIViewController {
     var ref: FIRDatabaseReference!
     var userRepositories: UserRepositories!
     var user: User!
-
+    var notification: NotificationModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +46,7 @@ class ProfileViewController: UIViewController {
             if (self.userId != self.myId && user.friends.contains(self.userId)){
                 self.subscribeBtnLabel.text = "Unsubscrible"
             } else {
-                 self.subscribeBtnLabel.text = "Subscrible"
+                self.subscribeBtnLabel.text = "Subscrible"
             }
         })
         
@@ -54,7 +55,7 @@ class ProfileViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,12 +76,20 @@ class ProfileViewController: UIViewController {
         if (subscribeBtnLabel.text == "Unsubscrible"){
             let uscribeIndex = user.friends.index(of: userId)
             user.friends.remove(at: uscribeIndex!)
-            let newFriendsList = user.friends 
+            let newFriendsList = user.friends
             ref.child("users/" + String(myId) + "/friends/").setValue(newFriendsList)
             
         } else {
-            user.friends.append(userId)
-            ref.child("users/" + String(myId) + "/friends/").setValue(user.friends)
+            let notificationRepositories = NotificationRepositories()
+            notificationRepositories.notificationCount(withh: {(count) in
+                let notifText = self.user.name + " subscribe on you"
+                self.notification = NotificationModel(notifId: Int(count)+1, text:notifText, userId:self.userId, type:"subscrible", usersNotifId:[self.user.notificationId] )
+                self.user.friends.append(self.userId)
+                self.ref.child("users/" + String(self.myId) + "/friends/").setValue(self.user.friends)
+                OneSignal.postNotification(["contents": [self.notification.lang: self.notification.text], "include_player_ids": self.notification.usersNotifId])
+                let notifDicionary = notificationMaper.notificationToDictionary(notification: self.notification)
+                self.ref.child("notifications/"+String(count+1)+"/").setValue(notifDicionary)
+            })
         }
     }
     

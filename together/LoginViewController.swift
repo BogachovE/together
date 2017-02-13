@@ -12,12 +12,15 @@ import FacebookCore
 import FacebookLogin
 import FBSDKCoreKit
 import OneSignal
+import GoogleSignIn
 
-class LoginViewController: UIViewController  {
+class LoginViewController: UIViewController, GIDSignInUIDelegate  {
     
     @IBOutlet weak var passwordEdit: UITextField!
     @IBOutlet weak var emailEdit: UITextField!
     @IBOutlet weak var rememberMe: UIButton!
+    
+
     
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
@@ -52,6 +55,8 @@ class LoginViewController: UIViewController  {
         // Do any additional setup after loading the view.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
          view.addGestureRecognizer(tap)
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
     }
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -214,7 +219,7 @@ class LoginViewController: UIViewController  {
         })
     }
     
-    
+        
     
     func findPassword(email: String!)  {
             let emailQuery = ref.child("users").queryOrdered(byChild: "email").queryEqual(toValue: email)
@@ -246,6 +251,15 @@ class LoginViewController: UIViewController  {
         })
     }
     
+    @IBAction func googlePressed(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+        if ( GIDSignIn.sharedInstance().clientID != nil){
+            self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+        }
+    }
+    @IBAction func logout(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
+    }
     
     /*
      // MARK: - Navigation
