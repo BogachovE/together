@@ -27,10 +27,13 @@
 		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
 		DDA899871E379631002D2069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA899861E379631002D2069 /* Main.storyboard */; };
+		DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */; };
+		DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
 		DDBFA91E1E4DF8DC003C9F2C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */; };
+		DDBFA9201E4E1F99003C9F2C /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA91F1E4E1F99003C9F2C /* NotificationModel.swift */; };
 		DDCBA6DF1E4CD1FF00F3CD74 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */; };
 		DDCBA6E01E4CD1FF00F3CD74 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D71E4CD1FF00F3CD74 /* AudioToolbox.framework */; };
 		DDCBA6E11E4CD1FF00F3CD74 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D81E4CD1FF00F3CD74 /* AVFoundation.framework */; };
@@ -73,12 +76,15 @@
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDA899861E379631002D2069 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationMaper.swift; sourceTree = "<group>"; };
+		DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRepositories.swift; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DDBFA91F1E4E1F99003C9F2C /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		DDCBA6D41E4CD0CD00F3CD74 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		DDCBA6D51E4CD12500F3CD74 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
 		DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -170,6 +176,7 @@
 			children = (
 				DDEA9FA21E2D23F200A943FF /* User.swift */,
 				DD3E8C3D1E3255810067F3A3 /* Event.swift */,
+				DDBFA91F1E4E1F99003C9F2C /* NotificationModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			children = (
 				DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */,
 				DD7E7ED51E3E21B00003A46F /* userMaper.swift */,
+				DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */,
 			);
 			name = Mapers;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 			children = (
 				DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */,
 				DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */,
+				DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -290,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Attractive Products";
 				TargetAttributes = {
 					DDBFA8FB1E27B02A0040FEE1 = {
@@ -429,9 +438,12 @@
 				DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */,
 				DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */,
 				DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */,
+				DDBFA9201E4E1F99003C9F2C /* NotificationModel.swift in Sources */,
 				DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */,
+				DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */,
+				DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */,
 				DDEA9FA31E2D23F200A943FF /* User.swift in Sources */,
 				DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */,
 			);
