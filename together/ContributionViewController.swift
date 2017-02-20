@@ -80,10 +80,14 @@ class ContributionViewController: UIViewController, PayPalPaymentDelegate{
         print("PayPal Payment Success !")
         let contributeSum = editSum.text
         let userRepositories = UserRepositories()
-        userRepositories.loadUser(userId: myId, withh: { (user) in
+        userRepositories.loadUser(userId: UInt64(myId), withh: { (user) in
             let notificationRepositories = NotificationRepositories()
             notificationRepositories.contributeNotification(event: self.event, user: user, sum: Int(contributeSum!)!)
         })
+        
+        let eventRepositories = EventRepositories()
+        eventRepositories.addContributionOwner(event: event, sum: Int(contributeSum!)!)
+        
                 paymentViewController?.dismiss(animated: true, completion: { () -> Void in
             // send completed confirmaion to your server
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")

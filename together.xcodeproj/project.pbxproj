@@ -48,6 +48,7 @@
 		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
 		DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */; };
 		DDEA9FA31E2D23F200A943FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA21E2D23F200A943FF /* User.swift */; };
+		DDED51451E59BFDB003931E6 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED51441E59BFDB003931E6 /* Mappable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositories.swift; sourceTree = "<group>"; };
 		DDEA9FA21E2D23F200A943FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DDED51441E59BFDB003931E6 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		DD306D961E2BEFAB0036EB4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDED51441E59BFDB003931E6 /* Mappable.swift */,
 				DDEA9FA21E2D23F200A943FF /* User.swift */,
 				DD3E8C3D1E3255810067F3A3 /* Event.swift */,
 				DDBFA91F1E4E1F99003C9F2C /* NotificationModel.swift */,
@@ -427,6 +430,7 @@
 				DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */,
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
+				DDED51451E59BFDB003931E6 /* Mappable.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
 				DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */,
 				DDA899851E379310002D2069 /* settingsViewController.swift in Sources */,

@@ -53,7 +53,7 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func userUpdate(){
         let userRepositories:UserRepositories = UserRepositories()
-        userRepositories.loadUser(userId: myId, withh: { (user) in
+        userRepositories.loadUser(userId: UInt64(myId), withh: { (user) in
             let newUser: User
             newUser = user
             if(self.editUserName.text! != ""){newUser.name = self.editUserName.text!}
@@ -77,7 +77,7 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
             //if(editPassword.text! != ""){newUser. = editPassword.text!}
             let userDictionary = UserMaper.userToDictionary(user: newUser)
             self.ref.child("users/" + String(self.myId)).setValue(userDictionary)
-            userRepositories.uploadUserImage(userId: user.id, image: self.photo.image!)
+            userRepositories.uploadUserImage(userId: UInt64(user.id), image: self.photo.image!)
         })
         
         

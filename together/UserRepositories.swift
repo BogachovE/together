@@ -55,7 +55,7 @@ class UserRepositories {
         }
     }
     
-    func loadUserImage(id:Int, storage: FIRStorage, storageRef: FIRStorageReference, withh: @escaping (UIImage)->Void){
+    func loadUserImage(id:UInt64, storage: FIRStorage, storageRef: FIRStorageReference, withh: @escaping (UIImage)->Void){
         var image :UIImage = UIImage()
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
         let riversRef = storageRef.child("avatars/"+String(id)+".jpg")
@@ -86,20 +86,22 @@ class UserRepositories {
             withh(name)
         })
     }
-    func loadUser(userId: Int, withh: @escaping (User)->Void){
+    
+    func loadUser(userId: UInt64, withh: @escaping (User)->Void){
         let userRef = ref.child("users/" + String(userId)).observe(.value, with:{ (snapshot) in
         let userDictionary = snapshot.value as! NSDictionary
         let storage = FIRStorage.storage()
         self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
             self.loadUserImage(id: userId, storage: storage, storageRef: self.storageRef, withh:{ (image) in
-                let user: User = UserMaper.dictionaryToUser(userDictionary: userDictionary, image: image)
+                var user: User = User()
+                user = UserMaper.dictionaryToUser(userDictionary: userDictionary, image: image)
                 withh(user)
             })
         })
     
     }
     
-    func uploadUserImage(userId: Int,image: UIImage){
+    func uploadUserImage(userId: UInt64,image: UIImage){
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
@@ -113,5 +115,9 @@ class UserRepositories {
             // Metadata contains file metadata such as size, content-type, and download URL.
             let downloadURL = metadata.downloadURL
         }
+    }
+    
+    func withdrawReguest(){
+        
     }
 }

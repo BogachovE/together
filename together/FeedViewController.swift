@@ -61,7 +61,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         //Load avatar and Login
         self.userRepositories = UserRepositories()
-        userRepositories.loadUserImage(id: id, storage: storage, storageRef: storageRef, withh: {(image) in
+        userRepositories.loadUserImage(id: UInt64(id), storage: storage, storageRef: storageRef, withh: {(image) in
             self.avatarImage.setImage(image, for: .normal)
         })
         userRepositories.loadLogin(id:id, withh: {(name) in
@@ -315,7 +315,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func addLike(sender: UIButton){
         
-        self.userRepositories.loadUser(userId: id, withh:{ (user) in
+        self.userRepositories.loadUser(userId: UInt64(id), withh:{ (user) in
             let notificationRepositories = NotificationRepositories()
             notificationRepositories.likeNotification(event: self.events[sender.tag], user: user, myId:self.id)
             

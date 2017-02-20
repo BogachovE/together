@@ -41,15 +41,15 @@ class NotificationRepositories{
     
     func contributeNotification(event:Event, user:User, sum:Int){
         notificationCount(withh: {(count) in
-            let userRepositories = UserRepositories()
-            userRepositories.loadUser(userId: event.ownerId, withh: { (owner) in
-                let notifcount = Int(count)
-                let notifText = user.name + " contribute your event " + String(sum) + "$"
-                let notification = NotificationModel(notifId: notifcount + 1, text: notifText, userId: owner.id, type: "contribute", usersNotifId: [owner.notificationId])
-                let notifDictionary = notificationMaper.notificationToDictionary(notification: notification)
-                OneSignal.postNotification(["contents": [notification.lang: notification.text], "include_player_ids": notification.usersNotifId])
-                self.ref.child("notifications/" + String(notifcount+1) + "/").setValue(notifDictionary)
-            })
+//            let userRepositories = UserRepositories()
+//            userRepositories.loadUser(userId: event.ownerId, withh: { (owner) in
+//                let notifcount = Int(count)
+//                let notifText = user.name + " contribute your event " + String(sum) + "$"
+//                let notification = NotificationModel(notifId: notifcount + 1, text: notifText, userId: owner.id, type: "contribute", usersNotifId: [owner.notificationId])
+//                let notifDictionary = notificationMaper.notificationToDictionary(notification: notification)
+//                OneSignal.postNotification(["contents": [notification.lang: notification.text], "include_player_ids": notification.usersNotifId])
+//                self.ref.child("notifications/" + String(notifcount+1) + "/").setValue(notifDictionary)
+//            })
         })
     }
     
@@ -65,7 +65,7 @@ class NotificationRepositories{
                     let storage = FIRStorage.storage()
                     self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
                     let childEvent = (childEvent as! FIRDataSnapshot).value as! NSDictionary
-                    userRepositories.loadUserImage(id: childEvent.value(forKey: "fromId") as! Int, storage: self.storage, storageRef: self.storageRef, withh:{ (avatar) in
+                    userRepositories.loadUserImage(id: childEvent.value(forKey: "fromId") as! UInt64, storage: self.storage, storageRef: self.storageRef, withh:{ (avatar) in
                         let notification = notificationMaper.dictionaryToNotification(notificationDictionary: childEvent, image: avatar)
                         notifications.append(notification)
                         withh(notifications)

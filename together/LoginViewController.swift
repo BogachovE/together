@@ -56,6 +56,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
          view.addGestureRecognizer(tap)
         GIDSignIn.sharedInstance().uiDelegate = self
+       
         
     }
     func dismissKeyboard() {
@@ -254,11 +255,12 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
     @IBAction func googlePressed(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
         if ( GIDSignIn.sharedInstance().clientID != nil){
-            self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
+            //self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
         }
     }
     @IBAction func logout(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
+   
     }
     
     /*
