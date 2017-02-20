@@ -21,6 +21,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var notificationRepositories: NotificationRepositories!
     var notifications: Array<NotificationModel>!
     var notifIcons: [UIImage]!
+    var selectedNotif: Int!
     
 
     override func viewDidLoad() {
@@ -64,6 +65,11 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let svc = segue.destination as! ProfileViewController
             
             svc.userId = self.id
+        } else if (segue.identifier == "otherProfileSegue") {
+            let svc = segue.destination as! ProfileViewController
+            
+            svc.userId = self.notifications[selectedNotif].fromId
+            
         }
         
     }
@@ -71,6 +77,10 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedNotif = indexPath.row
     }
     
     
@@ -93,10 +103,22 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             print("error")
         }
-    
-    
+         cell.imageButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
+        
         return cell
     }
+    
+    func buttonClicked(sender: UIButton) {
+        self.performSegue(withIdentifier: "otherProfileSegue", sender: self)
+    }
+    
+    
+
+
+    
+    
+
+
    
 
 }

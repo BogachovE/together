@@ -13,6 +13,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet var topicLabel: UILabel!
     @IBOutlet var avatarImage: UIImageView!
     @IBOutlet var typeIcon: UIImageView!
+    @IBOutlet var imageButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -117,6 +117,10 @@ class UserRepositories {
         }
     }
     
+    func loadContributedSum(){
+        
+    }
+    
     func withdrawReguest(){
         
     }
