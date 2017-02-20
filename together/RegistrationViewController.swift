@@ -35,6 +35,11 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
             UserDefaults.standard.synchronize()
         }
     }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +53,8 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         }
     
   

@@ -20,7 +20,6 @@ class  EventRepositories {
             let value = snapshot.value as? NSDictionary
             if (value?.value(forKey: "events") != nil){
                 for item in (value?.value(forKey: "events") as? NSArray)! {
-                    print("QWEQE",item as? NSDictionary)
                     if (item as? NSDictionary != nil){
                     let child = item as! NSDictionary
                     var event: Event = Event()
@@ -72,7 +71,6 @@ class  EventRepositories {
                 let friendsEventQuery = self.ref.child("events").queryOrdered(byChild: "ownerId").queryEqual(toValue: friend)
                 friendsEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
                     let child = snapshot
-                    // print("snapshot", snapshot)
                     var event: Event = Event()
                     for childEvent in child.children {
                         let childEvent = ((childEvent as! FIRDataSnapshot).value) as! NSDictionary
@@ -85,6 +83,7 @@ class  EventRepositories {
                         })
                     }
                 })
+                withh(events)
             }
         })
     }
@@ -122,8 +121,6 @@ class  EventRepositories {
         let myEventQuery = self.ref.child("events").queryOrdered(byChild: "ownerId").queryEqual(toValue: id)
         myEventQuery.observeSingleEvent(of: .value, with: { (snapshot) in
             let child = snapshot
-            //print("friendId", friend)
-            // print("snapshot", snapshot)
             var event: Event = Event()
             for childEvent in child.children {
                 let childEvent = (childEvent as! FIRDataSnapshot).value as! NSDictionary
@@ -147,9 +144,7 @@ class  EventRepositories {
     func findFriends(id: Int ,withh: @escaping (Array<Int>)->Void ){
         let friendsRef = ref.child("users/"+String(id))
         friendsRef.observe(.value, with: { snapshot in
-            print("UserID", id)
-            print("Snapshot", snapshot)
-            let friends = snapshot.childSnapshot(forPath: "friends").value! as! Array<Int>
+        let friends = snapshot.childSnapshot(forPath: "friends").value! as! Array<Int>
             withh(friends)
         })
     }
@@ -157,8 +152,6 @@ class  EventRepositories {
     func findSigned(id: Int ,withh: @escaping (Array<Int>)->Void ){
         let signedEventsRef = ref.child("users/"+String(id))
         signedEventsRef.observe(.value, with: { snapshot in
-            print("UserID", id)
-            print("Snapshot", snapshot)
             let snapshot = snapshot.value as! NSDictionary
             let signeds = snapshot.value(forKey: "signedEvent") as! Array<Int>
             withh(signeds)
@@ -224,6 +217,7 @@ class  EventRepositories {
             self.loadEventPhoto(eventId: eventId, storageRef: self.storageRef, withh:{ (image) in
                 let event: Event = EventMaper.dictionaryToEvent(eventDictionary: eventDictionary!, image: image)
                  withh(event)
+                
             })
         })
     }
@@ -236,6 +230,20 @@ class  EventRepositories {
             
                 withh(count-1)
             })
+    }
+    
+    func updateContribution(event: Event, sum: Int, withh: @escaping (Int)->Void){
+        
+        let ownerRef = ref.child("user/" + String(event.ownerId) + "/contributedSum/").observe(.value, with: {(snapshot) in
+        var contributionSum = snapshot.value as! Int
+            contributionSum = contributionSum + sum
+        })
+    }
+    
+    func  addContributionOwner(event: Event, sum: Int) -> Void {
+        updateContribution(event: event, sum: sum, withh:{ (newSum) in
+    let ownerRef = self.ref.child("user/" + String(event.ownerId) + "/contributedSum/").setValue(newSum)
+        })
     }
     
     

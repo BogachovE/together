@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
         myId = defaults.integer(forKey: "userId")
         
         userRepositories = UserRepositories()
-        userRepositories.loadUser(userId: myId/*userId*/, withh: { (user) in
+        userRepositories.loadUser(userId: UInt64(myId)/*userId*/, withh: { (user) in
             self.user = user
             self.setUserInfo(user: user)
             //maybe do func

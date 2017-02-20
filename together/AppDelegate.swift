@@ -94,6 +94,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
@@ -111,26 +115,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
                 userM.name = user.profile.name
-                userM.id = (snapshot.childSnapshot(forPath: "count").value) as! Int + 1
-                userM.notificationId = userNotifId!
-                UserDefaults.standard.set(userM.id, forKey: "userId")
-                UserDefaults.standard.synchronize()
-                if (!snapshot.childSnapshot(forPath: String(userM.id)).exists()){
-                    let storage = FIRStorage.storage()
-                    let storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
-                    let userRepositories = UserRepositories()
-                    userRepositories.addnewUser(user: userM, ref: ref, storageRef: storageRef)
-                }
+                let googleUserQuery = ref.child("users").queryOrdered(byChild: "name").queryEqual(toValue: userM.name)
+                googleUserQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if (snapshot.exists()){
+                        for i in snapshot.children{
+                            UserDefaults.standard.set(((i as! FIRDataSnapshot).value as! NSDictionary).value(forKey: "id") as! Int, forKey: "userId")
+                            UserDefaults.standard.synchronize()
+                        }
+                        
+                    } else {
+                        userM.email = user.profile.email
+                        userM.id = (snapshot.childSnapshot(forPath: "count").value) as! Int + 1
+                        userM.notificationId = userNotifId!
+                        UserDefaults.standard.set(userM.id, forKey: "userId")
+                        UserDefaults.standard.synchronize()
+                        
+                        let storage = FIRStorage.storage()
+                        let storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+                        let userRepositories = UserRepositories()
+                        userRepositories.addnewUser(user: userM, ref: ref, storageRef: storageRef)
+                    }
+                    
+                    let myStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+                    
+                    let protectedPage = myStoryBoard.instantiateViewController(withIdentifier: "feedViewController") as! FeedViewController
+                    
+                    //let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                    let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                    
+                    self.window?.rootViewController = protectedPage
+                    
+                })
             })
+            
+            guard let authentication = user.authentication else { return }
+            let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                              accessToken: authentication.accessToken)
+            // ...
+            
+            
         })
-        
-        guard let authentication = user.authentication else { return }
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                          accessToken: authentication.accessToken)
-        // ...
-        
-        
     }
+    
     
     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
                 withError error: NSError!) {

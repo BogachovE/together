@@ -49,7 +49,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Load avatar and Login
         userRepositories = UserRepositories()
        
-        userRepositories.loadUserImage(id: id, storage: storage, storageRef: storageRef, withh: {(image) in
+        userRepositories.loadUserImage(id: UInt64(id), storage: storage, storageRef: storageRef, withh: {(image) in
             self.avatarImage.setImage(image, for: .normal)
         })
         userRepositories.loadLogin(id:id, withh: {(name) in

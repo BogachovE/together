@@ -88,7 +88,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
                 self.eventParticipants.text = String(count)
                 self.eventDescription.text = event.description
                 
-                self.userRepositories.loadUser(userId: self.myId, withh: { (user) in
+                self.userRepositories.loadUser(userId: UInt64(self.myId), withh: { (user) in
                     //maybe do func
                     self.user = user
                     for i in user.signedEvent {
@@ -270,7 +270,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     func addLike(){
         let notificationRepositories = NotificationRepositories()
-        notificationRepositories.likeNotification(event: event, user: user, myId: myId)
+        notificationRepositories.likeNotification(event: self.event, user: user, myId: myId)
         let likeRef = ref.child("events/"+String(self.event.id)+"/likes/")
         likeRef.observeSingleEvent(of: .value, with: { (snaphot) in
             likeRef.child(String(snaphot.childrenCount)).setValue(self.myId)
@@ -300,10 +300,10 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         let isLike:Bool = self.checkLike()
         if (isLike){
             removeLike()
-            showEventInfo()
+            likeButton.isSelected = false
         } else {
             addLike()
-            showEventInfo()
+            likeButton.isSelected = true
         }
     }
     

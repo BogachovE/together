@@ -127,7 +127,7 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         eventRepositories.loadEventCount(withh:{ (count) in
             if (self.selectedCategory != "none"){
                 self.event = Event(title: self.editTitle.text!, description: self.editDescription.text!, id: count, photo: self.photoEdit.image!
-                    , category: self.selectedCategory, ownerId: self.id, location: self.editLoaction.text!, startTime: self.dataStartPicker.date, endTime: self.dataEndPicker.date)
+                    , category: self.selectedCategory, ownerId: UInt64(self.id), location: self.editLoaction.text!, startTime: self.dataStartPicker.date, endTime: self.dataEndPicker.date)
                 eventRepositories.addNewEvent(event: self.event, count: count, storageRef: self.storageRef)
                 self.layoutFAB()
                 self.makeToast(text: "Do you want to share your ivent?")
