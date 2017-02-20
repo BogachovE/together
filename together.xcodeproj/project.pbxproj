@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D63093A0274366C148A9DE67 /* Pods_together.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E158FE0680D7E6A951A920 /* Pods_together.framework */; };
 		DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */; };
+		DD2D9F0E1E5B48E500E5C070 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9F0D1E5B48E500E5C070 /* UserProtocol.swift */; };
 		DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DD306D8E1E2BE6D20036EB4A /* Base.lproj */; };
 		DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */; };
 		DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */; };
@@ -29,6 +30,7 @@
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
 		DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */; };
 		DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */; };
+		DDBC0AD31E5B60DE009111D3 /* WithdrawalReguestSwnder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
@@ -56,6 +58,7 @@
 		8B4DFA78B8B9589BD7760DFE /* Pods-together.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.release.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.release.xcconfig"; sourceTree = "<group>"; };
 		C9446721D9C31C4039F63B78 /* Pods-together.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.debug.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.debug.xcconfig"; sourceTree = "<group>"; };
 		DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShare.swift; sourceTree = "<group>"; };
+		DD2D9F0D1E5B48E500E5C070 /* UserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
 		DD306D8E1E2BE6D20036EB4A /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = together/Base.lproj; sourceTree = "<group>"; };
 		DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationMaper.swift; sourceTree = "<group>"; };
 		DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRepositories.swift; sourceTree = "<group>"; };
+		DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalReguestSwnder.swift; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 				DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */,
 			);
 			name = OwnLibs;
+			sourceTree = "<group>";
+		};
+		DD2D9F0C1E5B48C300E5C070 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DD2D9F0D1E5B48E500E5C070 /* UserProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		DD306D941E2BEF380036EB4A /* View */ = {
@@ -227,6 +239,7 @@
 		DDBFA8FE1E27B02A0040FEE1 /* together */ = {
 			isa = PBXGroup;
 			children = (
+				DD2D9F0C1E5B48C300E5C070 /* Protocols */,
 				DD1CB5431E40FA250060A7E8 /* OwnLibs */,
 				DD93297F1E2C12DC00F647BE /* together.entitlements */,
 				DDB7F3691E3A6C7D00EF451A /* Mapers */,
@@ -250,6 +263,7 @@
 				DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */,
 				DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */,
 				DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */,
+				DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -429,7 +443,9 @@
 				DDBFA91E1E4DF8DC003C9F2C /* Notification.swift in Sources */,
 				DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */,
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
+				DD2D9F0E1E5B48E500E5C070 /* UserProtocol.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
+				DDBC0AD31E5B60DE009111D3 /* WithdrawalReguestSwnder.swift in Sources */,
 				DDED51451E59BFDB003931E6 /* Mappable.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
 				DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */,
