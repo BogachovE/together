@@ -37,15 +37,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svc-kI-ngh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="294.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
                                 <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4b7-a0-KyN">
-                                <rect key="frame" x="0.0" y="294.33333333333326" width="414" height="441.66666666666674"/>
+                                <rect key="frame" x="0.0" y="294" width="414" height="442"/>
                                 <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnL-zi-C7t" userLabel="SocialLoginView">
-                                <rect key="frame" x="135" y="337.33333333333331" width="144" height="48"/>
+                                <rect key="frame" x="135" y="337" width="144" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfW-nv-Dvx" userLabel="FaceLogin">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -81,7 +81,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kz-1O-gcY">
-                                <rect key="frame" x="134.66666666666669" y="700" width="145.00000000000006" height="21"/>
+                                <rect key="frame" x="135" y="700" width="145" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3sa-Cm-a7A"/>
                                 </constraints>
@@ -94,10 +94,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1De-fC-USn" userLabel="PhoneElementView">
-                                <rect key="frame" x="111" y="84.333333333333314" width="192" height="230"/>
+                                <rect key="frame" x="111" y="84" width="192" height="230"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vig-FP-JVj">
-                                        <rect key="frame" x="12" y="48.000000000000014" width="168" height="140"/>
+                                        <rect key="frame" x="12" y="48" width="168" height="140"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="18b-IA-Uy0"/>
@@ -108,14 +108,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="192" height="230"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="57W-7s-6eV">
-                                        <rect key="frame" x="48" y="67.000000000000014" width="96" height="95.999999999999986"/>
+                                        <rect key="frame" x="48" y="67" width="96" height="96"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="bFK-qE-O7L"/>
                                             <constraint firstAttribute="height" constant="96" id="gAg-Ap-Z9b"/>
                                         </constraints>
                                     </imageView>
                                     <view alpha="0.33000001311302185" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dT9-JQ-UAe">
-                                        <rect key="frame" x="12" y="24" width="168" height="24.000000000000014"/>
+                                        <rect key="frame" x="12" y="24" width="168" height="24"/>
                                         <color key="backgroundColor" red="0.27058823529999998" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Gm8-dc-FwH"/>
@@ -140,7 +140,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouz-84-doo">
-                                <rect key="frame" x="43.666666666666657" y="272.33333333333331" width="327" height="42"/>
+                                <rect key="frame" x="44" y="272" width="327" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="3AA-PD-G9Y"/>
                                     <constraint firstAttribute="height" constant="42" id="H8C-3F-G2e"/>
@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0f-L6-bU1">
-                                <rect key="frame" x="60.666666666666657" y="646" width="293" height="42"/>
+                                <rect key="frame" x="61" y="646" width="293" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="7Wr-WH-5qj"/>
                                     <constraint firstAttribute="width" constant="293" id="Esi-vN-8iZ"/>
@@ -190,7 +190,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-TC-F6y">
-                                <rect key="frame" x="60.666666666666657" y="600" width="141" height="24"/>
+                                <rect key="frame" x="61" y="600" width="141" height="24"/>
                                 <state key="normal" title="Remembe me " image="check off">
                                     <color key="titleColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -200,7 +200,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks8-Tk-h93">
-                                <rect key="frame" x="179.66666666666666" y="655" width="55" height="24"/>
+                                <rect key="frame" x="180" y="655" width="55" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -302,7 +302,7 @@ My #1 goal will always be to meet your needs .</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-93-hJd">
-                                <rect key="frame" x="113.66666666666669" y="628" width="187" height="48"/>
+                                <rect key="frame" x="114" y="628" width="187" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="rk8-d9-quC"/>
                                     <constraint firstAttribute="width" constant="187" id="voq-4f-Dc6"/>
@@ -365,9 +365,9 @@ My #1 goal will always be to meet your needs .</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-gE-HvD">
-                                <rect key="frame" x="148.66666666666669" y="638" width="117.00000000000006" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" red="0.93799455568297296" green="0.98094888012121773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="154" y="638" width="107.33333333333331" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrR-qW-9hA">
@@ -529,7 +529,7 @@ My #1 goal will always be to meet your needs .</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-Hj-f5u">
                                 <rect key="frame" x="264" y="691" width="29" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2C-5v-roL">
@@ -568,7 +568,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXg-qx-TNj">
-                                <rect key="frame" x="19.333333333333343" y="0.0" width="375.33333333333337" height="24"/>
+                                <rect key="frame" x="19.666666666666657" y="0.0" width="375" height="24"/>
                                 <color key="backgroundColor" red="0.19215686274509802" green="0.34901960784313724" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="B1L-sH-tdj"/>
@@ -626,29 +626,29 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IY-oa-cVd">
-                                <rect key="frame" x="56" y="518.33333333333348" width="346" height="205.66666666666663"/>
+                                <rect key="frame" x="56" y="518" width="346" height="206"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SaU-tv-FnR">
-                                <rect key="frame" x="0.0" y="290.33333333333326" width="414" height="445.66666666666674"/>
+                                <rect key="frame" x="0.0" y="290" width="414" height="446"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icn-TF-rGk">
-                                <rect key="frame" x="217" y="371.33333333333331" width="30" height="21"/>
+                                <rect key="frame" x="217" y="371" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzJ-tc-uyy">
-                                <rect key="frame" x="217" y="350.33333333333331" width="38" height="21"/>
+                                <rect key="frame" x="217" y="350" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 june 2016 at 20:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjc-OJ-tdb">
-                                <rect key="frame" x="56" y="371.33333333333331" width="158" height="21"/>
+                                <rect key="frame" x="56" y="371" width="158" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1960784314" green="0.32549019610000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -662,7 +662,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="krm-Kb-0T2">
-                                <rect key="frame" x="0.0" y="24" width="414" height="266.33333333333331"/>
+                                <rect key="frame" x="0.0" y="24" width="414" height="266"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="krm-Kb-0T2" secondAttribute="height" multiplier="373:240" id="KDu-gS-cla"/>
                                 </constraints>
@@ -678,7 +678,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDN-Mt-p1E">
-                                <rect key="frame" x="20" y="272.33333333333331" width="179.66666666666666" height="36"/>
+                                <rect key="frame" x="20" y="272" width="179.66666666666666" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="0U0-Sq-oWE"/>
                                     <constraint firstAttribute="height" constant="36" id="f6o-MV-VnN"/>
@@ -689,7 +689,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMy-gj-8lA">
-                                <rect key="frame" x="222.66666666666663" y="272.33333333333331" width="179.33333333333337" height="36"/>
+                                <rect key="frame" x="222.66666666666663" y="272" width="179.33333333333337" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="qKV-aR-VzR"/>
                                 </constraints>
@@ -699,7 +699,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6w-Fa-FUi">
-                                <rect key="frame" x="50" y="542.33333333333337" width="40" height="33"/>
+                                <rect key="frame" x="50" y="542" width="40" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="More">
                                     <color key="titleColor" red="0.40784313729999999" green="0.97254901959999995" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -709,7 +709,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-6q-FKB">
-                                <rect key="frame" x="340" y="471.33333333333337" width="48" height="48.000000000000114"/>
+                                <rect key="frame" x="340" y="471" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Jvd-2d-2zF"/>
                                     <constraint firstAttribute="width" constant="48" id="fcu-0N-huY"/>
@@ -721,7 +721,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-2I-nZm">
-                                <rect key="frame" x="20" y="568.33333333333337" width="36" height="33"/>
+                                <rect key="frame" x="20" y="568" width="36" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Less">
                                     <color key="titleColor" red="0.40784313729999999" green="0.97254901959999995" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -731,58 +731,58 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contribute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n89-LC-Fu3">
-                                <rect key="frame" x="268.66666666666669" y="280.33333333333331" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="271.33333333333326" y="280" width="81.666666666666686" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-sb-gi2">
-                                <rect key="frame" x="68.666666666666657" y="277.33333333333331" width="83.999999999999972" height="26"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="71" y="277" width="77.333333333333343" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="7 june 2016 at 20:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-ct-TIC">
-                                <rect key="frame" x="56" y="350.33333333333331" width="158" height="21"/>
+                                <rect key="frame" x="56" y="350" width="158" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1960784314" green="0.32549019610000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steven Bernson, Attorney at Law" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spE-bs-NXe">
-                                <rect key="frame" x="56" y="428.33333333333331" width="250" height="21"/>
+                                <rect key="frame" x="56" y="428" width="250" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7770 participants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u69-Tn-8TM">
-                                <rect key="frame" x="56" y="485.33333333333331" width="134" height="21"/>
+                                <rect key="frame" x="56" y="485" width="134" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friendsicon" translatesAutoresizingMaskIntoConstraints="NO" id="kz9-X8-TvH">
-                                <rect key="frame" x="20" y="484.33333333333331" width="24" height="24"/>
+                                <rect key="frame" x="20" y="484" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1uV-FG-LnR"/>
                                     <constraint firstAttribute="height" constant="24" id="C9y-gW-OL8"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-jr-zpc">
-                                <rect key="frame" x="20" y="348.33333333333331" width="24" height="24"/>
+                                <rect key="frame" x="20" y="348" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="3uv-RX-8v6"/>
                                     <constraint firstAttribute="height" constant="24" id="vYP-hB-BGc"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationicon" translatesAutoresizingMaskIntoConstraints="NO" id="MZl-cV-ahp">
-                                <rect key="frame" x="20" y="427.33333333333331" width="24" height="24"/>
+                                <rect key="frame" x="20" y="427" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Qgl-7f-PcB"/>
                                     <constraint firstAttribute="height" constant="24" id="j6X-GP-gmD"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreicon" translatesAutoresizingMaskIntoConstraints="NO" id="Ssw-YA-ddZ">
-                                <rect key="frame" x="20" y="547.33333333333337" width="24" height="24"/>
+                                <rect key="frame" x="20" y="547" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="OD8-W0-Awo"/>
                                     <constraint firstAttribute="width" constant="24" id="pSn-Yv-ZMK"/>
@@ -1037,13 +1037,13 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event description Event description Event description Event description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-V9-DA8">
-                                                    <rect key="frame" x="8" y="99" width="90" height="28.666666666666671"/>
+                                                    <rect key="frame" x="8" y="99" width="90" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <color key="textColor" red="0.49803921568627452" green="0.51764705882352935" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" red="0.49803921568627452" green="0.51764705882352935" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-U8-TcI">
-                                                    <rect key="frame" x="8" y="129.66666666666666" width="23" height="11"/>
+                                                    <rect key="frame" x="8" y="130" width="23" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" red="0.41176470588235292" green="0.94117647058823528" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1102,7 +1102,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JPt-Sc-bXH">
-                                <rect key="frame" x="19.666666666666657" y="127" width="375" height="35"/>
+                                <rect key="frame" x="20" y="127" width="375" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="JPb-Pf-a2J"/>
                                     <constraint firstAttribute="width" constant="375" id="pcp-fe-9us"/>
@@ -1166,19 +1166,19 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="HZV-b8-UFH">
-                                <rect key="frame" x="0.0" y="24" width="414" height="266.33333333333331"/>
+                                <rect key="frame" x="0.0" y="24" width="414" height="266"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HZV-b8-UFH" secondAttribute="height" multiplier="373:240" id="EGa-Pi-cC9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-WK-4tA">
-                                <rect key="frame" x="211" y="384.33333333333331" width="30" height="21"/>
+                                <rect key="frame" x="211" y="384" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="W2e-xB-43J">
-                                <rect key="frame" x="56" y="405.33333333333331" width="340" height="48"/>
+                                <rect key="frame" x="56" y="405" width="340" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="e0Y-xt-gMO"/>
                                 </constraints>
@@ -1187,17 +1187,17 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZI-zL-bhc">
-                                <rect key="frame" x="207" y="315.33333333333331" width="38" height="21"/>
+                                <rect key="frame" x="207" y="315" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRb-F8-UQh">
-                                <rect key="frame" x="0.0" y="290.33333333333326" width="414" height="445.66666666666674"/>
+                                <rect key="frame" x="0.0" y="290" width="414" height="446"/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <datePicker contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Pi-DK-Rwg">
-                                <rect key="frame" x="56" y="336.33333333333331" width="340" height="48"/>
+                                <rect key="frame" x="56" y="336" width="340" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="OVf-cb-sSN"/>
                                 </constraints>
@@ -1207,27 +1207,27 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 <locale key="locale" localeIdentifier="en_US"/>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-dB-FzX">
-                                <rect key="frame" x="56" y="525.33333333333337" width="340" height="30"/>
+                                <rect key="frame" x="56" y="525" width="340" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationicon" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-II-XUn">
-                                <rect key="frame" x="20" y="474.33333333333331" width="24" height="24"/>
+                                <rect key="frame" x="20" y="474" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="5PP-Qb-iT7"/>
                                     <constraint firstAttribute="height" constant="24" id="KY2-AU-14I"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6nX-Fc-QXO">
-                                <rect key="frame" x="20" y="348.33333333333331" width="24" height="24"/>
+                                <rect key="frame" x="20" y="348" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="is4-OL-b5S"/>
                                     <constraint firstAttribute="height" constant="24" id="ou2-hT-kAg"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPe-yW-MfN">
-                                <rect key="frame" x="20" y="272.33333333333331" width="176.66666666666666" height="36"/>
+                                <rect key="frame" x="20" y="272" width="176.66666666666666" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="dEu-tp-M6O"/>
                                 </constraints>
@@ -1237,13 +1237,13 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afO-SM-nmF">
-                                <rect key="frame" x="80.666666666666657" y="280.33333333333331" width="56.999999999999972" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="82" y="280" width="52.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uK2-qB-WBM">
-                                <rect key="frame" x="219.66666666666663" y="272.33333333333331" width="176.33333333333337" height="36"/>
+                                <rect key="frame" x="219.66666666666663" y="272" width="176.33333333333337" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="L95-Xr-fzB"/>
                                 </constraints>
@@ -1253,26 +1253,26 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfd-8H-pEh">
-                                <rect key="frame" x="286.66666666666669" y="280.33333333333331" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="288" y="280" width="40.666666666666686" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ZO-7p-7cN">
-                                <rect key="frame" x="56" y="471.33333333333331" width="340" height="30"/>
+                                <rect key="frame" x="56" y="471" width="340" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn" translatesAutoresizingMaskIntoConstraints="NO" id="VBh-R0-WUa">
-                                <rect key="frame" x="20" y="211.33333333333334" width="114" height="36"/>
+                                <rect key="frame" x="20" y="211" width="114" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Kr3-xd-N8T"/>
                                     <constraint firstAttribute="width" constant="114" id="dim-g6-JMu"/>
                                 </constraints>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-1P-PYJ">
-                                <rect key="frame" x="37" y="211.33333333333334" width="80" height="36"/>
+                                <rect key="frame" x="37" y="211" width="80" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1375,7 +1375,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
         <scene sceneID="eC6-Fj-hUa">
             <objects>
                 <navigationController id="9fh-94-Bui" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="zfy-ax-xom">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zfy-ax-xom">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
@@ -1412,7 +1412,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2o-vU-Wvf">
-                                <rect key="frame" x="165.66666666666666" y="140" width="83" height="34"/>
+                                <rect key="frame" x="166" y="140" width="83" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Edit photo">
                                     <color key="titleColor" red="0.37647058820000001" green="1" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1838,21 +1838,21 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxX-Gl-fvW">
-                                <rect key="frame" x="0.0" y="294.33333333333326" width="414" height="441.66666666666674"/>
+                                <rect key="frame" x="0.0" y="294" width="414" height="442"/>
                                 <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttg-Tq-m85">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="294.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
                                 <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ttg-Tq-m85" secondAttribute="height" multiplier="125:89" id="JaX-GF-eGX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kI-q6-bHn" userLabel="PhoneElementView">
-                                <rect key="frame" x="111" y="84.333333333333314" width="192" height="230"/>
+                                <rect key="frame" x="111" y="84" width="192" height="230"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0g-yk-9GI">
-                                        <rect key="frame" x="12" y="48.000000000000014" width="168" height="140"/>
+                                        <rect key="frame" x="12" y="48" width="168" height="140"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="168" id="BaM-yA-s7z"/>
@@ -1862,7 +1862,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                         <rect key="frame" x="0.0" y="0.0" width="192" height="230"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adl-EG-POk">
-                                        <rect key="frame" x="54" y="163" width="84" height="20.999999999999972"/>
+                                        <rect key="frame" x="54" y="163" width="84" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="NOW-h2-cKg"/>
                                         </constraints>
@@ -1875,14 +1875,14 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_edit" translatesAutoresizingMaskIntoConstraints="NO" id="iLm-bU-oyt">
-                                        <rect key="frame" x="48" y="67.000000000000014" width="96" height="95.999999999999986"/>
+                                        <rect key="frame" x="48" y="67" width="96" height="96"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="Geq-Lx-KB1"/>
                                             <constraint firstAttribute="height" constant="96" id="r5I-R3-Geq"/>
                                         </constraints>
                                     </imageView>
                                     <view alpha="0.33000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfN-es-KBm">
-                                        <rect key="frame" x="12" y="24" width="168" height="24.000000000000014"/>
+                                        <rect key="frame" x="12" y="24" width="168" height="24"/>
                                         <color key="backgroundColor" red="0.27058823529411763" green="0.3529411764705882" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="FrZ-V4-TqI"/>
@@ -1909,7 +1909,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnl-Tj-g2q" userLabel="UserNameView">
-                                <rect key="frame" x="63" y="338.33333333333331" width="288" height="48"/>
+                                <rect key="frame" x="63" y="338" width="288" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="9zB-ie-TXu">
                                         <rect key="frame" x="0.0" y="12" width="24" height="24"/>
@@ -1939,7 +1939,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwS-Cy-PDA" userLabel="PhoneNumberView">
-                                <rect key="frame" x="63" y="398.33333333333331" width="288" height="48"/>
+                                <rect key="frame" x="63" y="398" width="288" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-ea-lCb">
                                         <rect key="frame" x="0.0" y="12" width="24" height="24"/>
@@ -1969,7 +1969,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3G1-h3-rR1" userLabel="EmailView">
-                                <rect key="frame" x="63" y="458.33333333333331" width="288" height="48"/>
+                                <rect key="frame" x="63" y="458" width="288" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-lZ-Lol">
                                         <rect key="frame" x="0.0" y="12" width="24" height="24"/>
@@ -1999,7 +1999,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-gp-eVN" userLabel="PasswordView">
-                                <rect key="frame" x="63" y="518.33333333333337" width="288" height="48"/>
+                                <rect key="frame" x="63" y="518" width="288" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-jz-1F2">
                                         <rect key="frame" x="0.0" y="12" width="24" height="24"/>
@@ -2029,7 +2029,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FQ-YB-2CJ">
-                                <rect key="frame" x="43.666666666666657" y="272.33333333333331" width="327" height="42"/>
+                                <rect key="frame" x="44" y="272" width="327" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="cOT-RU-IfC"/>
                                     <constraint firstAttribute="height" constant="42" id="egF-B7-ZfL"/>
@@ -2040,7 +2040,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmH-ub-mvS">
-                                <rect key="frame" x="60.666666666666657" y="670" width="293" height="42"/>
+                                <rect key="frame" x="61" y="670" width="293" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="7f9-LU-xTs"/>
                                     <constraint firstAttribute="width" constant="293" id="H8T-cq-K93"/>
@@ -2054,7 +2054,7 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-Lw-4lT">
-                                <rect key="frame" x="179.66666666666666" y="679" width="55" height="24"/>
+                                <rect key="frame" x="180" y="679" width="55" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2143,11 +2143,11 @@ Providing this service cost us a lot of money , effort , and time. Therefore , i
         <image name="user_icon" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u3N-WV-xMK"/>
+        <segue reference="WYc-us-yhh"/>
+        <segue reference="eqe-0o-ajS"/>
         <segue reference="zbz-ai-djY"/>
         <segue reference="G0E-3f-w9Q"/>
         <segue reference="jfm-WW-4Rb"/>
-        <segue reference="n3t-Pa-Wnp"/>
-        <segue reference="eqe-0o-ajS"/>
+        <segue reference="G8D-NZ-Tdh"/>
     </inferredMetricsTieBreakers>
 </document>
