@@ -28,6 +28,8 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
      var id:Int!
     var storageRef: FIRStorageReference!
     var fab = KCFloatingActionButton()
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+
 
     
     
@@ -47,6 +49,11 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func layoutFAB() {

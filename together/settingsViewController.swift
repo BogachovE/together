@@ -20,6 +20,8 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var myId: Int = 0
     var ref: FIRDatabaseReference!
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+
     
 
     override func viewDidLoad() {
@@ -35,6 +37,11 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -79,9 +86,9 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
             self.ref.child("users/" + String(self.myId)).setValue(userDictionary)
             userRepositories.uploadUserImage(userId: UInt64(user.id), image: self.photo.image!)
         })
-        
-        
     }
+    
+
     
     //Actions
     @IBAction func logOutPressed(sender: AnyObject) {

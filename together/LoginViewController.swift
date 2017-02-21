@@ -42,7 +42,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
         let defaults = UserDefaults.standard
         let id = defaults.integer(forKey: "userId") as Int!
         if (id != nil && id != 0){self.performSegue(withIdentifier: "fromLoginToMain", sender: self)}
-
     } 
     
     override func viewDidLoad() {
