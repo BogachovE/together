@@ -28,13 +28,15 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
      var id:Int!
     var storageRef: FIRStorageReference!
     var fab = KCFloatingActionButton()
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-
+    
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self

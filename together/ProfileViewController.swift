@@ -33,6 +33,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
