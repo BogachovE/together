@@ -20,8 +20,7 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var myId: Int = 0
     var ref: FIRDatabaseReference!
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-
+    
     
 
     override func viewDidLoad() {
@@ -30,6 +29,9 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
         //Load userDefaults
         let defaults = UserDefaults.standard
         myId = defaults.integer(forKey: "userId")
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
     }
