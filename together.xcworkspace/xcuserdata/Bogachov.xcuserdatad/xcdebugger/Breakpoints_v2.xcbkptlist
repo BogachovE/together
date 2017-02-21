@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/LoginViewController.swift"
-            timestampString = "509038951.194325"
+            timestampString = "509370785.224954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "logout(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,7 +250,7 @@
                   moduleName = "together"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogachov/IOS_projects/together/together/AppDelegate.swift"
-                  timestampString = "509306695.676518"
+                  timestampString = "509371862.307507"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "116"
@@ -265,7 +265,7 @@
                   moduleName = "together"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogachov/IOS_projects/together/together/AppDelegate.swift"
-                  timestampString = "509306695.678303"
+                  timestampString = "509371862.310837"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/CreateNewEventViewController.swift"
-            timestampString = "509040147.064828"
+            timestampString = "509372171.251641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "doneButtonPressed(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -336,6 +336,22 @@
             startingLineNumber = "82"
             endingLineNumber = "82"
             landmarkName = "loadFriendsEvents(id:withh:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "together/settingsViewController.swift"
+            timestampString = "509372171.251641"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "editPhotoPressed(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
