@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController {
         
         if (userId == myId){
             subscribleButton.isHidden = true
-            showWithdrawal()
+            //showWithdrawal()
         }
         // Do any additional setup after loading the view.
     }
