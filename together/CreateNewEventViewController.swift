@@ -12,7 +12,7 @@ import KCFloatingActionButton
 import Social
 import MessageUI
 
-class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate {
+class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var dataStartPicker: UIDatePicker!
     @IBOutlet var dataEndPicker: UIDatePicker!
@@ -21,6 +21,7 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var photoEdit: UIImageView!
     @IBOutlet var editTitle: UITextField!
+    @IBOutlet weak var wishListTable: UITableView!
     
     var selectedCategory: String!
     var pickerData: [String] = []
@@ -28,6 +29,7 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
      var id:Int!
     var storageRef: FIRStorageReference!
     var fab = KCFloatingActionButton()
+    var linkCount: Int! = 2
     
 
     
@@ -49,6 +51,9 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+        
+        wishListTable.delegate = self
+        wishListTable.dataSource = self
         
         // Do any additional setup after loading the view.
     }
@@ -130,7 +135,45 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Dispose of any resources that can be recreated.
     }
     
+    //table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return linkCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = wishListTable.dequeueReusableCell(withIdentifier: "tableviewcell", for: indexPath) as! WishListTableViewCell
+        cell.link.text = "Tshort"
+        
+        cell.pluseButton.addTarget(self, action: #selector(self.pluseclicked(sender:)), for: UIControlEvents.touchUpInside)
+        
+        if (indexPath.row == linkCount - 1){
+            //cell.pluseButton.isHidden = false
+        } else {
+            cell.pluseButton.setTitle("-", for: .normal)
+        }
+        
+        
+        
+        return cell
+    }
+
+    
+    
+    
     //Actions
+    
+    func pluseclicked(sender: UIButton) {
+        if (sender.title(for: .normal) == "+"){
+        linkCount = linkCount + 1
+        wishListTable.reloadData()
+        } else {
+            linkCount = linkCount - 1
+            wishListTable.reloadData()
+        }
+        
+    }
+    
     @IBAction func doneButtonPressed(sender: AnyObject) {
         let eventRepositories = EventRepositories()
         eventRepositories.loadEventCount(withh:{ (count) in
@@ -139,7 +182,7 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
                     , category: self.selectedCategory, ownerId: UInt64(self.id), location: self.editLoaction.text!, startTime: self.dataStartPicker.date, endTime: self.dataEndPicker.date)
                 eventRepositories.addNewEvent(event: self.event, count: count, storageRef: self.storageRef)
                 self.layoutFAB()
-                self.makeToast(text: "Do you want to share your ivent?")
+                self.makeToast(text: "Do you want to share your event?")
                 self.fab.open()
             } else {
                 self.makeToast(text: "Please select category")

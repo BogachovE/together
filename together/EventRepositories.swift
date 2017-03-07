@@ -27,7 +27,6 @@ class  EventRepositories {
                     let storage = FIRStorage.storage()
                     self.storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
                     self.loadEventPhoto(eventId: child.value(forKey: "id") as! Int, storageRef: self.storageRef, withh: { (image) in
-                        
                         event = EventMaper.dictionaryToEvent(eventDictionary: child, image: image)
                         
                         events.append(event)

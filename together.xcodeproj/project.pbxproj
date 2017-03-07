@@ -47,6 +47,7 @@
 		DDCBA6E71E4CD1FF00F3CD74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6DE1E4CD1FF00F3CD74 /* SystemConfiguration.framework */; };
 		DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256651E3619FA003180BA /* NewsViewController.swift */; };
 		DDD256681E361A7F003180BA /* ContributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD256671E361A7F003180BA /* ContributionViewController.swift */; };
+		DDD5B91C1E6C25640062336F /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD5B91B1E6C25640062336F /* WishListTableViewCell.swift */; };
 		DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE799401E2E812E00F93B6C /* FeedViewController.swift */; };
 		DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */; };
 		DDEA9FA31E2D23F200A943FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9FA21E2D23F200A943FF /* User.swift */; };
@@ -103,6 +104,7 @@
 		DDCBA6DE1E4CD1FF00F3CD74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DDD256651E3619FA003180BA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DDD256671E361A7F003180BA /* ContributionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionViewController.swift; sourceTree = "<group>"; };
+		DDD5B91B1E6C25640062336F /* WishListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
 		DDE799401E2E812E00F93B6C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositories.swift; sourceTree = "<group>"; };
 		DDEA9FA21E2D23F200A943FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */,
 				DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */,
 				DDA899821E377E24002D2069 /* NewsTableViewCell.swift */,
+				DDD5B91B1E6C25640062336F /* WishListTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			files = (
 				DD61661F1E4366B200D3DF82 /* Instagram.swift in Sources */,
 				DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */,
+				DDD5B91C1E6C25640062336F /* WishListTableViewCell.swift in Sources */,
 				DD999D091E33A79900FF787A /* EventViewController.swift in Sources */,
 				DDBFA91E1E4DF8DC003C9F2C /* Notification.swift in Sources */,
 				DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */,
