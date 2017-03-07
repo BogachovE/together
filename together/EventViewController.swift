@@ -14,7 +14,7 @@ import Social
 
 
 
-class EventViewController: UIViewController, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate{
+class EventViewController: UIViewController, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDelegate, UITableViewDataSource{
     var eventId: Int = 0
     var storageRef: FIRStorageReference!
     var ref: FIRDatabaseReference!
@@ -37,6 +37,8 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var lessButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var subscribeLabel: UILabel!
+    @IBOutlet weak var wishListIcon: UIImageView!
+    @IBOutlet weak var wishListTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +52,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         showEventInfo()
         layoutFAB()
         userRepositories = UserRepositories()
-        
-        
-    
-        
-        
-        // Do any additional setup after loading the view.
+        wishListTable.delegate = self
+        wishListTable.dataSource = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -282,6 +281,18 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         
     }
     
+    //table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        let cell = wishListTable.dequeueReusableCell(withIdentifier: "eventTableviewcell", for: indexPath) as! WishListTableViewCell
+        cell.link.text = "ghjkl"
+        
+        return cell
+    }
 
  
 
@@ -294,6 +305,8 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         lessButton.isEnabled = true
         moreButton.isHidden = true
         eventDescription.isHidden = false
+        wishListIcon.isHidden = true
+        wishListTable.isHidden = true
     }
     
     @IBAction func likeButtonPressed(_ sender: Any) {
@@ -314,6 +327,8 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         lessButton.isEnabled = false
         moreButton.isHidden = false
         eventDescription.isHidden = true
+        wishListIcon.isHidden = false
+        wishListTable.isHidden = false
     }
     
     @IBAction func subscribeButtonPressed(_ sender: Any) {
