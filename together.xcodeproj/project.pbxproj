@@ -26,6 +26,7 @@
 		DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED51E3E21B00003A46F /* userMaper.swift */; };
 		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
 		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
+		DDA40CD01E76FB8100B34C5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA40CCF1E76FB8100B34C5A /* StoreKit.framework */; };
 		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
 		DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */; };
@@ -79,6 +80,7 @@
 		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		DDA40CCF1E76FB8100B34C5A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationMaper.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				DDCBA6E61E4CD1FF00F3CD74 /* SafariServices.framework in Frameworks */,
 				DDCBA6E71E4CD1FF00F3CD74 /* SystemConfiguration.framework in Frameworks */,
 				D63093A0274366C148A9DE67 /* Pods_together.framework in Frameworks */,
+				DDA40CD01E76FB8100B34C5A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +277,7 @@
 		FDE4294A7497F7895F95DFC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDA40CCF1E76FB8100B34C5A /* StoreKit.framework */,
 				DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */,
 				DDCBA6D71E4CD1FF00F3CD74 /* AudioToolbox.framework */,
 				DDCBA6D81E4CD1FF00F3CD74 /* AVFoundation.framework */,
@@ -326,9 +330,12 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FZM9VUX6F8;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
@@ -596,15 +603,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ammar Noorwali (Y4SKR8RDW9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ammar Noorwali (Y4SKR8RDW9)";
 				DEVELOPMENT_TEAM = FZM9VUX6F8;
 				INFOPLIST_FILE = together/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.products.attractive.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f5d0ae67-3e37-4e0a-a431-a8215d8e20ee";
+				PROVISIONING_PROFILE_SPECIFIER = together;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -620,15 +628,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ammar Noorwali (Y4SKR8RDW9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ammar Noorwali (Y4SKR8RDW9)";
 				DEVELOPMENT_TEAM = FZM9VUX6F8;
 				INFOPLIST_FILE = together/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.products.attractive.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f5d0ae67-3e37-4e0a-a431-a8215d8e20ee";
+				PROVISIONING_PROFILE_SPECIFIER = together;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

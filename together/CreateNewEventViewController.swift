@@ -11,8 +11,10 @@ import Firebase
 import KCFloatingActionButton
 import Social
 import MessageUI
+import StoreKit
 
-class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDataSource, UITableViewDelegate, SKProductsRequestDelegate,
+SKPaymentTransactionObserver {
 
     @IBOutlet var dataStartPicker: UIDatePicker!
     @IBOutlet var dataEndPicker: UIDatePicker!
@@ -30,6 +32,16 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
     var storageRef: FIRStorageReference!
     var fab = KCFloatingActionButton()
     var linkCount: Int! = 2
+    var url: String!
+    var urlString: String!
+    
+    /* Variables */
+    let COINS_PRODUCT_ID = "com.products.attractive.togetherr.wish"
+    
+    var productID = ""
+    var productsRequest = SKProductsRequest()
+    var iapProducts = [SKProduct]()
+   
     
 
     
@@ -54,6 +66,13 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         wishListTable.delegate = self
         wishListTable.dataSource = self
+        
+       
+        
+        
+        
+        // Fetch IAP Products available
+        fetchAvailableProducts()
         
         // Do any additional setup after loading the view.
     }
@@ -137,23 +156,48 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     //table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return linkCount
+        let count: Int
+        if (event.linkUrls.count != 0){
+            if (event.linkUrls[0] == ""){
+            count = 1
+            } else {
+            count = event.linkUrls.count + 1
+            }
+        } else {
+            count = 1
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = wishListTable.dequeueReusableCell(withIdentifier: "tableviewcell", for: indexPath) as! WishListTableViewCell
-        cell.link.text = "Tshort"
         
-        cell.pluseButton.addTarget(self, action: #selector(self.pluseclicked(sender:)), for: UIControlEvents.touchUpInside)
         
-        if (indexPath.row == linkCount - 1){
-            //cell.pluseButton.isHidden = false
+        if (event.linkUrls.count != 0){
+            if (indexPath.row == 0){
+                if (event.linkUrls[0] != ""){
+                    cell.pluseButton.setTitle("-", for: .normal)
+                    cell.link.text = event.linkStrings[indexPath.row]
+                } else {
+                    cell.pluseButton.setTitle("+", for: .normal)
+                    cell.link.text = ""
+                }
+            } else if (indexPath.row == event.linkUrls.count) {
+                cell.link.text = ""
+                cell.pluseButton.setTitle("+", for: .normal)
+            } else {
+                cell.pluseButton.setTitle("-", for: .normal)
+                cell.link.text = event.linkStrings[indexPath.row]
+            }
         } else {
-            cell.pluseButton.setTitle("-", for: .normal)
+            cell.link.text = ""
+            cell.pluseButton.setTitle("+", for: .normal)
         }
         
-        
+        cell.pluseButton.tag = indexPath.row
+        cell.pluseButton.addTarget(self, action: #selector(self.pluseclicked(sender:)), for: UIControlEvents.touchUpInside)
+
         
         return cell
     }
@@ -165,25 +209,161 @@ class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     func pluseclicked(sender: UIButton) {
         if (sender.title(for: .normal) == "+"){
-        linkCount = linkCount + 1
-        wishListTable.reloadData()
+            
+            let alert = UIAlertController(title: "Add wishes", message: "Plese enter your wishes", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+            alert.addTextField { (url) in
+                url.placeholder = "Enter URL"
+            }
+            alert.addTextField { (urlString) in
+                urlString.placeholder = "Enter name of your wishes"
+            }
+            self.present(alert, animated: true, completion: nil)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    self.url = alert.textFields![0].text
+                    self.urlString = alert.textFields![1].text
+                    self.purchaseMyProduct(product: self.iapProducts[0])
+                    
+                print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                }
+            }))
+
         } else {
-            linkCount = linkCount - 1
+            print(sender.tag)
+            event.linkStrings.remove(at: sender.tag)
+            event.linkUrls.remove(at: sender.tag)
             wishListTable.reloadData()
         }
         
     }
     
+    // MARK: - FETCH AVAILABLE IAP PRODUCTS
+    func fetchAvailableProducts()  {
+        if SKPaymentQueue.canMakePayments() {
+            print("Покупки доступны")
+            
+            let productID: Set<String> = ["com.products.attractive.togetherr.wish"]
+            let request = SKProductsRequest(productIdentifiers: productID)
+            request.delegate = self
+            request.start()
+        } else {
+            print("Покупки не доступны")
+        }
+    }
+    
+    // MARK: - REQUEST IAP PRODUCTS
+    func productsRequest (_ request:SKProductsRequest, didReceive response:SKProductsResponse) {
+        print("Product request phase")
+        
+        print(response.invalidProductIdentifiers)
+        
+        let myProduct = response.products
+        
+        for product in myProduct {
+            print("Товар добавлен")
+            print("Идентификатор продукта: \(product.productIdentifier)")
+            print("\(product.localizedTitle)")
+            print("\(product.localizedDescription)")
+            }
+            
+        
+    }
+    
+    // MARK: - MAKE PURCHASE OF A PRODUCT
+    func canMakePurchases() -> Bool {  return SKPaymentQueue.canMakePayments()  }
+    func purchaseMyProduct(product: SKProduct) {
+        if self.canMakePurchases() {
+            let payment = SKPayment(product: product)
+            SKPaymentQueue.default().add(self)
+            SKPaymentQueue.default().add(payment)
+            
+            print("PRODUCT TO PURCHASE: \(product.productIdentifier)")
+            productID = product.productIdentifier
+            
+            
+            // IAP Purchases dsabled on the Device
+        } else {
+            UIAlertView(title: "IAP Tutorial",
+                        message: "Purchases are disabled in your device!",
+                        delegate: nil, cancelButtonTitle: "OK").show()
+        }
+    }
+
+    // MARK:- IAP PAYMENT QUEUE
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction:AnyObject in transactions {
+            if let trans = transaction as? SKPaymentTransaction {
+                switch trans.transactionState {
+                    
+                case .purchased:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    
+                    // The Consumable product (10 coins) has been purchased -> gain 10 extra coins!
+                    if productID == COINS_PRODUCT_ID {
+                        
+                        if (self.event.linkUrls.count != 0) {
+                            if (self.event.linkUrls[0] == ""){
+                                self.event.linkUrls[0] = self.url!
+                                self.event.linkStrings[0] = self.urlString!
+                            } else {
+                                self.event.linkUrls.append(self.url!)
+                                self.event.linkStrings.append(self.urlString!)
+                            }
+                        } else {
+                            self.event.linkUrls.append(self.url!)
+                            self.event.linkStrings.append(self.urlString!)
+                        }
+                        self.wishListTable.reloadData()
+
+                        
+                        UIAlertView(title: "IAP Tutorial",
+                                    message: "You've successfully bought 10 extra coins!",
+                                    delegate: nil,
+                                    cancelButtonTitle: "OK").show()
+                    }
+                    break
+                    
+                case .failed:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    break
+                case .restored:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    break
+                    
+                default: break
+                }}}
+    }
+
+    
     @IBAction func doneButtonPressed(sender: AnyObject) {
         let eventRepositories = EventRepositories()
         eventRepositories.loadEventCount(withh:{ (count) in
             if (self.selectedCategory != "none"){
-                self.event = Event(title: self.editTitle.text!, description: self.editDescription.text!, id: count, photo: self.photoEdit.image!
-                    , category: self.selectedCategory, ownerId: UInt64(self.id), location: self.editLoaction.text!, startTime: self.dataStartPicker.date, endTime: self.dataEndPicker.date)
-                eventRepositories.addNewEvent(event: self.event, count: count, storageRef: self.storageRef)
-                self.layoutFAB()
-                self.makeToast(text: "Do you want to share your event?")
-                self.fab.open()
+                let newEvent = Event(title: self.editTitle.text!,
+                                   description: self.editDescription.text!,
+                                   id: count,
+                                   photo: self.photoEdit.image!,
+                                   category: self.selectedCategory,
+                                   ownerId: UInt64(self.id),
+                                   location: self.editLoaction.text!,
+                                   startTime: self.dataStartPicker.date,
+                                   endTime: self.dataEndPicker.date,
+                                   linkUrls: self.event.linkUrls,
+                                   linkStrings: self.event.linkStrings)
+                eventRepositories.addNewEvent(event: newEvent, count: count, storageRef: self.storageRef)
+               // self.layoutFAB()
+             //   self.makeToast(text: "Do you want to share your event?")
+              //  self.fab.open()
+                self.performSegue(withIdentifier: "fromCreateToFeed", sender: self)
             } else {
                 self.makeToast(text: "Please select category")
             }

@@ -22,10 +22,26 @@ class Event {
     var startTime: Date
     var endTime: Date
     var signedUsers: Array<Int>
+    var linkUrls: Array<String>
+    var linkStrings: Array<String>
     
     
     
-    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: UInt64 = 0, likes: Array<Int> = [0], location: String = "", startTime: Date = Date(), endTime: Date = Date(), signedUsers: Array<Int> = [0]) {
+    init(title: String = "",
+         description: String = "",
+         id: Int = 0,
+         photo: UIImage = #imageLiteral(resourceName: "EventPhoto"),
+         contrebuted: Int = 0,
+         category: String = "",
+         ownerId: UInt64 = 0,
+         likes: Array<Int> = [0],
+         location: String = "", startTime: Date = Date(),
+         endTime: Date = Date(),
+         signedUsers: Array<Int> = [0],
+         linkUrls: Array<String> = [""],
+         linkStrings: Array<String> = [""]
+        )
+    {
         self.title = title
         self.id = id
         self.description = description
@@ -38,6 +54,8 @@ class Event {
         self.startTime = startTime
         self.endTime = endTime
         self.signedUsers = signedUsers
+        self.linkUrls = linkUrls
+        self.linkStrings = linkStrings
             }
 }
 
