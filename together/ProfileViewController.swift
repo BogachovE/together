@@ -23,8 +23,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet var withdrawal: UIButton!
     @IBOutlet var contributedLabel: UILabel!
     
-    var userId: Int = 0
-    var myId: Int = 0
+    var userId: UInt64 = 0
+    var myId: UInt64 = 0
     var storageRef: FIRStorageReference!
     var ref: FIRDatabaseReference!
     var userRepositories: UserRepositories!
@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
         
         //Load userDefaults
         let defaults = UserDefaults.standard
-        myId = defaults.integer(forKey: "userId")
+        myId = defaults.value(forKey: "userId") as! UInt64
         
         userRepositories = UserRepositories()
         userRepositories.loadUser(userId: UInt64(myId)/*userId*/, withh: { (user) in
@@ -62,14 +62,6 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func showWithdrawal(){
-        self.withdrawal.isHidden = false
-        self.withdrawal.isEnabled = true
-        self.contributed.isHidden = false
-        self.contributed.isEnabled = true
-        self.contributedLabel.isHidden = false
-        self.contributedLabel.isEnabled = true
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,36 +75,13 @@ class ProfileViewController: UIViewController {
         avatar.image = user.photo
         followingLabels.text = String(user.friends.count - 1)
         descriptionLabel.text = user.description
-        contributed.text = "\(user.contributedSum)"   // MARK: спросить лешу
+        //contributed.text = "\(user.contributedSum)"   // MARK: спросить лешу
         
         
         
     }
     
-    func showWithdrawalAlert(){
-        var withdrawalSum: Int!
-        var payPalAdress: String!
-        let withdrawalAlert = UIAlertController(title: "Withdrawal Reguest", message: "Plese enter sum and PayPall adress", preferredStyle: UIAlertControllerStyle.alert)
-        withdrawalAlert.addTextField { (withdrawalSumEntered) in
-            withdrawalSumEntered.placeholder = "SUM"
-           withdrawalSum = Int(withdrawalSumEntered.text!)
-        }
-        withdrawalAlert.addTextField { (payPalAdressEntered) in
-            payPalAdressEntered.placeholder = "PayPall Adress"
-            payPalAdress = payPalAdressEntered.text!
-        }
-        withdrawalAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            if (Int((withdrawalAlert.textFields?[0].text)!)! <= Int(self.contributed.text!)!){
-                let sum = Int((withdrawalAlert.textFields?[0].text)!)!
-                WithdrawalReguestSender.send(sum: sum, adress: (withdrawalAlert.textFields?[1].text!)!, user:self.user)
-                self.makeToast(text: "You will resive your money in 5 days")
-            } else {
-                self.makeToast(text:"You have not enough money")
-            }
-        }))
-        self.present(withdrawalAlert, animated: true, completion: nil)
-        
-    }
+    
     
     func makeToast(text: String) {
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height-100, width: 300, height: 35))
@@ -153,9 +122,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func withdrawalPressed(sender: AnyObject) {
-        showWithdrawalAlert()
-    }
+    
     
     
     

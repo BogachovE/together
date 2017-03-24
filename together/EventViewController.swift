@@ -22,7 +22,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     var userRepositories: UserRepositories!
     var event: Event!
     var fab = KCFloatingActionButton()
-    var myId: Int!
+    var myId: UInt64!
     var user: User!
 
     @IBOutlet weak var eventPhoto: UIImageView!
@@ -48,7 +48,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         eventRepositories = EventRepositories()
         let defaults = UserDefaults.standard
-        myId = defaults.integer(forKey: "userId")
+        myId = defaults.value(forKey: "userId") as! UInt64
         showEventInfo()
         layoutFAB()
         userRepositories = UserRepositories()
@@ -97,6 +97,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
                             self.subscribeLabel.text = "Subscrible"
                         }
                     }
+                    self.wishListTable.reloadData()
                 })
             })
         })
@@ -105,10 +106,10 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     func layoutFAB() {
         fab.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
         fab.plusColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-        let titles: Array<String> = ["Share to whatsapp", "Share to facebook", "Share by email", "Share to instagram", "Share to twiter"]
-        let types: Array<String> = ["wat", "face", "email", "incta", "twiter"]
-        let icons: Array<UIImage> = [#imageLiteral(resourceName: "watBtn"), #imageLiteral(resourceName: "faceBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
-        for i in 0...4{
+        let titles: Array<String> = ["Share to facebook", "Share by email", "Share to instagram", "Share to twiter"]
+        let types: Array<String> = ["face", "email", "incta", "twiter"]
+        let icons: Array<UIImage> = [#imageLiteral(resourceName: "faceBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
+        for i in 0...3{
             let item = KCFloatingActionButtonItem()
             item.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
             item.circleShadowColor = UIColor.red
@@ -277,21 +278,34 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         })
     }
     
-    func checkSubscribe(){
-        
-    }
     
     //table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        var count: Int
+        if (event != nil) {
+            count = event.linkStrings.count
+        } else {
+            count = 3
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = wishListTable.dequeueReusableCell(withIdentifier: "eventTableviewcell", for: indexPath) as! WishListTableViewCell
-        cell.link.text = "ghjkl"
+        if (event != nil){
+        cell.link.text = event.linkStrings[indexPath.row]
+        } else {
+            cell.link.text = ""
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let url = NSURL(string: event.linkUrls[indexPath.row]) as! URL
+        print(url)
+        UIApplication.shared.openURL(url)
     }
 
  
@@ -310,13 +324,15 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func likeButtonPressed(_ sender: Any) {
-        let isLike:Bool = self.checkLike()
-        if (isLike){
-            removeLike()
-            likeButton.isSelected = false
-        } else {
-            addLike()
-            likeButton.isSelected = true
+        if (event != nil && user != nil){
+            let isLike:Bool = self.checkLike()
+            if (isLike){
+                removeLike()
+                likeButton.isSelected = false
+            } else {
+                addLike()
+                likeButton.isSelected = true
+            }
         }
     }
     
@@ -332,19 +348,21 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func subscribeButtonPressed(_ sender: Any) {
-        if (subscribeLabel.text == "Unsubscrible"){
-            let uscribeIndex = user.signedEvent.index(of: event.id)
-            user.signedEvent.remove(at: uscribeIndex!)
-            ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
-            let uscribeEventIndex = event.signedUsers.index(of: myId)
-            event.signedUsers.remove(at: uscribeEventIndex!)
-            ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
-            
-        } else {
-            user.signedEvent.append(event.id)
-            ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
-            event.signedUsers.append(myId)
-            ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+        if (event != nil && user != nil) {
+            if (subscribeLabel.text == "Unsubscrible"){
+                let uscribeIndex = user.signedEvent.index(of: event.id)
+                user.signedEvent.remove(at: uscribeIndex!)
+                ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
+                let uscribeEventIndex = event.signedUsers.index(of: myId)
+                event.signedUsers.remove(at: uscribeEventIndex!)
+                ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+                
+            } else {
+                user.signedEvent.append(event.id)
+                ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
+                event.signedUsers.append(myId)
+                ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+            }
         }
     }
     

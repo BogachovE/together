@@ -23,7 +23,7 @@ class NotificationRepositories{
         })
     }
     
-    func likeNotification(event:Event, user:User, myId: Int){
+    func likeNotification(event:Event, user:User, myId: UInt64){
         notificationCount(withh: {(count) in
             let userRepositories = UserRepositories()
             userRepositories.loadUser(userId: event.ownerId, withh: { (owner) in
@@ -53,7 +53,7 @@ class NotificationRepositories{
         })
     }
     
-    func loadUserNotificatons(userId: Int, withh: @escaping (Array<NotificationModel>)->Void){
+    func loadUserNotificatons(userId: UInt64, withh: @escaping (Array<NotificationModel>)->Void){
         var notifications: Array<NotificationModel>
         notifications = Array<NotificationModel>()
 

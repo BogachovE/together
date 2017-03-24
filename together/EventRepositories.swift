@@ -62,7 +62,7 @@ class  EventRepositories {
             withh(events)
     }
     
-    func loadFriendsEvents(id: Int, withh: @escaping (Array<Event>)->Void)  {
+    func loadFriendsEvents(id: UInt64, withh: @escaping (Array<Event>)->Void)  {
         var events: Array<Event>
         events = Array<Event>()
         findFriends(id: id, withh: {(friends)  in
@@ -87,7 +87,7 @@ class  EventRepositories {
         })
     }
     
-    func loadSignedEvents(id: Int, withh: @escaping (Array<Event>)->Void)  {
+    func loadSignedEvents(id: UInt64, withh: @escaping (Array<Event>)->Void)  {
         var events: Array<Event>
         events = Array<Event>()
         findSigned(id: id, withh: {(signeds)  in
@@ -114,7 +114,7 @@ class  EventRepositories {
         })
     }
     
-    func loadMyEvents (id: Int, withh: @escaping (Array<Event>)->Void)  {
+    func loadMyEvents (id: UInt64, withh: @escaping (Array<Event>)->Void)  {
         var events: Array<Event>
         events = Array<Event>()
         let myEventQuery = self.ref.child("events").queryOrdered(byChild: "ownerId").queryEqual(toValue: id)
@@ -140,7 +140,7 @@ class  EventRepositories {
         
     }
     
-    func findFriends(id: Int ,withh: @escaping (Array<Int>)->Void ){
+    func findFriends(id: UInt64 ,withh: @escaping (Array<Int>)->Void ){
         let friendsRef = ref.child("users/"+String(id))
         friendsRef.observe(.value, with: { snapshot in
         let friends = snapshot.childSnapshot(forPath: "friends").value! as! Array<Int>
@@ -148,7 +148,7 @@ class  EventRepositories {
         })
     }
     
-    func findSigned(id: Int ,withh: @escaping (Array<Int>)->Void ){
+    func findSigned(id: UInt64 ,withh: @escaping (Array<Int>)->Void ){
         let signedEventsRef = ref.child("users/"+String(id))
         signedEventsRef.observe(.value, with: { snapshot in
             let snapshot = snapshot.value as! NSDictionary
@@ -224,7 +224,7 @@ class  EventRepositories {
     func loadParticipantsCount(evetId: Int, withh: @escaping (Int)->Void){
         let eventRef = ref.child("events/"+String(evetId)).observe(.value, with: { (snapshot) in
             let eventDictionary = snapshot.value as? NSDictionary
-            let signedUsers = eventDictionary?.value(forKey: "signedUsers") as! Array<Int>
+            let signedUsers = eventDictionary?.value(forKey: "signedUsers") as! Array<UInt64>
             let count = signedUsers.count
             
                 withh(count-1)

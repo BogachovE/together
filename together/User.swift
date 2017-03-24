@@ -11,12 +11,12 @@ import UIKit
 
 class User : Mappable {
    
-    var id: Int
+    var id: UInt64
     var name: String
     var email: String
     var phone: String
     var photo: UIImage
-    var friends: Array<Int>
+    var friends: Array<UInt64>
     var signedEvent: Array<Int>
     var title: String
     var followersCount: Int
@@ -24,7 +24,7 @@ class User : Mappable {
     var notificationId: String
     var contributedSum: Int
     
-    init(name: String = "", email: String = "", id: Int = 0, phone: String = "", photo: UIImage = #imageLiteral(resourceName: "photo_edit"), friends: Array<Int> = [0], signedEvent: Array<Int> = [0], title: String = "", followersCount:Int = 0, description:String = "", notificationId: String = "", contributedSum: Int = 0) {
+    init(name: String = "", email: String = "", id: UInt64 = 0, phone: String = "", photo: UIImage = #imageLiteral(resourceName: "photo_edit"), friends: Array<UInt64> = [0], signedEvent: Array<Int> = [0], title: String = "", followersCount:Int = 0, description:String = "", notificationId: String = "", contributedSum: Int = 0) {
         self.name = name
         self.id = id
         self.email = email
@@ -61,10 +61,10 @@ class User : Mappable {
         let user: User
         user = User(name: dictionary.value(forKey: "name") as! String,
                     email: dictionary.value(forKey: "email") as! String,
-                    id: dictionary.value(forKey: "id") as! Int,
+                    id: UInt64(dictionary.value(forKey: "id") as! Int),
                     phone: dictionary.value(forKey: "phone") as! String,
                     photo: dictionary.value(forKey: "photo") as! UIImage,
-                    friends: dictionary.value(forKey: "friends") as! Array<Int>,
+                    friends: dictionary.value(forKey: "friends") as! Array<UInt64>,
                     signedEvent: dictionary.value(forKey: "signedEvent") as! Array<Int>,
                     title: dictionary.value(forKey: "title") as! String,
                     followersCount: dictionary.value(forKey: "followersCount") as! Int,

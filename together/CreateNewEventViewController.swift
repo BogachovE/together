@@ -28,7 +28,7 @@ SKPaymentTransactionObserver {
     var selectedCategory: String!
     var pickerData: [String] = []
     var event: Event = Event()
-     var id:Int!
+     var id:UInt64!
     var storageRef: FIRStorageReference!
     var fab = KCFloatingActionButton()
     var linkCount: Int! = 2
@@ -56,7 +56,7 @@ SKPaymentTransactionObserver {
         self.categoryPicker.dataSource = self
         
         let defaults = UserDefaults.standard
-        id = defaults.integer(forKey: "userId")
+        id = defaults.value(forKey: "userId") as! UInt64
         
         selectedCategory = "none"
         pickerData = ["Celebrating", "Helping"]
@@ -353,7 +353,7 @@ SKPaymentTransactionObserver {
                                    id: count,
                                    photo: self.photoEdit.image!,
                                    category: self.selectedCategory,
-                                   ownerId: UInt64(self.id),
+                                   ownerId: self.id,
                                    location: self.editLoaction.text!,
                                    startTime: self.dataStartPicker.date,
                                    endTime: self.dataEndPicker.date,

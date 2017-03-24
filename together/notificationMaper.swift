@@ -21,7 +21,7 @@ class notificationMaper{
     static func dictionaryToNotification(notificationDictionary: NSDictionary, image: UIImage = #imageLiteral(resourceName: "face"))-> NotificationModel{
         let notification: NotificationModel
         
-        notification = NotificationModel(notifId: notificationDictionary.value(forKey: "notifId") as! Int, text: notificationDictionary.value(forKey: "text") as! String, status: notificationDictionary.value(forKey: "status") as! String, userId: notificationDictionary.value(forKey: "userId") as! Int, type: notificationDictionary.value(forKey: "type") as! String, usersNotifId: notificationDictionary.value(forKey: "usersNotifId") as! [String], lang: notificationDictionary.value(forKey: "lang") as! String, fromId: notificationDictionary.value(forKey: "fromId") as! Int, fromAvatar: image)
+        notification = NotificationModel(notifId: notificationDictionary.value(forKey: "notifId") as! Int, text: notificationDictionary.value(forKey: "text") as! String, status: notificationDictionary.value(forKey: "status") as! String, userId: notificationDictionary.value(forKey: "userId") as! UInt64, type: notificationDictionary.value(forKey: "type") as! String, usersNotifId: notificationDictionary.value(forKey: "usersNotifId") as! [String], lang: notificationDictionary.value(forKey: "lang") as! String, fromId: notificationDictionary.value(forKey: "fromId") as! UInt64, fromAvatar: image)
         
         return notification
     }

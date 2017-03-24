@@ -13,7 +13,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var eventPhoto: UIImageView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
-    @IBOutlet weak var eventCollected: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
 

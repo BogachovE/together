@@ -19,12 +19,10 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.03</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb265862410514007</string>
@@ -71,18 +69,22 @@
 	<key>FacebookAppID</key>
 	<string>265862410514007</string>
 	<key>FacebookDisplayName</key>
-	<string>together</string>
+	<string>togetherr</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
-		<string>instagram</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>NeedLibrary access for uploading avatar Images</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>NeedLibrary access for uploading Images</string>
+	<string>NeedLibrary access for uploading avatar Images</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

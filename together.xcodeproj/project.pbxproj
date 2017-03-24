@@ -16,7 +16,6 @@
 		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
 		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
 		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
-		DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515EA81E48EA610025D5BE /* PaymentViewController.swift */; };
 		DD61661F1E4366B200D3DF82 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61661E1E4366B200D3DF82 /* Instagram.swift */; };
 		DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6166201E43706D00D3DF82 /* ProfileViewController.swift */; };
 		DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */; };
@@ -31,7 +30,6 @@
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
 		DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */; };
 		DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */; };
-		DDBC0AD31E5B60DE009111D3 /* WithdrawalReguestSwnder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
 		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
@@ -69,7 +67,6 @@
 		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
 		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DD515EA81E48EA610025D5BE /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		DD61661E1E4366B200D3DF82 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		DD6166201E43706D00D3DF82 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -85,7 +82,6 @@
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationMaper.swift; sourceTree = "<group>"; };
 		DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRepositories.swift; sourceTree = "<group>"; };
-		DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalReguestSwnder.swift; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,7 +182,6 @@
 				DDD256671E361A7F003180BA /* ContributionViewController.swift */,
 				DDA899841E379310002D2069 /* settingsViewController.swift */,
 				DD6166201E43706D00D3DF82 /* ProfileViewController.swift */,
-				DD515EA81E48EA610025D5BE /* PaymentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,7 +264,6 @@
 				DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */,
 				DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */,
 				DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */,
-				DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -456,7 +450,6 @@
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DD2D9F0E1E5B48E500E5C070 /* UserProtocol.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
-				DDBC0AD31E5B60DE009111D3 /* WithdrawalReguestSwnder.swift in Sources */,
 				DDED51451E59BFDB003931E6 /* Mappable.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
 				DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */,
@@ -470,7 +463,6 @@
 				DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */,
 				DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */,
 				DDBFA9201E4E1F99003C9F2C /* NotificationModel.swift in Sources */,
-				DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */,
 				DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */,

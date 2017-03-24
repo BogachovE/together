@@ -58,11 +58,11 @@ class EventMaper{
             contrebuted: eventDictionary.value(forKey: "contrebuted") as! Int,
             category: eventDictionary.value(forKey: "category") as! String,
             ownerId: eventDictionary.value(forKey: "ownerId") as! UInt64,
-            likes: eventDictionary.value(forKey: "likes") as! Array<Int>,
+            likes: eventDictionary.value(forKey: "likes") as! Array<UInt64>,
             location: eventDictionary.value(forKey: "location") as! String,
             startTime: startTime!,
             endTime: endTime!,
-            signedUsers: eventDictionary.value(forKey: "signedUsers") as! Array<Int>,
+            signedUsers: eventDictionary.value(forKey: "signedUsers") as! Array<UInt64>,
             linkUrls: eventDictionary.value(forKey: "linkUrls") as! Array<String>,
             linkStrings: eventDictionary.value(forKey: "linkStrings") as! Array<String>
         )

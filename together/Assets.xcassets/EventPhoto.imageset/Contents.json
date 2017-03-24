@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Screen-Shot-2012-09-14-at-3.05.40-PM-1.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +12,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "Screen-Shot-2012-09-14-at-3.05.40-PM-2.png",
       "scale" : "3x"
     }
   ],

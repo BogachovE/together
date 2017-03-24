@@ -14,7 +14,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var loginView: UILabel!
     @IBOutlet weak var avatarImage: UIButton!
     
-    var id: Int!
+    var id: UInt64!
     var userRepositories: UserRepositories!
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
@@ -35,7 +35,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //Load userDefaults
         let defaults = UserDefaults.standard
-        id = defaults.integer(forKey: "userId")
+        id = defaults.value(forKey: "userId") as! UInt64
         
         let notificationRepositories = NotificationRepositories()
         notificationRepositories.loadUserNotificatons(userId: id, withh: { (notifications) in

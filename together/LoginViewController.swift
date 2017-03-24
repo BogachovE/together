@@ -201,9 +201,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
                     }
                     print("fetched user: \((result as! NSDictionary).value(forKey: "name"))")
                     let id = (result as! NSDictionary).value(forKey: "id") as! String
-                    self.userId = Int(id) as AnyObject?
+                    self.userId = UInt64(id) as AnyObject?
                     self.user.name = (result as! NSDictionary).value(forKey: "name") as! String
-                    self.user.id = self.userId as! Int
+                    self.user.id = self.userId! as! UInt64
                     self.user.notificationId = userNotifId!
                     self.ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
                         if (snapshot.childSnapshot(forPath: String(id)).exists()){
