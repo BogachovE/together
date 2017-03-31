@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/CreateNewEventViewController.swift"
-            timestampString = "511447371.198071"
+            timestampString = "512510114.316281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "productsRequest(_:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/CreateNewEventViewController.swift"
-            timestampString = "511447371.198071"
+            timestampString = "512510114.316281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "pluseclicked(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/CreateNewEventViewController.swift"
-            timestampString = "511447371.198071"
+            timestampString = "512510114.316281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "productsRequest(_:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,12 +538,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "together/EventViewController.swift"
-            timestampString = "511626402.995574"
+            timestampString = "512510114.316281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

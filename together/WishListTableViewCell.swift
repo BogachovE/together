@@ -10,7 +10,8 @@ import UIKit
 
 class WishListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var link: UILabel!
+    @IBOutlet weak var link: UIButton!
+    @IBOutlet weak var checkbox: UIButton!
     @IBOutlet weak var pluseButton: UIButton!
     
     override func awakeFromNib() {

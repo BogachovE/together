@@ -294,24 +294,57 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     
         let cell = wishListTable.dequeueReusableCell(withIdentifier: "eventTableviewcell", for: indexPath) as! WishListTableViewCell
         if (event != nil){
-        cell.link.text = event.linkStrings[indexPath.row]
+            cell.link.setTitle(event.linkStrings[indexPath.row], for: .normal)
         } else {
-            cell.link.text = ""
+            cell.link.setTitle("", for: .normal)
+        }
+        
+        cell.checkbox.tag = indexPath.row
+        cell.checkbox.addTarget(self, action: #selector(self.checkclicked(sender:)), for: UIControlEvents.touchUpInside)
+        cell.link.tag = indexPath.row
+        cell.link.addTarget(self, action: #selector(self.linkclicked(sender:)), for: UIControlEvents.touchUpInside)
+
+        
+        if (event != nil) {
+            if (event.linkDone[indexPath.row] == 0){
+            cell.checkbox.isSelected = false
+            } else {
+                cell.checkbox.isSelected = true
+            }
+            
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = NSURL(string: event.linkUrls[indexPath.row]) as! URL
-        print(url)
-        UIApplication.shared.openURL(url)
+        
     }
 
  
 
     
     //Actions
+    func linkclicked(sender: UIButton) {
+        let url = NSURL(string: event.linkUrls[sender.tag]) as! URL
+        print(url)
+        UIApplication.shared.openURL(url)
+    }
+    
+    func checkclicked(sender: UIButton) {
+
+        if(event != nil) {
+            if (event.linkDone[sender.tag] == 0){
+                event.linkDone[sender.tag] = myId
+            } else if (event.linkDone[sender.tag] == myId) {
+                event.linkDone[sender.tag] = 0
+            }
+            wishListTable.reloadData()
+        }
+        
+
+    }
+    
     @IBAction func moreButtonPressed(_ sender: Any) {
         likeButton.isHidden = true
         moreIcon.isHidden = true

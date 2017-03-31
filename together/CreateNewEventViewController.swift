@@ -178,20 +178,21 @@ SKPaymentTransactionObserver {
             if (indexPath.row == 0){
                 if (event.linkUrls[0] != ""){
                     cell.pluseButton.setTitle("-", for: .normal)
-                    cell.link.text = event.linkStrings[indexPath.row]
+                    cell.link.setTitle(event.linkStrings[indexPath.row], for: .normal)
                 } else {
                     cell.pluseButton.setTitle("+", for: .normal)
-                    cell.link.text = ""
+                    cell.link.setTitle("", for: .normal)
+
                 }
             } else if (indexPath.row == event.linkUrls.count) {
-                cell.link.text = ""
+                cell.link.setTitle("", for: .normal)
                 cell.pluseButton.setTitle("+", for: .normal)
             } else {
                 cell.pluseButton.setTitle("-", for: .normal)
-                cell.link.text = event.linkStrings[indexPath.row]
+                cell.link.setTitle(event.linkStrings[indexPath.row], for: .normal)
             }
         } else {
-            cell.link.text = ""
+            cell.link.setTitle("", for: .normal)
             cell.pluseButton.setTitle("+", for: .normal)
         }
         
@@ -310,23 +311,15 @@ SKPaymentTransactionObserver {
                     // The Consumable product (10 coins) has been purchased -> gain 10 extra coins!
                     if productID == COINS_PRODUCT_ID {
                         
-                        if (self.event.linkUrls.count != 0) {
-                            if (self.event.linkUrls[0] == ""){
-                                self.event.linkUrls[0] = self.url!
-                                self.event.linkStrings[0] = self.urlString!
-                            } else {
-                                self.event.linkUrls.append(self.url!)
-                                self.event.linkStrings.append(self.urlString!)
-                            }
-                        } else {
+                    
                             self.event.linkUrls.append(self.url!)
                             self.event.linkStrings.append(self.urlString!)
-                        }
+                        
                         self.wishListTable.reloadData()
 
                         
-                        UIAlertView(title: "IAP Tutorial",
-                                    message: "You've successfully bought 10 extra coins!",
+                        UIAlertView(title: "Successfully",
+                                    message: "You've successfully add wishes",
                                     delegate: nil,
                                     cancelButtonTitle: "OK").show()
                     }

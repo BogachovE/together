@@ -24,6 +24,7 @@ class Event {
     var signedUsers: Array<UInt64>
     var linkUrls: Array<String>
     var linkStrings: Array<String>
+    var linkDone: Array<UInt64>
     
     
     
@@ -39,7 +40,8 @@ class Event {
          endTime: Date = Date(),
          signedUsers: Array<UInt64> = [0],
          linkUrls: Array<String> = [""],
-         linkStrings: Array<String> = [""]
+         linkStrings: Array<String> = [""],
+         linkDone: Array<UInt64> = [0]
         )
     {
         self.title = title
@@ -56,6 +58,7 @@ class Event {
         self.signedUsers = signedUsers
         self.linkUrls = linkUrls
         self.linkStrings = linkStrings
+        self.linkDone = linkDone
             }
 }
 
