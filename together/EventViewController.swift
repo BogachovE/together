@@ -11,7 +11,8 @@ import Firebase
 import KCFloatingActionButton
 import MessageUI
 import Social
-
+import EventKit
+import AMGCalendarManager
 
 
 class EventViewController: UIViewController, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDelegate, UITableViewDataSource{
@@ -24,6 +25,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     var fab = KCFloatingActionButton()
     var myId: UInt64!
     var user: User!
+    var eventStore = EKEventStore()
 
     @IBOutlet weak var eventPhoto: UIImageView!
     @IBOutlet weak var eventDataEnd: UILabel!
@@ -54,9 +56,11 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         userRepositories = UserRepositories()
         wishListTable.delegate = self
         wishListTable.dataSource = self
-
     }
+    
+    
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,7 +84,6 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
                 let endTimeString = formatter.string(from: event.endTime)
                 
                 self.eventDataStart.text = startTimeString
-                self.eventDataEnd.text = endTimeString
                 self.eventLocation.text = event.location
                 self.eventPhoto.image = event.photo
                 self.eventTitle.text = event.title
@@ -190,7 +193,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         
 
         mailComposerVC.setSubject("Email from Together")
-        mailComposerVC.setMessageBody("Hi I want to show you something", isHTML: false)
+        mailComposerVC.setMessageBody("Hi I want to show you something https://itunes.apple.com/us/app/togetherr/id1203266312?l=ru&ls=1&mt=8", isHTML: false)
     
         let data = UIImagePNGRepresentation(event.photo) as NSData?
         
@@ -320,6 +323,19 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    func makeNewCalendarMark(date: Date, title: String, notes: String){
+        AMGCalendarManager.shared.createEvent(completion: { (event) in
+            guard let event = event else { return }
+            
+            event.startDate = date
+            event.endDate = event.startDate.addingTimeInterval(60 * 60 * 1) // 1 hour
+            event.title = title
+            event.notes = notes
+            
+            AMGCalendarManager.shared.saveEvent(event: event)
+        })
+    }
 
  
 
@@ -389,12 +405,12 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
                 let uscribeEventIndex = event.signedUsers.index(of: myId)
                 event.signedUsers.remove(at: uscribeEventIndex!)
                 ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
-                
             } else {
                 user.signedEvent.append(event.id)
                 ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
                 event.signedUsers.append(myId)
                 ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+                makeNewCalendarMark(date: event.startTime, title: event.title, notes: event.description)
             }
         }
     }

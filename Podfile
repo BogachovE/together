@@ -12,6 +12,10 @@ target ‘together’ do
     pod "KCFloatingActionButton"
     pod 'PayPal-iOS-SDK'
     pod 'OneSignal'
+    pod "AMGCalendarManager"
+    pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
+    pod 'GoogleMaps'
 end
 
 

@@ -38,6 +38,11 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
+        self.avatarImage.clipsToBounds = true;
+        self.avatarImage.layer.borderWidth = 1.0
+        self.avatarImage.layer.borderColor = UIColor.white.cgColor
+        
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")

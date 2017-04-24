@@ -18,8 +18,10 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet var editPhoneNumber: UITextField!
     @IBOutlet var editUserName: UITextField!
     
-    var myId: Int = 0
+    var myId: UInt64 = 0
     var ref: FIRDatabaseReference!
+    var storageRef: FIRStorageReference!
+
     
     
 
@@ -28,7 +30,24 @@ class settingsViewController: UIViewController, UIImagePickerControllerDelegate,
         ref = FIRDatabase.database().reference()
         //Load userDefaults
         let defaults = UserDefaults.standard
-        myId = defaults.integer(forKey: "userId")
+        myId = defaults.value(forKey: "userId") as! UInt64
+
+        ref = FIRDatabase.database().reference()
+        let storage = FIRStorage.storage()
+        storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
+
+        
+        self.photo.layer.cornerRadius = self.photo.frame.size.width / 2;
+        self.photo.clipsToBounds = true;
+        self.photo.layer.borderWidth = 1.0
+        self.photo.layer.borderColor = UIColor.white.cgColor
+
+        //Load avatar and Login
+        let userRepositories = UserRepositories()
+        userRepositories.loadUserImage(id: myId, storage: storage, storageRef: storageRef, withh: {(image) in
+            self.photo.image = image
+        })
+
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)

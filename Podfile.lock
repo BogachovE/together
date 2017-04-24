@@ -1,4 +1,5 @@
 PODS:
+  - AMGCalendarManager (1.3)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -61,6 +62,16 @@ PODS:
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.2.0):
+    - GoogleMaps (= 2.2.0)
+    - GooglePlaces (= 2.2.0)
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - GoogleSignIn (4.0.1):
     - GoogleAppUtilities (~> 1.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
@@ -94,6 +105,7 @@ PODS:
   - PayPal-iOS-SDK/Core (2.16.1)
 
 DEPENDENCIES:
+  - AMGCalendarManager
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -101,12 +113,16 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
   - GoogleSignIn
   - KCFloatingActionButton
   - OneSignal
   - PayPal-iOS-SDK
 
 SPEC CHECKSUMS:
+  AMGCalendarManager: fb18348ef1420c65c4aa3c75931818f9a5dee828
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
@@ -124,6 +140,9 @@ SPEC CHECKSUMS:
   FirebaseStorage: 5738284835edb57f0e81d4ae5832bb17c1e4b5fa
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   GoogleSignIn: a8694c0a8e6d1b0ec77c58014de5bfd4ba2fa766
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
@@ -133,6 +152,6 @@ SPEC CHECKSUMS:
   OneSignal: 4cb42948ebc141bd5deb54d3fda25105db94f6d4
   PayPal-iOS-SDK: 774ac7de2d7c3b0ee7e8a35f8b347fd07787321b
 
-PODFILE CHECKSUM: 649c1c12464f4b3ead3fba268be0f429c99eb627
+PODFILE CHECKSUM: a093d63bba372374f78db3d9a03c010e3d7eba8b
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

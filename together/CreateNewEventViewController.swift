@@ -12,6 +12,8 @@ import KCFloatingActionButton
 import Social
 import MessageUI
 import StoreKit
+import AMGCalendarManager
+import GooglePlacePicker
 
 class CreateNewEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UINavigationControllerDelegate,  UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDataSource, UITableViewDelegate, SKProductsRequestDelegate,
 SKPaymentTransactionObserver {
@@ -63,7 +65,7 @@ SKPaymentTransactionObserver {
         
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
-        
+        editLoaction.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidBegin)
         wishListTable.delegate = self
         wishListTable.dataSource = self
         
@@ -268,6 +270,7 @@ SKPaymentTransactionObserver {
         print(response.invalidProductIdentifiers)
         
         let myProduct = response.products
+        self.iapProducts.append(myProduct[0])
         
         for product in myProduct {
             print("Товар добавлен")
@@ -335,6 +338,40 @@ SKPaymentTransactionObserver {
                 default: break
                 }}}
     }
+    
+    func makeNewCalendarMark(date: Date, title: String, notes: String){
+        AMGCalendarManager.shared.createEvent(completion: { (event) in
+            guard let event = event else { return }
+            
+            event.startDate = date
+            event.endDate = event.startDate.addingTimeInterval(60 * 60 * 1) // 1 hour
+            event.title = title
+            event.notes = notes
+            
+            AMGCalendarManager.shared.saveEvent(event: event)
+        })
+    }
+    func textFieldDidChange(_ textField: UITextField){
+        let config = GMSPlacePickerConfig(viewport: nil)
+        let placePicker = GMSPlacePicker(config: config)
+        
+        placePicker.pickPlace(callback: { (place, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let place = place else {
+                print("No place selected")
+                return
+            }
+            
+            print("Place name \(place.name)")
+            print("Place address \(place.formattedAddress)")
+            print("Place attributions \(place.attributions)")
+            self.editLoaction.text = place.formattedAddress
+        })
+    }
 
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
@@ -349,13 +386,13 @@ SKPaymentTransactionObserver {
                                    ownerId: self.id,
                                    location: self.editLoaction.text!,
                                    startTime: self.dataStartPicker.date,
-                                   endTime: self.dataEndPicker.date,
                                    linkUrls: self.event.linkUrls,
                                    linkStrings: self.event.linkStrings)
                 eventRepositories.addNewEvent(event: newEvent, count: count, storageRef: self.storageRef)
                // self.layoutFAB()
              //   self.makeToast(text: "Do you want to share your event?")
               //  self.fab.open()
+                self.makeNewCalendarMark(date: newEvent.startTime, title: newEvent.title, notes: newEvent.description)
                 self.performSegue(withIdentifier: "fromCreateToFeed", sender: self)
             } else {
                 self.makeToast(text: "Please select category")

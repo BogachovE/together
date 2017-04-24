@@ -19,9 +19,9 @@ class  EventRepositories {
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if (value?.value(forKey: "events") != nil){
-                for item in (value?.value(forKey: "events") as? NSArray)! {
-                    if (item as? NSDictionary != nil){
-                    let child = item as! NSDictionary
+                for item in (value?.value(forKey: "events") as? NSDictionary)! {
+                    if (item.value as? NSDictionary != nil){
+                    let child = item.value as! NSDictionary
                     var event: Event = Event()
                     
                     let storage = FIRStorage.storage()

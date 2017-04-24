@@ -12,6 +12,8 @@ import FacebookCore
 import FBSDKCoreKit
 import OneSignal
 import GoogleSignIn
+import GooglePlaces
+import GoogleMaps
 
 
 
@@ -27,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyDqLRk1pMJ7q8Ch0L_qvRKqU8CPi2b298A")
+        GMSServices.provideAPIKey("AIzaSyDqLRk1pMJ7q8Ch0L_qvRKqU8CPi2b298A")
         
         OneSignal.initWithLaunchOptions(launchOptions, appId: "aab72c04-c005-49da-a064-d4e93e7fed76")
         OneSignal.initWithLaunchOptions(launchOptions, appId: "aab72c04-c005-49da-a064-d4e93e7fed76", handleNotificationReceived: { (notification) in

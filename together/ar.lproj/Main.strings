@@ -1,0 +1,180 @@
+
+/* Class = "UILabel"; text = "Evgeniy Bogachov"; ObjectID = "0mt-9o-RFy"; */
+"0mt-9o-RFy.text" = "Evgeniy Bogachov";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1Vw-AE-hbe"; */
+"1Vw-AE-hbe.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Hashtag"; ObjectID = "1W8-Jg-iGo"; */
+"1W8-Jg-iGo.normalTitle" = "وسم";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "3Zf-qF-N1z"; */
+"3Zf-qF-N1z.placeholder" = "البريد ا لكتروني";
+
+/* Class = "UITextField"; placeholder = "Edit location"; ObjectID = "4ZO-7p-7cN"; */
+"4ZO-7p-7cN.placeholder" = "تعديل المكان";
+
+/* Class = "UILabel"; text = "Evgeniy Bogachov"; ObjectID = "5j5-Zd-c7l"; */
+"5j5-Zd-c7l.text" = "Evgeniy Bogachov";
+
+/* Class = "UIButton"; normalTitle = "Forget Password?"; ObjectID = "7kz-1O-gcY"; */
+"7kz-1O-gcY.normalTitle" = "نسيت كلمة المرور?";
+
+/* Class = "UILabel"; text = "7 june 2016 at 20:30"; ObjectID = "Bwa-ct-TIC"; */
+"Bwa-ct-TIC.text" = "7 june 2016 at 20:30";
+
+/* Class = "UILabel"; text = " Hi, My name is Evgenii Bogachov (English translation is Jack). In my portfolio, there are a few programs that I’ve developed. I believe, that my strong sides are responsibility and an ability to look at a product as an entrepreneur and the user.\nMy #1 goal will always be to meet your needs ."; ObjectID = "EE9-cH-IYE"; */
+"EE9-cH-IYE.text" = " Hi, My name is Evgenii Bogachov (English translation is Jack). In my portfolio, there are a few programs that I’ve developed. I believe, that my strong sides are responsibility and an ability to look at a product as an entrepreneur and the user.\nMy #1 goal will always be to meet your needs .";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "EFD-D9-Smr"; */
+"EFD-D9-Smr.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "-or-"; ObjectID = "EIV-f4-Vm2"; */
+"EIV-f4-Vm2.text" = "-أو-";
+
+/* Class = "UILabel"; text = "Following"; ObjectID = "Exk-B4-YWc"; */
+"Exk-B4-YWc.text" = "متابع";
+
+/* Class = "UITextField"; placeholder = "Edit description"; ObjectID = "F1A-dB-FzX"; */
+"F1A-dB-FzX.placeholder" = "تعديل الوصف";
+
+/* Class = "UITextField"; placeholder = "description"; ObjectID = "GR5-jN-o0x"; */
+"GR5-jN-o0x.placeholder" = "الوصف";
+
+/* Class = "UIButton"; normalTitle = "Less"; ObjectID = "Gog-2I-nZm"; */
+"Gog-2I-nZm.normalTitle" = "مختصر";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HKj-eZ-r6F"; */
+"HKj-eZ-r6F.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "3.5K"; ObjectID = "Hdh-ac-xsJ"; */
+"Hdh-ac-xsJ.text" = "3.5K";
+
+/* Class = "UILabel"; text = "Start"; ObjectID = "IZI-zL-bhc"; */
+"IZI-zL-bhc.text" = "البدء";
+
+/* Class = "UILabel"; text = "DONE"; ObjectID = "J4Q-Lw-4lT"; */
+"J4Q-Lw-4lT.text" = "تم";
+
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "J8D-g0-3bZ"; */
+"J8D-g0-3bZ.placeholder" = "رقم الجوال";
+
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "JSS-9R-PrF"; */
+"JSS-9R-PrF.placeholder" = "رقم الجوال";
+
+/* Class = "UILabel"; text = "Event"; ObjectID = "Jg5-Uk-g25"; */
+"Jg5-Uk-g25.text" = "Event";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "L6o-cx-2ED"; */
+"L6o-cx-2ED.normalTitle" = "+";
+
+/* Class = "UITabBarItem"; title = "Feed"; ObjectID = "LV3-Vd-TZl"; */
+"LV3-Vd-TZl.title" = "التحديثات";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "OSf-VR-1p8"; */
+"OSf-VR-1p8.placeholder" = "البريد ا لكتروني";
+
+/* Class = "UIButton"; normalTitle = "My occasion"; ObjectID = "Rke-53-M9d"; */
+"Rke-53-M9d.normalTitle" = "قائمة مناسباتي";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "T13-xx-fji"; */
+"T13-xx-fji.title" = "أخبار";
+
+/* Class = "UIButton"; normalTitle = "More"; ObjectID = "X6w-Fa-FUi"; */
+"X6w-Fa-FUi.normalTitle" = "المزيد";
+
+/* Class = "UIButton"; normalTitle = "Edit Photo"; ObjectID = "Xxp-8p-NLj"; */
+"Xxp-8p-NLj.normalTitle" = "تعديل الصورة";
+
+/* Class = "UITextField"; placeholder = "Edit title"; ObjectID = "YZ4-gc-7c4"; */
+"YZ4-gc-7c4.placeholder" = "تعديل العنوان";
+
+/* Class = "UIButton"; normalTitle = "Edit Photo"; ObjectID = "adl-EG-POk"; */
+"adl-EG-POk.normalTitle" = "تعديل الصورة";
+
+/* Class = "UILabel"; text = "Cancel"; ObjectID = "afO-SM-nmF"; */
+"afO-SM-nmF.text" = "إلغاء";
+
+/* Class = "UIButton"; normalTitle = "Signed"; ObjectID = "cfe-L5-2R2"; */
+"cfe-L5-2R2.normalTitle" = "داخل";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "cuI-ow-0Ko"; */
+"cuI-ow-0Ko.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "3.5K"; ObjectID = "dCB-bY-Rdw"; */
+"dCB-bY-Rdw.text" = "3.5K";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "e56-8r-J2g"; */
+"e56-8r-J2g.placeholder" = "كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "e7f-tg-lrV"; */
+"e7f-tg-lrV.normalTitle" = "خروج";
+
+/* Class = "UIButton"; normalTitle = "Remembe me "; ObjectID = "ex8-TC-F6y"; */
+"ex8-TC-F6y.normalTitle" = "تذكرني";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "gfJ-JF-OC9"; */
+"gfJ-JF-OC9.placeholder" = "البريد ا لكتروني";
+
+/* Class = "UILabel"; text = "End"; ObjectID = "gi5-WK-4tA"; */
+"gi5-WK-4tA.text" = "ا نتهاء";
+
+/* Class = "UILabel"; text = "Evgeniy Bogachov"; ObjectID = "jUD-LQ-4KM"; */
+"jUD-LQ-4KM.text" = "Evgeniy Bogachov";
+
+/* Class = "UILabel"; text = "Subscribe"; ObjectID = "k7U-gE-HvD"; */
+"k7U-gE-HvD.text" = "ا شتراك";
+
+/* Class = "UILabel"; text = "DONE"; ObjectID = "ks8-Tk-h93"; */
+"ks8-Tk-h93.text" = "تم";
+
+/* Class = "UIButton"; normalTitle = "Tshort"; ObjectID = "lt5-HS-aMK"; */
+"lt5-HS-aMK.normalTitle" = "Tshort";
+
+/* Class = "UILabel"; text = "Android Ios UI "; ObjectID = "m1n-yb-K7H"; */
+"m1n-yb-K7H.text" = "Android Ios UI ";
+
+/* Class = "UITextField"; placeholder = "Title"; ObjectID = "mj8-i1-jLH"; */
+"mj8-i1-jLH.placeholder" = "العنوان";
+
+/* Class = "UILabel"; text = "Event description Event description Event description Event description"; ObjectID = "oTa-V9-DA8"; */
+"oTa-V9-DA8.text" = "Event description Event description Event description Event description";
+
+/* Class = "UIButton"; normalTitle = "Friends"; ObjectID = "pLg-Cu-wHC"; */
+"pLg-Cu-wHC.normalTitle" = "ا صدقاء";
+
+/* Class = "UILabel"; text = "Steven Bernson, Attorney at Law"; ObjectID = "spE-bs-NXe"; */
+"spE-bs-NXe.text" = "Steven Bernson, Attorney at Law";
+
+/* Class = "UILabel"; text = "7770 participants"; ObjectID = "u69-Tn-8TM"; */
+"u69-Tn-8TM.text" = "7770 participants";
+
+/* Class = "UILabel"; text = "Subscribe"; ObjectID = "w8h-sb-gi2"; */
+"w8h-sb-gi2.text" = "ا شتراك";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xa9-Xh-6Se"; */
+"xa9-Xh-6Se.text" = "العنوان";
+
+/* Class = "UITextField"; placeholder = "User name"; ObjectID = "xee-0P-dDW"; */
+"xee-0P-dDW.placeholder" = "ا سم";
+
+/* Class = "UILabel"; text = "Followers"; ObjectID = "yKz-YN-9Qh"; */
+"yKz-YN-9Qh.text" = "متابعون";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "yaN-Xn-xSz"; */
+"yaN-Xn-xSz.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yaf-Id-Cbj"; */
+"yaf-Id-Cbj.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Edit photo"; ObjectID = "z2o-vU-Wvf"; */
+"z2o-vU-Wvf.normalTitle" = "تعديل الصورة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zY1-3u-lmw"; */
+"zY1-3u-lmw.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "User name"; ObjectID = "zez-Ph-rsz"; */
+"zez-Ph-rsz.placeholder" = "ا سم";
+
+/* Class = "UILabel"; text = "Done"; ObjectID = "zfd-8H-pEh"; */
+"zfd-8H-pEh.text" = "تم";
