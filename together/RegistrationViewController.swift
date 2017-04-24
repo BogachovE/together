@@ -12,7 +12,7 @@ import OneSignal
 
 
 
-class RegistratonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RegistratonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var editUserName: UITextField!
     @IBOutlet weak var editPhoneNumber: UITextField!
@@ -35,6 +35,42 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
             UserDefaults.standard.synchronize()
         }
     }
+    var activeTextField = UITextField()
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        self.activeTextField = textField
+    }
+   
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == editUserName) {
+            editPhoneNumber.becomeFirstResponder()
+        } else if (textField == editPhoneNumber) {
+            editEmail.resignFirstResponder()
+        }else if (textField == editEmail) {
+            editPassword.resignFirstResponder()
+        } else { dismissKeyboard()
+                    }
+        
+        return true
+    }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -50,6 +86,17 @@ class RegistratonViewController: UIViewController, UIImagePickerControllerDelega
         self.photoEdit.clipsToBounds = true;
         self.photoEdit.layer.borderWidth = 1.0
         self.photoEdit.layer.borderColor = UIColor.white.cgColor
+    
+        editUserName.delegate = self
+        editPhoneNumber.delegate = self
+        editEmail.delegate = self
+        editPassword.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+      
+
+        
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")

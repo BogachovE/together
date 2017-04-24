@@ -21,7 +21,7 @@ class UserRepositories {
             let count = value?["count"] as? NSInteger
             if (user.id == 0){
                 if (count != nil){
-                    user.id = count!+1
+                    user.id = UInt64(count! + 1)
                     } else{
                         user.id = 1
                             }
@@ -71,7 +71,7 @@ class UserRepositories {
         }
     }
 
-    func loadLogin(id:Int, withh: @escaping (String)->Void){
+    func loadLogin(id:UInt64, withh: @escaping (String)->Void){
         var name:String = ""
         ref.child("users/"+String(id)).observeSingleEvent(of: .value, with: { (snapshot) in
             if(snapshot.exists()){

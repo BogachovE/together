@@ -8,32 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		D63093A0274366C148A9DE67 /* Pods_together.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E158FE0680D7E6A951A920 /* Pods_together.framework */; };
+		DD0400C51EADFAA600D973D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0400C71EADFAA600D973D8 /* LaunchScreen.storyboard */; };
+		DD0400C81EADFAB200D973D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0400CA1EADFAB200D973D8 /* Main.storyboard */; };
+		DD0400CE1EAE087100D973D8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD0400D01EAE087100D973D8 /* Info.plist */; };
 		DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */; };
 		DD2D9F0E1E5B48E500E5C070 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9F0D1E5B48E500E5C070 /* UserProtocol.swift */; };
-		DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DD306D8E1E2BE6D20036EB4A /* Base.lproj */; };
 		DD306D921E2BEEEE0036EB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */; };
 		DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */; };
 		DD3E8C3E1E3255810067F3A3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3D1E3255810067F3A3 /* Event.swift */; };
 		DD3E8C401E3258970067F3A3 /* EventRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */; };
 		DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */; };
-		DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515EA81E48EA610025D5BE /* PaymentViewController.swift */; };
 		DD61661F1E4366B200D3DF82 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61661E1E4366B200D3DF82 /* Instagram.swift */; };
 		DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6166201E43706D00D3DF82 /* ProfileViewController.swift */; };
 		DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */; };
 		DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */; };
-		DD7BADC41E51EB98002AB3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7BADC21E51EB98002AB3ED /* Main.storyboard */; };
 		DD7E7ED41E3E1AF10003A46F /* eventMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */; };
 		DD7E7ED61E3E21B00003A46F /* userMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E7ED51E3E21B00003A46F /* userMaper.swift */; };
 		DD91C7CE1E323AAD0066CF8E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */; };
 		DD999D091E33A79900FF787A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD999D081E33A79900FF787A /* EventViewController.swift */; };
+		DDA40CD01E76FB8100B34C5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA40CCF1E76FB8100B34C5A /* StoreKit.framework */; };
 		DDA899831E377E24002D2069 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899821E377E24002D2069 /* NewsTableViewCell.swift */; };
 		DDA899851E379310002D2069 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA899841E379310002D2069 /* settingsViewController.swift */; };
 		DDAFA0931E509C20000DDCA4 /* notificationMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */; };
 		DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */; };
-		DDBC0AD31E5B60DE009111D3 /* WithdrawalReguestSwnder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */; };
 		DDBFA9001E27B02A0040FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */; };
 		DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */; };
-		DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */; };
 		DDBFA91E1E4DF8DC003C9F2C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */; };
 		DDBFA9201E4E1F99003C9F2C /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBFA91F1E4E1F99003C9F2C /* NotificationModel.swift */; };
 		DDCBA6DF1E4CD1FF00F3CD74 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */; };
@@ -58,9 +57,13 @@
 		65E158FE0680D7E6A951A920 /* Pods_together.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_together.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4DFA78B8B9589BD7760DFE /* Pods-together.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.release.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.release.xcconfig"; sourceTree = "<group>"; };
 		C9446721D9C31C4039F63B78 /* Pods-together.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.debug.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.debug.xcconfig"; sourceTree = "<group>"; };
+		DD0400C61EADFAA600D973D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD0400C91EADFAB200D973D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD0400CB1EADFAC900D973D8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DD0400CC1EADFACA00D973D8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		DD0400CF1EAE087100D973D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		DD1CB5441E40FA4D0060A7E8 /* SocialShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShare.swift; sourceTree = "<group>"; };
 		DD2D9F0D1E5B48E500E5C070 /* UserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
-		DD306D8E1E2BE6D20036EB4A /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = together/Base.lproj; sourceTree = "<group>"; };
 		DD306D901E2BEEEE0036EB4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD306D911E2BEEEE0036EB4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DD306D971E2BF5610036EB4A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../Downloads/roboto-3 2/Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -68,27 +71,23 @@
 		DD3E8C3D1E3255810067F3A3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRepositories.swift; sourceTree = "<group>"; };
 		DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DD515EA81E48EA610025D5BE /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		DD61661E1E4366B200D3DF82 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		DD6166201E43706D00D3DF82 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DD6D8ADE1E3DF804002DA0C8 /* CreateNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewEventViewController.swift; sourceTree = "<group>"; };
-		DD7BADC31E51EB98002AB3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD7E7ED31E3E1AF10003A46F /* eventMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventMaper.swift; sourceTree = "<group>"; };
 		DD7E7ED51E3E21B00003A46F /* userMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userMaper.swift; sourceTree = "<group>"; };
 		DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DD93297F1E2C12DC00F647BE /* together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = together.entitlements; sourceTree = "<group>"; };
 		DD999D081E33A79900FF787A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		DDA40CCF1E76FB8100B34C5A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DDA899821E377E24002D2069 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA899841E379310002D2069 /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		DDAFA0921E509C1F000DDCA4 /* notificationMaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationMaper.swift; sourceTree = "<group>"; };
 		DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRepositories.swift; sourceTree = "<group>"; };
-		DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalReguestSwnder.swift; sourceTree = "<group>"; };
 		DDBFA8FC1E27B02A0040FEE1 /* together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBFA8FF1E27B02A0040FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DDBFA9091E27B02A0040FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DDBFA90B1E27B02A0040FEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDBFA91D1E4DF8DC003C9F2C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		DDBFA91F1E4E1F99003C9F2C /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		DDCBA6D41E4CD0CD00F3CD74 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -126,6 +125,7 @@
 				DDCBA6E61E4CD1FF00F3CD74 /* SafariServices.framework in Frameworks */,
 				DDCBA6E71E4CD1FF00F3CD74 /* SystemConfiguration.framework in Frameworks */,
 				D63093A0274366C148A9DE67 /* Pods_together.framework in Frameworks */,
+				DDA40CD01E76FB8100B34C5A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,9 +162,7 @@
 		DD306D941E2BEF380036EB4A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DD7BADC21E51EB98002AB3ED /* Main.storyboard */,
 				DD91C7CD1E323AAD0066CF8E /* CollectionViewCell.swift */,
-				DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */,
 				DDA899821E377E24002D2069 /* NewsTableViewCell.swift */,
 				DDD5B91B1E6C25640062336F /* WishListTableViewCell.swift */,
 			);
@@ -183,7 +181,6 @@
 				DDD256671E361A7F003180BA /* ContributionViewController.swift */,
 				DDA899841E379310002D2069 /* settingsViewController.swift */,
 				DD6166201E43706D00D3DF82 /* ProfileViewController.swift */,
-				DD515EA81E48EA610025D5BE /* PaymentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -225,7 +222,6 @@
 				DDCBA6D41E4CD0CD00F3CD74 /* Header.h */,
 				DDBFA8FE1E27B02A0040FEE1 /* together */,
 				DDBFA8FD1E27B02A0040FEE1 /* Products */,
-				DD306D8E1E2BE6D20036EB4A /* Base.lproj */,
 				DA912F5E1DA467831B8EAF57 /* Pods */,
 				FDE4294A7497F7895F95DFC9 /* Frameworks */,
 			);
@@ -242,6 +238,8 @@
 		DDBFA8FE1E27B02A0040FEE1 /* together */ = {
 			isa = PBXGroup;
 			children = (
+				DD0400C71EADFAA600D973D8 /* LaunchScreen.storyboard */,
+				DD0400CA1EADFAB200D973D8 /* Main.storyboard */,
 				DD2D9F0C1E5B48C300E5C070 /* Protocols */,
 				DD1CB5431E40FA250060A7E8 /* OwnLibs */,
 				DD93297F1E2C12DC00F647BE /* together.entitlements */,
@@ -254,7 +252,7 @@
 				DDBFA9061E27B02A0040FEE1 /* Assets.xcassets */,
 				DD306D991E2BF5650036EB4A /* Fonts */,
 				DD3E8C411E325F2C0067F3A3 /* GoogleService-Info.plist */,
-				DDBFA90B1E27B02A0040FEE1 /* Info.plist */,
+				DD0400D01EAE087100D973D8 /* Info.plist */,
 				DD6AD4DA1E40CAF300A1FF07 /* UIColor.swift */,
 			);
 			path = together;
@@ -266,7 +264,6 @@
 				DDEA9FA01E2D21B700A943FF /* UserRepositories.swift */,
 				DD3E8C3F1E3258970067F3A3 /* EventRepositories.swift */,
 				DDAFA0941E50A066000DDCA4 /* NotificationRepositories.swift */,
-				DDBC0AD21E5B60DE009111D3 /* WithdrawalReguestSwnder.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -274,6 +271,7 @@
 		FDE4294A7497F7895F95DFC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDA40CCF1E76FB8100B34C5A /* StoreKit.framework */,
 				DDCBA6D61E4CD1FF00F3CD74 /* Accelerate.framework */,
 				DDCBA6D71E4CD1FF00F3CD74 /* AudioToolbox.framework */,
 				DDCBA6D81E4CD1FF00F3CD74 /* AVFoundation.framework */,
@@ -319,16 +317,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Attractive Products";
 				TargetAttributes = {
 					DDBFA8FB1E27B02A0040FEE1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FZM9VUX6F8;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
@@ -346,8 +347,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ar,
 			);
 			mainGroup = DDBFA8F31E27B0290040FEE1;
 			productRefGroup = DDBFA8FD1E27B02A0040FEE1 /* Products */;
@@ -364,11 +365,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBFA90A1E27B02A0040FEE1 /* LaunchScreen.storyboard in Resources */,
-				DD7BADC41E51EB98002AB3ED /* Main.storyboard in Resources */,
+				DD0400C51EADFAA600D973D8 /* LaunchScreen.storyboard in Resources */,
 				DDBFA9071E27B02A0040FEE1 /* Assets.xcassets in Resources */,
-				DD306D8F1E2BE6D20036EB4A /* Base.lproj in Resources */,
 				DD3E8C421E325F2C0067F3A3 /* GoogleService-Info.plist in Resources */,
+				DD0400CE1EAE087100D973D8 /* Info.plist in Resources */,
+				DD0400C81EADFAB200D973D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +418,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DD9DBF0B1E2E667B003E7A2E /* ShellScript */ = {
@@ -449,7 +450,6 @@
 				DDEA9FA11E2D21B700A943FF /* UserRepositories.swift in Sources */,
 				DD2D9F0E1E5B48E500E5C070 /* UserProtocol.swift in Sources */,
 				DDD256661E3619FA003180BA /* NewsViewController.swift in Sources */,
-				DDBC0AD31E5B60DE009111D3 /* WithdrawalReguestSwnder.swift in Sources */,
 				DDED51451E59BFDB003931E6 /* Mappable.swift in Sources */,
 				DDE799411E2E812E00F93B6C /* FeedViewController.swift in Sources */,
 				DD1CB5451E40FA4D0060A7E8 /* SocialShare.swift in Sources */,
@@ -463,7 +463,6 @@
 				DD6AD4DB1E40CAF300A1FF07 /* UIColor.swift in Sources */,
 				DD6D8ADF1E3DF804002DA0C8 /* CreateNewEventViewController.swift in Sources */,
 				DDBFA9201E4E1F99003C9F2C /* NotificationModel.swift in Sources */,
-				DD515EA91E48EA610025D5BE /* PaymentViewController.swift in Sources */,
 				DDAFA0951E50A066000DDCA4 /* NotificationRepositories.swift in Sources */,
 				DD306D931E2BEEEE0036EB4A /* RegistrationViewController.swift in Sources */,
 				DD6166211E43706D00D3DF82 /* ProfileViewController.swift in Sources */,
@@ -476,20 +475,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DD7BADC21E51EB98002AB3ED /* Main.storyboard */ = {
+		DD0400C71EADFAA600D973D8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DD7BADC31E51EB98002AB3ED /* Base */,
+				DD0400C61EADFAA600D973D8 /* Base */,
+				DD0400CB1EADFAC900D973D8 /* ar */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DD0400CA1EADFAB200D973D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD0400C91EADFAB200D973D8 /* Base */,
+				DD0400CC1EADFACA00D973D8 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DDBFA9081E27B02A0040FEE1 /* LaunchScreen.storyboard */ = {
+		DD0400D01EAE087100D973D8 /* Info.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DDBFA9091E27B02A0040FEE1 /* Base */,
+				DD0400CF1EAE087100D973D8 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -499,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -535,6 +545,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -549,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -579,6 +591,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -596,6 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Application Integration Certification Authority";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FZM9VUX6F8;
 				INFOPLIST_FILE = together/Info.plist;
@@ -603,8 +617,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.products.attractive.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "5e6bbff2-3c23-4a27-9795-218b3230965e";
+				PROVISIONING_PROFILE_SPECIFIER = together;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -620,15 +634,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = together/together.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ammar Noorwali (Y4SKR8RDW9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = FZM9VUX6F8;
 				INFOPLIST_FILE = together/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.products.attractive.togetherr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0de3289c-749e-4740-a05d-b1ce801abdb5";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.products.attractive.togetherr";
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

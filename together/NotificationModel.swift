@@ -13,17 +13,17 @@ class NotificationModel {
     var notifId:Int
     var text:String
     var status:String
-    var userId:Int
+    var userId:UInt64
     var type:String
     var usersNotifId: [String]
     var lang: String
-    var fromId: Int
+    var fromId: UInt64
     var fromAvatar: UIImage
     
     
     
     
-    init(notifId: Int = 0, text: String = "void text", status: String = "Unread", userId: Int = 0, type:String = "none", usersNotifId: [String] = [""], lang: String = "en", fromId: Int = 0, fromAvatar: UIImage = #imageLiteral(resourceName: "face")) {
+    init(notifId: Int = 0, text: String = "void text", status: String = "Unread", userId: UInt64 = 0, type:String = "none", usersNotifId: [String] = [""], lang: String = "en", fromId: UInt64 = 0, fromAvatar: UIImage = #imageLiteral(resourceName: "face")) {
         self.text = text
         self.notifId = notifId
         self.status = status

@@ -28,9 +28,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
     var myAccessToken: String!
     var user: User!
     var pass: String!
-    var userId : AnyObject? {
+    var userId : UInt64? {
         get {
-            return UserDefaults.standard.object(forKey: "userId") as AnyObject?
+            return UserDefaults.standard.object(forKey: "userId") as! UInt64?
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "userId")
@@ -144,7 +144,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
                             let dict = child.value as! NSDictionary
                             
                                 let id = dict.value(forKey: "id")
-                                self.userId = id as AnyObject?
+                                self.userId = id as! UInt64
                         
                             self.performSegue(withIdentifier: "fromLoginToMain", sender: self)
                         }
@@ -201,9 +201,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate  {
                     }
                     print("fetched user: \((result as! NSDictionary).value(forKey: "name"))")
                     let id = (result as! NSDictionary).value(forKey: "id") as! String
-                    self.userId = Int(id) as AnyObject?
+                    self.userId = UInt64(id) as UInt64?
                     self.user.name = (result as! NSDictionary).value(forKey: "name") as! String
-                    self.user.id = self.userId as! Int
+                    self.user.id = self.userId! 
                     self.user.notificationId = userNotifId!
                     self.ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
                         if (snapshot.childSnapshot(forPath: String(id)).exists()){

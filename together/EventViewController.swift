@@ -11,7 +11,8 @@ import Firebase
 import KCFloatingActionButton
 import MessageUI
 import Social
-
+import EventKit
+import AMGCalendarManager
 
 
 class EventViewController: UIViewController, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate, UITableViewDelegate, UITableViewDataSource{
@@ -22,8 +23,9 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     var userRepositories: UserRepositories!
     var event: Event!
     var fab = KCFloatingActionButton()
-    var myId: Int!
+    var myId: UInt64!
     var user: User!
+    var eventStore = EKEventStore()
 
     @IBOutlet weak var eventPhoto: UIImageView!
     @IBOutlet weak var eventDataEnd: UILabel!
@@ -48,15 +50,17 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         eventRepositories = EventRepositories()
         let defaults = UserDefaults.standard
-        myId = defaults.integer(forKey: "userId")
+        myId = defaults.value(forKey: "userId") as! UInt64
         showEventInfo()
         layoutFAB()
         userRepositories = UserRepositories()
         wishListTable.delegate = self
         wishListTable.dataSource = self
-
     }
+    
+    
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,7 +84,6 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
                 let endTimeString = formatter.string(from: event.endTime)
                 
                 self.eventDataStart.text = startTimeString
-                self.eventDataEnd.text = endTimeString
                 self.eventLocation.text = event.location
                 self.eventPhoto.image = event.photo
                 self.eventTitle.text = event.title
@@ -97,6 +100,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
                             self.subscribeLabel.text = "Subscrible"
                         }
                     }
+                    self.wishListTable.reloadData()
                 })
             })
         })
@@ -105,10 +109,10 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     func layoutFAB() {
         fab.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
         fab.plusColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-        let titles: Array<String> = ["Share to whatsapp", "Share to facebook", "Share by email", "Share to instagram", "Share to twiter"]
-        let types: Array<String> = ["wat", "face", "email", "incta", "twiter"]
-        let icons: Array<UIImage> = [#imageLiteral(resourceName: "watBtn"), #imageLiteral(resourceName: "faceBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
-        for i in 0...4{
+        let titles: Array<String> = ["Share to facebook", "Share by email", "Share to instagram", "Share to twiter"]
+        let types: Array<String> = ["face", "email", "incta", "twiter"]
+        let icons: Array<UIImage> = [#imageLiteral(resourceName: "faceBtn"),#imageLiteral(resourceName: "EmailBtn"), #imageLiteral(resourceName: "inctaBtn"), #imageLiteral(resourceName: "twiterBtn")]
+        for i in 0...3{
             let item = KCFloatingActionButtonItem()
             item.buttonColor = UIColor(red:0.41, green:0.94, blue:0.68, alpha:1.0)
             item.circleShadowColor = UIColor.red
@@ -189,7 +193,7 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         
 
         mailComposerVC.setSubject("Email from Together")
-        mailComposerVC.setMessageBody("Hi I want to show you something", isHTML: false)
+        mailComposerVC.setMessageBody("Hi I want to show you something https://itunes.apple.com/us/app/togetherr/id1203266312?l=ru&ls=1&mt=8", isHTML: false)
     
         let data = UIImagePNGRepresentation(event.photo) as NSData?
         
@@ -277,27 +281,86 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
         })
     }
     
-    func checkSubscribe(){
-        
-    }
     
     //table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        var count: Int
+        if (event != nil) {
+            count = event.linkStrings.count
+        } else {
+            count = 3
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = wishListTable.dequeueReusableCell(withIdentifier: "eventTableviewcell", for: indexPath) as! WishListTableViewCell
-        cell.link.text = "ghjkl"
+        if (event != nil){
+            cell.link.setTitle(event.linkStrings[indexPath.row], for: .normal)
+        } else {
+            cell.link.setTitle("", for: .normal)
+        }
+        
+        cell.checkbox.tag = indexPath.row
+        cell.checkbox.addTarget(self, action: #selector(self.checkclicked(sender:)), for: UIControlEvents.touchUpInside)
+        cell.link.tag = indexPath.row
+        cell.link.addTarget(self, action: #selector(self.linkclicked(sender:)), for: UIControlEvents.touchUpInside)
+
+        
+        if (event != nil) {
+            if (event.linkDone[indexPath.row] == 0){
+            cell.checkbox.isSelected = false
+            } else {
+                cell.checkbox.isSelected = true
+            }
+            
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func makeNewCalendarMark(date: Date, title: String, notes: String){
+        AMGCalendarManager.shared.createEvent(completion: { (event) in
+            guard let event = event else { return }
+            
+            event.startDate = date
+            event.endDate = event.startDate.addingTimeInterval(60 * 60 * 1) // 1 hour
+            event.title = title
+            event.notes = notes
+            
+            AMGCalendarManager.shared.saveEvent(event: event)
+        })
     }
 
  
 
     
     //Actions
+    func linkclicked(sender: UIButton) {
+        let url = NSURL(string: event.linkUrls[sender.tag]) as! URL
+        print(url)
+        UIApplication.shared.openURL(url)
+    }
+    
+    func checkclicked(sender: UIButton) {
+
+        if(event != nil) {
+            if (event.linkDone[sender.tag] == 0){
+                event.linkDone[sender.tag] = myId
+            } else if (event.linkDone[sender.tag] == myId) {
+                event.linkDone[sender.tag] = 0
+            }
+            wishListTable.reloadData()
+        }
+        
+
+    }
+    
     @IBAction func moreButtonPressed(_ sender: Any) {
         likeButton.isHidden = true
         moreIcon.isHidden = true
@@ -310,13 +373,15 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func likeButtonPressed(_ sender: Any) {
-        let isLike:Bool = self.checkLike()
-        if (isLike){
-            removeLike()
-            likeButton.isSelected = false
-        } else {
-            addLike()
-            likeButton.isSelected = true
+        if (event != nil && user != nil){
+            let isLike:Bool = self.checkLike()
+            if (isLike){
+                removeLike()
+                likeButton.isSelected = false
+            } else {
+                addLike()
+                likeButton.isSelected = true
+            }
         }
     }
     
@@ -332,19 +397,21 @@ class EventViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func subscribeButtonPressed(_ sender: Any) {
-        if (subscribeLabel.text == "Unsubscrible"){
-            let uscribeIndex = user.signedEvent.index(of: event.id)
-            user.signedEvent.remove(at: uscribeIndex!)
-            ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
-            let uscribeEventIndex = event.signedUsers.index(of: myId)
-            event.signedUsers.remove(at: uscribeEventIndex!)
-            ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
-            
-        } else {
-            user.signedEvent.append(event.id)
-            ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
-            event.signedUsers.append(myId)
-            ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+        if (event != nil && user != nil) {
+            if (subscribeLabel.text == "Unsubscrible"){
+                let uscribeIndex = user.signedEvent.index(of: event.id)
+                user.signedEvent.remove(at: uscribeIndex!)
+                ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
+                let uscribeEventIndex = event.signedUsers.index(of: myId)
+                event.signedUsers.remove(at: uscribeEventIndex!)
+                ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+            } else {
+                user.signedEvent.append(event.id)
+                ref.child("users/" + String(myId) + "/signedEvent/").setValue(user.signedEvent)
+                event.signedUsers.append(myId)
+                ref.child("events/" + String(event.id) + "/signedUsers/").setValue(event.signedUsers)
+                makeNewCalendarMark(date: event.startTime, title: event.title, notes: event.description)
+            }
         }
     }
     

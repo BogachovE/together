@@ -23,10 +23,10 @@ class UserMaper{
         
         user = User(name: userDictionary.value(forKey: "name") as! String,
                     email: userDictionary.value(forKey: "email") as! String,
-                    id: userDictionary.value(forKey: "id") as! Int,
+                    id: userDictionary.value(forKey: "id") as! UInt64,
                     phone: userDictionary.value(forKey: "phone") as! String,
                     photo: image,
-                    friends: userDictionary.value(forKey: "friends") as! Array<Int>,
+                    friends: userDictionary.value(forKey: "friends") as! Array<UInt64>,
                     signedEvent: userDictionary.value(forKey: "signedEvent") as! Array<Int>,
                     title: userDictionary.value(forKey: "title") as! String,
                     followersCount: userDictionary.value(forKey: "followersCount") as! Int,

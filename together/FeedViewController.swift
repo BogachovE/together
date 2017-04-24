@@ -26,7 +26,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var userRepositories: UserRepositories!
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
-    var id:Int!
+    var id:UInt64!
     var buttonState: Array<Bool> = []
     var filterType: String = "all"
     var searchActive : Bool = false
@@ -38,13 +38,17 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
+        self.avatarImage.clipsToBounds = true;
+        self.avatarImage.layer.borderWidth = 1.0
+        self.avatarImage.layer.borderColor = UIColor.white.cgColor
+        
         ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://together-df2ce.appspot.com")
         //Load userDefaults
         let defaults = UserDefaults.standard
-        id = defaults.integer(forKey: "userId")
-        
+        id = defaults.value(forKey: "userId") as! UInt64
         pickerData = ["Category","Celebretion", "Helping"]
         
         eventRepositories = EventRepositories()
@@ -132,7 +136,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         for i in events[indexPath.row].likes {
-            if (i == id){
+            if (UInt64(i) == id){
              cell.likeButton.isSelected = true
             }else {
               cell.likeButton.isSelected = false
@@ -143,7 +147,6 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         cell.eventPhoto.image = events[indexPath.row].photo
         cell.eventTitle.text = events[indexPath.row].title
         cell.eventDescription.text = events[indexPath.row].description
-        cell.eventCollected.text = String(events[indexPath.row].contrebuted)+"$"
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
         
@@ -288,7 +291,7 @@ class FeedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         var isLiked: Bool
         isLiked = false
         for i in events[sender.tag].likes{
-            if (i == id) {
+            if (UInt64(i) == id) {
                 isLiked = true
                 print("i=",i)
             }

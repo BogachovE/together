@@ -17,15 +17,33 @@ class Event {
     var photo: UIImage
     var category: String
     var ownerId: UInt64
-    var likes: Array<Int>
+    var likes: Array<UInt64>
     var location: String
     var startTime: Date
     var endTime: Date
-    var signedUsers: Array<Int>
+    var signedUsers: Array<UInt64>
+    var linkUrls: Array<String>
+    var linkStrings: Array<String>
+    var linkDone: Array<UInt64>
     
     
     
-    init(title: String = "", description: String = "", id: Int = 0, photo: UIImage = #imageLiteral(resourceName: "EventPhoto"), contrebuted: Int = 0, category: String = "", ownerId: UInt64 = 0, likes: Array<Int> = [0], location: String = "", startTime: Date = Date(), endTime: Date = Date(), signedUsers: Array<Int> = [0]) {
+    init(title: String = "",
+         description: String = "",
+         id: Int = 0,
+         photo: UIImage = #imageLiteral(resourceName: "EventPhoto"),
+         contrebuted: Int = 0,
+         category: String = "",
+         ownerId: UInt64 = 0,
+         likes: Array<UInt64> = [0],
+         location: String = "", startTime: Date = Date(),
+         endTime: Date = Date(),
+         signedUsers: Array<UInt64> = [0],
+         linkUrls: Array<String> = [""],
+         linkStrings: Array<String> = [""],
+         linkDone: Array<UInt64> = [0]
+        )
+    {
         self.title = title
         self.id = id
         self.description = description
@@ -38,6 +56,9 @@ class Event {
         self.startTime = startTime
         self.endTime = endTime
         self.signedUsers = signedUsers
+        self.linkUrls = linkUrls
+        self.linkStrings = linkStrings
+        self.linkDone = linkDone
             }
 }
 

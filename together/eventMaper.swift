@@ -29,7 +29,10 @@ class EventMaper{
             "location":event.location,
             "startTime":startTimeString,
             "endTime": endTimeString,
-            "signedUsers": event.signedUsers
+            "signedUsers": event.signedUsers,
+            "linkUrls": event.linkUrls,
+            "linkStrings": event.linkStrings,
+            "linkDone": event.linkDone
         ]
         return dictionaryEvent
     }
@@ -56,11 +59,14 @@ class EventMaper{
             contrebuted: eventDictionary.value(forKey: "contrebuted") as! Int,
             category: eventDictionary.value(forKey: "category") as! String,
             ownerId: eventDictionary.value(forKey: "ownerId") as! UInt64,
-            likes: eventDictionary.value(forKey: "likes") as! Array<Int>,
+            likes: eventDictionary.value(forKey: "likes") as! Array<UInt64>,
             location: eventDictionary.value(forKey: "location") as! String,
             startTime: startTime!,
             endTime: endTime!,
-            signedUsers: eventDictionary.value(forKey: "signedUsers") as! Array<Int>
+            signedUsers: eventDictionary.value(forKey: "signedUsers") as! Array<UInt64>,
+            linkUrls: eventDictionary.value(forKey: "linkUrls") as! Array<String>,
+            linkStrings: eventDictionary.value(forKey: "linkStrings") as! Array<String>,
+            linkDone: eventDictionary.value(forKey: "linkDone") as! Array<UInt64>
         )
         print("ownerIdInMaper = ", event.ownerId as Any)
         print("ownerIdInMaperDict = ", eventDictionary.value(forKey: "ownerId") as Any)

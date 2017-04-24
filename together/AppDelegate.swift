@@ -12,6 +12,8 @@ import FacebookCore
 import FBSDKCoreKit
 import OneSignal
 import GoogleSignIn
+import GooglePlaces
+import GoogleMaps
 
 
 
@@ -27,7 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Aa1krQ-_8zYx_bd8F2qCjqXbrFPrCcvIpa54v38Eri7lVihEi66gqy4nQLT6WabRcqO5nHZ_E6sH5iSj", PayPalEnvironmentSandbox: "aanoorwali-facilitator@hotmail.com"])
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyDqLRk1pMJ7q8Ch0L_qvRKqU8CPi2b298A")
+        GMSServices.provideAPIKey("AIzaSyDqLRk1pMJ7q8Ch0L_qvRKqU8CPi2b298A")
+        
         OneSignal.initWithLaunchOptions(launchOptions, appId: "aab72c04-c005-49da-a064-d4e93e7fed76")
         OneSignal.initWithLaunchOptions(launchOptions, appId: "aab72c04-c005-49da-a064-d4e93e7fed76", handleNotificationReceived: { (notification) in
             print("Received Notification - \(notification?.payload.notificationID)")
@@ -44,30 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             print(fullMessage)
         }, settings: [kOSSettingsKeyAutoPrompt : true])
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
     
     
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let faceReturn = FBSDKApplicationDelegate.sharedInstance().application(app,open: url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         
-        let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(
-            application,
-            open: url,
-            sourceApplication: sourceApplication,
-            annotation: annotation)
-        // Add any custom logic here.
-        return facebookDidHandle
+        let googleReturn = GIDSignIn.sharedInstance().handle(url,
+                                                                sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                                annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        return googleReturn
     }
     
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: [:])
-    }
+   
     
     
     
@@ -125,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                         
                     } else {
                         userM.email = user.profile.email
-                        userM.id = (snapshot.childSnapshot(forPath: "count").value) as! Int + 1
+                        userM.id = UInt64((snapshot.childSnapshot(forPath: "count").value) as! Int + 1)
                         userM.notificationId = userNotifId!
                         UserDefaults.standard.set(userM.id, forKey: "userId")
                         UserDefaults.standard.synchronize()
